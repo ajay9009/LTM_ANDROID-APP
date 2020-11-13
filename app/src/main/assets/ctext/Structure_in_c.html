@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h2 style="text-align: center;"><strong><span style="color: #ff6600;">Structures</span></strong></h2>
+        <p>Arrays allow to define type of variables that can hold several data items of the same kind.
+            Similarly <strong>structure</strong> is another user defined data type available in C that
+            allows
+            to combine data items of different kinds.</p>
+        <p>Structures are used to represent a record. Suppose you want to keep track of your books in a library. You
+            might want to track the following attributes about each book &minus;</p>
+        <ul class="list">
+            <li>Title</li>
+            <li>Author</li>
+            <li>Subject</li>
+            <li>Book ID</li>
+        </ul>
+
+        <h3>Defining a Structure</h3>
+        <p>To define a structure, you must use the <strong>struct</strong> statement. The struct statement
+            defines a new data type, with more than one member. The format of the struct statement is as follows
+            &minus;
+        </p>
+        <textarea id="ta" cols="30" rows="5" readonly>
+struct [structure tag] {
+
+    member definition;
+                    
+}
+            </textarea>
+        <p>The <strong>structure tag</strong> is optional and each member definition is a normal variable
+            definition, such as int i; or float f; or any other valid variable definition. At the end of the
+            structure's
+            definition, before the final semicolon, you can specify one or more structure variables but it is
+            optional.
+        </p>
+
+    </div>
+</body>
+
+</html>
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #008080;
+        padding: 20px 50px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px 50px;
+        box-shadow: 2px 2px 25px black;
+    }
+
+    #ta {
+        color: white;
+        background: #25383c;
+        padding: 10px 15px;
+        resize: none;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+    }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

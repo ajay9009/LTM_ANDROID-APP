@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overloading</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h2 style="text-align: center;"><span style="color: #ff6600;"><span
+                    style="color: #ff6600;">Overloading</span></span></h2>
+        <p> </p>
+        <p>C++ allows you to specify more than one definition for a <strong>function</strong> name or
+            an <strong>operator</strong> in the same scope, which is called <strong>function
+                overloading</strong> and <strong>operator overloading</strong> respectively.</p>
+        <p>An overloaded declaration is a declaration that is declared with the same name as a previously declared
+            declaration in the same scope, except that both declarations have different arguments and obviously
+            different definition (implementation).</p>
+        <p>When you call an overloaded <strong>function</strong> or <strong>operator</strong>, the
+            compiler determines the most appropriate definition to use, by comparing the argument types you have used to
+            call the function or operator with the parameter types specified in the definitions. The process of
+            selecting the most appropriate overloaded function or operator is called <strong>overload
+                resolution</strong>.</p>
+        <h3>Function Overloading in C++</h3>
+        <p>You can have multiple definitions for the same function name in the same scope. The definition of the
+            function must differ from each other by the types and/or the number of arguments in the argument list. You
+            cannot overload function declarations that differ only by return type.</p>
+        <h3>Operators Overloading in C++</h3>
+        <p>You can redefine or overload most of the built-in operators available in C++. Thus, a programmer can use
+            operators with user-defined types as well.</p>
+        <p>Overloaded operators are functions with special names: the keyword "operator" followed by the symbol for the
+            operator being defined. Like any other function, an overloaded operator has a return type and a parameter
+            list.</p>
+        <pre><b>Box operator+(const Box&amp;);</b></pre>
+        <p>declares the addition operator that can be used to <strong>add</strong> two Box objects and returns
+            final Box object. Most overloaded operators may be defined as ordinary non-member functions or as class
+            member functions. In case we define above function as non-member function of a class then we would have to
+            pass two arguments for each operand as follows &minus;</p>
+        <pre><b>Box operator+(const Box&amp;, const Box&amp;);</b></pre>
+        <h3>Overloadable/Non-overloadableOperators</h3>
+        <p>Following is the list of operators which can be overloaded &minus;</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="ts">+</td>
+                    <td class="ts">-</td>
+                    <td class="ts">*</td>
+                    <td class="ts">/</td>
+                    <td class="ts">%</td>
+                    <td class="ts">^</td>
+                </tr>
+                <tr>
+                    <td class="ts">&amp;</td>
+                    <td class="ts">|</td>
+                    <td class="ts">~</td>
+                    <td class="ts">!</td>
+                    <td class="ts">,</td>
+                    <td class="ts">=</td>
+                </tr>
+                <tr>
+                    <td class="ts">&lt;</td>
+                    <td class="ts">&gt;</td>
+                    <td class="ts">&lt;=</td>
+                    <td class="ts">&gt;=</td>
+                    <td class="ts">++</td>
+                    <td class="ts">--</td>
+                </tr>
+                <tr>
+                    <td class="ts">&lt;&lt;</td>
+                    <td class="ts">&gt;&gt;</td>
+                    <td class="ts">==</td>
+                    <td class="ts">!=</td>
+                    <td class="ts">&amp;&amp;</td>
+                    <td class="ts">||</td>
+                </tr>
+                <tr>
+                    <td class="ts">+=</td>
+                    <td class="ts">-=</td>
+                    <td class="ts">/=</td>
+                    <td class="ts">%=</td>
+                    <td class="ts">^=</td>
+                    <td class="ts">&amp;=</td>
+                </tr>
+                <tr>
+                    <td class="ts">|=</td>
+                    <td class="ts">*=</td>
+                    <td class="ts">&lt;&lt;=</td>
+                    <td class="ts">&gt;&gt;=</td>
+                    <td class="ts">[]</td>
+                    <td class="ts">()</td>
+                </tr>
+                <tr>
+                    <td class="ts">-&gt;</td>
+                    <td class="ts">-&gt;*</td>
+                    <td class="ts">new</td>
+                    <td class="ts">new []</td>
+                    <td class="ts">delete</td>
+                    <td class="ts">delete []</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Following is the list of operators, which can not be overloaded &minus;</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td>::</td>
+                    <td>.*</td>
+                    <td>.</td>
+                    <td>?:</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Operator Overloading Examples</h3>
+        <p>Here are various operator overloading examples to help you in understanding the concept.</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Operators &amp; Example</th>
+                </tr>
+                <tr>
+                    <td class="ts">1.</td>
+                    <td>unary operators overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">2.</td>
+                    <td>binary operators overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">3.</td>
+                    <td>relational operators overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">4.</td>
+                    <td>input/output operators overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">5.</td>
+                    <td>++ and -- operators overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">6.</td>
+                    <td>assignment operators overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">7.</td>
+                    <td>function call () operator overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">8.</td>
+                    <td>subscripting [] operator overloading</td>
+                </tr>
+                <tr>
+                    <td class="ts">9.</td>
+                    <td>class member access operator-&gt;overloading</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre class="result notranslate"> </pre>
+        <pre class="result notranslate"> </pre>
+
+    </div>
+</body>
+
+</html>
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #008080;
+        padding: 20px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px 50px;
+        box-shadow: 2px 2px 25px black;
+    }
+
+    #ta {
+        color: white;
+        background: #25383c;
+        padding: 10px 15px;
+        resize: none;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+    }
+
+    .ts {
+        text-align: center;
+    }
+
+
+
+    @media only screen and (max-width: 600px) {
+        #ta {
+            width: 80%;
+            font-size: 10px;
+            padding: 7px;
+        }
+
+        body {
+            padding: 10px;
+            font-size: 10px;
+        }
+
+        .container {
+            box-shadow: 1px 1px 18px;
+            padding: 10px;
+        }
+    }
+</style>

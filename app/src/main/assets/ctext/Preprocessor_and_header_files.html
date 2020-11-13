@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Preprocessor</span></h2>
+      <p>The <strong>C Preprocessor</strong> is not a part of the compiler, but is a separate step in the
+         compilation process. In simple terms, a C Preprocessor is just a text substitution tool and it instructs the
+         compiler
+         to do required pre-processing before the actual compilation. We'll refer to the C Preprocessor as CPP.</p>
+      <p>All preprocessor commands begin with a hash symbol (#). It must be the first nonblank character, and for
+         readability,
+         a preprocessor directive should begin in the first column. The following section lists down all the important
+         preprocessor directives &minus;</p>
+      <table class="table table-bordered">
+         <tbody>
+            <tr>
+               <th>Sr.No.</th>
+               <th>Directive &amp; Description</th>
+            </tr>
+            <tr>
+               <td class="ts">1.</td>
+               <td>
+                  <p><strong>#define</strong></p>
+                  <p>Substitutes a preprocessor macro.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">2.</td>
+               <td>
+                  <p><strong>#include</strong></p>
+                  <p>Inserts a particular header from another file.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">3.</td>
+               <td>
+                  <p><strong>#undef</strong></p>
+                  <p>Undefines a preprocessor macro.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">4.</td>
+               <td>
+                  <p><strong>#ifdef</strong></p>
+                  <p>Returns true if this macro is defined.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">5.</td>
+               <td>
+                  <p><strong>#ifndef</strong></p>
+                  <p>Returns true if this macro is not defined.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">6.</td>
+               <td>
+                  <p><strong>#if</strong></p>
+                  <p>Tests if a compile time condition is true.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">7.</td>
+               <td>
+                  <p><strong>#else</strong></p>
+                  <p>The alternative for #if.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">8.</td>
+               <td>
+                  <p><strong>#elif</strong></p>
+                  <p>#else and #if in one statement.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">9.</td>
+               <td>
+                  <p><strong>#endif</strong></p>
+                  <p>Ends preprocessor conditional.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">10.</td>
+               <td>
+                  <p><strong>#error</strong></p>
+                  <p>Prints error message on stderr.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">11.</td>
+               <td>
+                  <p><strong>#pragma</strong></p>
+                  <p>Issues special commands to the compiler, using a standardized method.</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+      <h3>Preprocessors Examples</h3>
+      <p>Analyze the following examples to understand various directives.</p>
+      <pre><strong>#define MAX_ARRAY_LENGTH 20</strong></pre>
+      <p>This directive tells the CPP to replace instances of MAX_ARRAY_LENGTH with 20. Use <em>#define</em> for
+         constants to increase readability.</p>
+      <pre><strong>#include</strong> <strong>&lt;stdio.h&gt;</strong>
+<strong>#include "myheader.h"</strong></pre>
+      <p>These directives tell the CPP to get stdio.h from <strong>System Libraries</strong> and add the text to the
+         current source file. The next line tells CPP to get <strong>myheader.h</strong> from the local directory
+         and add the content to the current source file.</p>
+      <pre><strong>#undef FILE_SIZE</strong>
+<strong>#define FILE_SIZE </strong></pre>
+      <p>It tells the CPP to undefine existing FILE_SIZE and define it as 42.</p>
+      <pre><strong>#ifndef MESSAGE</strong>
+<strong>#define MESSAGE You wish!</strong>
+<strong>#endif</strong></pre>
+      <p>It tells the CPP to define MESSAGE only if MESSAGE isn't already defined.</p>
+      <pre><strong>#ifdef DEBUG</strong>
+<strong>/* Your debugging statements here */</strong>
+<strong>#endif</strong></pre>
+      <p>It tells the CPP to process the statements enclosed if DEBUG is defined. This is useful if you pass
+         the <em>-DDEBUG</em> flag to the gcc compiler at the time of compilation. This will define DEBUG, so you
+         can turn debugging on and off on the fly during compilation.</p>
+
+      <h3>Predefined Macros</h3>
+      <p>ANSI C defines a number of macros. Although each one is available for use in programming, the predefined macros
+         should not be directly modified.</p>
+      <table>
+            <tr>
+               <th>Sr.No.</th>
+               <th>Macro &amp; Description</th>
+            </tr>
+            <tr>
+               <td class="ts">1.</td>
+               <td>
+                  <p><strong>__DATE__</strong></p>
+                  <p>The current date as a character literal in "MMM DD YYYY" format.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">2.</td>
+               <td>
+                  <p><strong>__TIME__</strong></p>
+                  <p>The current time as a character literal in "HH:MM:SS" format.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">3.</td>
+               <td>
+                  <p><strong>__FILE__</strong></p>
+                  <p>This contains the current filename as a string literal.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">4.</td>
+               <td>
+                  <p><strong>__LINE__</strong></p>
+                  <p>This contains the current line number as a decimal constant.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">5.</td>
+               <td>
+                  <p><strong>__STDC__</strong></p>
+                  <p>Defined as 1 when the compiler complies with the ANSI standard.</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+      <h3>Preprocessor Operators</h3>
+      <p>The C preprocessor offers the following operators to help create macros &minus;</p>
+      <h3>The Macro Continuation (\) Operator</h3>
+      <p>A macro is normally confined to a single line. The macro continuation operator (\) is used to continue a macro
+         that
+         is too long for a single line. For example &minus;</p>
+      <pre><strong>#define message_for (a,b)  \
+printf(#a " and " #b ": We love you!\n")</strong></pre>
+
+      <h3>The Stringize (#) Operator</h3>
+      <p>The stringize or number-sign operator ( '#' ), when used within a macro definition, converts a macro parameter
+         into a
+         string constant. This operator may be used only in a macro having a specified argument or parameter list.</p>
+      <hr />
+
+      <h2 style="text-align: center;"><span style="color: #ff6600;"><span style="color: #ff6600;">Header
+               Files</span></span>
+      </h2>
+      <p>A header file is a file with extension <strong>.h</strong> which contains C function declarations and macro
+         definitions to be shared between several source files. There are two types of header files: the files that the
+         programmer writes and the files that comes with your compiler.</p>
+      <p>You request to use a header file in your program by including it with the C preprocessing
+         directive <strong>#include</strong>, like you have seen inclusion of <strong>stdio.h</strong> header
+         file, which comes along with your compiler.</p>
+      <p>Including a header file is equal to copying the content of the header file but we do not do it because it will
+         be
+         error-prone and it is not a good idea to copy the content of a header file in the source files, especially if
+         we have
+         multiple source files in a program.</p>
+      <p>A simple practice in C or C++ programs is that we keep all the constants, macros, system wide global variables,
+         and
+         function prototypes in the header files and include that header file wherever it is required.</p>
+
+      <h3>Include Syntax</h3>
+      <p>Both the user and the system header files are included using the preprocessing
+         directive <strong>#include</strong>. It has the following two forms &minus;</p>
+      <pre><strong>#include &lt;file&gt;</strong></pre>
+      <p>This form is used for system header files. It searches for a file named 'file' in a standard list of system
+         directories. You can prepend directories to this list with the -I option while compiling your source code.</p>
+      <pre><strong>#include "file"</strong></pre>
+      <p>This form is used for header files of your own program. It searches for a file named 'file' in the directory
+         containing the current file. You can prepend directories to this list with the -I option while compiling your
+         source
+         code.</p>
+
+      <h3>Include Operation</h3>
+      <p>The <strong>#include</strong> directive works by directing the C preprocessor to scan the specified file as
+         input before continuing with the rest of the current source file. The output from the preprocessor contains the
+         output already generated, followed by the output resulting from the included file, followed by the output that
+         comes
+         from the text after the <strong>#include</strong> directive. For example, if you have a header file
+         header.h as follows &minus;</p>
+      <pre><strong>char *test (void);</strong></pre>
+      <p>and a main program called <em>program.c</em> that uses the header file, like this &minus;</p>
+         <textarea id="ta" cols="30" rows="7" readonly>
+int x;
+#include "header.h"
+
+int main (void) {
+   puts (test ());
+}
+         </textarea>
+      <p>The compiler will see the same token stream as it would if program.c read.</p>
+      <textarea id="ta" cols="30" rows="7" readonly>
+int x;
+char *test (void);
+         
+int main (void) {
+   puts (test ());
+}
+</textarea>
+
+      <h3>Once-Only Headers</h3>
+      <p>If a header file happens to be included twice, the compiler will process its contents twice and it will result
+         in an error. The standard way to prevent this is to enclose the entire real contents of the file in a conditional,
+         like this &minus;</p>
+         <textarea id="ta" cols="30" rows="7" readonly>
+#ifndef HEADER_FILE
+#define HEADER_FILE
+            
+the entire header file file
+
+#endif
+         </textarea>
+
+      <p>This construct is commonly known as a wrapper <strong>#ifndef</strong>. When the header is included again, the
+         conditional will be false, because HEADER_FILE is defined. The preprocessor will skip over the entire contents
+         of the
+         file, and the compiler will not see it twice.</p>
+
+      <h3>Computed Includes</h3>
+      <p>Sometimes it is necessary to select one of the several different header files to be included into your program.
+         For
+         instance, they might specify configuration parameters to be used on different sorts of operating systems. You
+         could
+         do this with a series of conditionals as follows &minus;</p>
+
+         <textarea id="ta" cols="30" rows="7" readonly>
+#if SYSTEM_1
+   # include "system_1.h"
+#elif SYSTEM_2
+   # include "system_2.h"
+#elif SYSTEM_3
+   ...
+#endif
+         </textarea>
+
+      <p>But as it grows, it becomes tedious, instead the preprocessor offers the ability to use a macro for the header
+         name.
+         This is called a <strong>computed include</strong>. Instead of writing a header name as the direct argument
+         of <strong>#include</strong>, you simply put a macro name there &minus;</p>
+
+         <textarea id="ta" cols="30" rows="4" readonly>
+#define SYSTEM_H "system_1.h"
+...
+#include SYSTEM_H
+         </textarea>
+      <p>SYSTEM_H will be expanded, and the preprocessor will look for system_1.h as if
+         the <strong>#include</strong> had been written that way originally. SYSTEM_H could be defined by your
+         Makefile with a -D option.</p>
+   </div>
+</body>
+
+</html>
+
+
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px 50px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

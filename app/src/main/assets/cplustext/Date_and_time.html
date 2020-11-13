@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Date and Time</title>
+</head>
+
+<body>
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Date and Time</span></h2>
+      <p>The C++ standard library does not provide a proper date type. C++ inherits the structs and functions for date
+         and time manipulation from C. To access date and time related functions and structures, you would need to
+         include &lt;ctime&gt; header file in your C++ program.</p>
+      <p>There are four time-related types: <strong>clock_t, time_t, size_t</strong>, and <strong>tm</strong>. The types
+         - clock_t, size_t and time_t are capable of representing the system time and date as some sort of integer.</p>
+      <p>Following are the important functions, which we use while working with date and time in C or C++. All these
+         functions are part of standard C and C++ library and you can check their detail using reference to C++ standard
+         library given below.</p>
+      <table>
+         <tbody>
+            <tr>
+               <th>Sr.No</th>
+               <th>Function &amp; Purpose</th>
+            </tr>
+            <tr>
+               <td class="ts">1.</td>
+               <td>
+                  <p><strong>time_t time(time_t *time);</strong></p>
+                  <p>This returns the current calendar time of the system in number of seconds elapsed since January 1,
+                     1970. If the system has no time, .1 is returned.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">2.</td>
+               <td>
+                  <p><strong>char *ctime(const time_t *time);</strong></p>
+                  <p>This returns a pointer to a string of the form <em>day month year hours:minutes:seconds
+                        year\n\0</em>.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">3.</td>
+               <td>
+                  <p><strong>struct tm *localtime(const time_t *time);</strong></p>
+                  <p>This returns a pointer to the <strong>tm</strong> structure representing local time.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">4.</td>
+               <td>
+                  <p><strong>clock_t clock(void);</strong></p>
+                  <p>This returns a value that approximates the amount of time the calling program has been running. A
+                     value of .1 is returned if the time is not available.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">5.</td>
+               <td>
+                  <p><strong>char * asctime ( const struct tm * time );</strong></p>
+                  <p>This returns a pointer to a string that contains the information stored in the structure pointed to
+                     by time converted into the form: day month date hours:minutes:seconds year\n\0</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">6.</td>
+               <td>
+                  <p><strong>struct tm *gmtime(const time_t *time);</strong></p>
+                  <p>This returns a pointer to the time in the form of a tm structure. The time is represented in
+                     Coordinated Universal Time (UTC), which is essentially Greenwich Mean Time (GMT).</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">7.</td>
+               <td>
+                  <p><strong>time_t mktime(struct tm *time);</strong></p>
+                  <p>This returns the calendar-time equivalent of the time found in the structure pointed to by time.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">8.</td>
+               <td>
+                  <p><strong>double difftime ( time_t time2, time_t time1 );</strong></p>
+                  <p>This function calculates the difference in seconds between time1 and time2.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">9.</td>
+               <td>
+                  <p><strong>size_t strftime();</strong></p>
+                  <p>This function can be used to format date and time in a specific format.</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+      <h3>Current Date and Time</h3>
+      <p>Suppose you want to retrieve the current system date and time, either as a local time or as a Coordinated
+         Universal Time (UTC). Following is the example to achieve the same &minus;</p>
+
+         <textarea id="ta" cols="70" rows="10" readonly>
+#include <iostream>
+#include <ctime>
+            
+using namespace std;
+            
+int main() {
+   // current date/time based on current system
+   time_t now = time(0);
+               
+   // convert now to string form
+   char* dt = ctime(&now);
+            
+   cout << "The local date and time is: " << dt << endl;
+            
+   // convert now to tm struct for UTC
+   tm *gmtm = gmtime(&now);
+   dt = asctime(gmtm);
+   cout << "The UTC date and time is:"<< dt << endl;
+}   
+</textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>The local date and time is: Sat Jan  8 20:07:41 2011
+
+The UTC date and time is:Sun Jan  9 03:07:41 2011
+</b></pre>
+      <h3>Format Time using struct tm</h3>
+      <p>The <strong>tm</strong> structure is very important while working with date and time in either C or C++. This
+         structure holds the date and time in the form of a C structure as mentioned above. Most of the time related
+         functions makes use of tm structure. Following is an example which makes use of various date and time related
+         functions and tm structure &minus;</p>
+      <p>While using structure in this chapter, I'm making an assumption that you have basic understanding on C
+         structure and how to access structure members using arrow -&gt; operator.</p>
+      
+         <textarea id="ta" cols="70" rows="10" readonly>
+#include <iostream>
+#include <ctime>
+               
+using namespace std;
+               
+int main() {
+   // current date/time based on current system
+   time_t now = time(0);
+               
+   cout << "Number of sec since January 1,1970:" << now << endl;
+               
+   tm *ltm = localtime(&now);
+               
+   // print various components of tm structure.
+   cout << "Year:" << 1900 + ltm->tm_year << endl;
+   cout << "Month: "<< 1 + ltm->tm_mon<< endl;
+   cout << "Day: "<<  ltm->tm_mday << endl;
+   cout << "Time: "<< 1 + ltm->tm_hour << ":";
+   cout << 1 + ltm->tm_min << ":";
+   cout << 1 + ltm->tm_sec << endl;
+}
+         </textarea>
+         
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>Number of sec since January 1,1970:1563027637
+Year2019
+Month: 7
+Day: 13
+Time: 15:21:38</b></pre>
+
+
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

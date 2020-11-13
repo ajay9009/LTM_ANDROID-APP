@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pointers</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Pointers</span></h2>
+      <p>C++ pointers are easy and fun to learn. Some C++ tasks are performed more easily with pointers, and other C++
+         tasks, such as dynamic memory allocation, cannot be performed without them.</p>
+      <p>As you know every variable is a memory location and every memory location has its address defined which can be
+         accessed using ampersand (&amp;) operator which denotes an address in memory. Consider the following which will
+         print the address of the variables defined &minus;</p>
+
+         <textarea id="ta" cols="50" rows="10" readonly>
+#include <iostream>
+
+using namespace std;
+int main () {
+   int  var1;
+   char var2[10];
+               
+   cout << "Address of var1 variable: ";
+   cout << &var1 << endl;
+               
+   cout << "Address of var2 variable: ";
+   cout << &var2 << endl;
+               
+   return 0;
+}
+         </textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>Address of var1 variable: 0xbfebd5c0
+Address of var2 variable: 0xbfebd5b6
+</b></pre>
+      <h3>What are Pointers?</h3>
+      <p>A <strong>pointer</strong> is a variable whose value is the address of another variable. Like any
+         variable or constant, you must declare a pointer before you can work with it. The general form of a pointer
+         variable declaration is &minus;</p>
+      <pre><b>type *var-name;</b>
+</pre>
+      <p>Here, <strong>type</strong> is the pointer's base type; it must be a valid C++ type
+         and <strong>var-name</strong> is the name of the pointer variable. The asterisk you used to declare a
+         pointer is the same asterisk that you use for multiplication. However, in this statement the asterisk is being
+         used to designate a variable as a pointer. Following are the valid pointer declaration &minus;</p>
+      <pre><b>int    *ip;    // pointer to an integer
+double *dp;    // pointer to a double
+float  *fp;    // pointer to a float
+char   *ch     // pointer to character</b>
+</pre>
+      <p>The actual data type of the value of all pointers, whether integer, float, character, or otherwise, is the
+         same, a long hexadecimal number that represents a memory address. The only difference between pointers of
+         different data types is the data type of the variable or constant that the pointer points to.</p>
+      <h3>Using Pointers in C++</h3>
+      <p>There are few important operations, which we will do with the pointers very
+         frequently. <strong>(a)</strong> We define a pointer variable. <strong>(b)</strong> Assign
+         the address of a variable to a pointer. <strong>(c)</strong> Finally access the value at the address
+         available in the pointer variable. This is done by using unary operator * that returns the value of the
+         variable located at the address specified by its operand. Following example makes use of these operations
+         &minus;</p>
+         <textarea id="ta" cols="70" rows="10" readonly>
+#include <iostream>
+
+using namespace std;
+               
+int main () {
+   int  var = 20;   // actual variable declaration.
+   int  *ip;        // pointer variable 
+               
+   ip = &var;       // store address of var in pointer variable
+               
+   cout << "Value of var variable: ";
+   cout << var << endl;
+               
+   // print the address stored in ip pointer variable
+   cout << "Address stored in ip variable: ";
+   cout << ip << endl;
+               
+   // access the value at the address available in pointer
+   cout << "Value of *ip variable: ";
+   cout << *ip << endl;
+               
+   return 0;
+}
+         </textarea>
+
+      <p>When the above code is compiled and executed, it produces result something as follows &minus;</p>
+      <pre><b>Value of var variable: 20
+Address stored in ip variable: 0xbfc601ac
+Value of *ip variable: 20
+</b></pre>
+      <h3>Pointers in C++</h3>
+      <p>Pointers have many but easy concepts and they are very important to C++ programming. There are following few
+         important pointer concepts which should be clear to a C++ programmer &minus;</p>
+      <table>
+         <tbody>
+            <tr>
+               <th>Sr.No</th>
+               <th>Concept &amp; Description</th>
+            </tr>
+            <tr>
+               <td class="ts">1.</td>
+               <td>Null pointer<br />
+                  <p>C++ supports null pointer, which is a constant with a value of zero defined in several standard
+                     libraries.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">2.</td>
+               <td>pointer arithmetic<br />
+                  <p>There are four arithmetic operators that can be used on pointers: ++, --, +, -</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">3.</td>
+               <td>
+                  <p>pointer vs array</p>
+                  <p>There is a close relationship between pointers and arrays.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">4.</td>
+               <td>array to pointer<br />
+                  <p>You can define arrays to hold a number of pointers.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">5.</td>
+               <td>pointer to pointer<br />
+                  <p>C++ allows you to have pointer on a pointer and so on.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">6.</td>
+               <td>passing pointers to function<br />
+                  <p>Passing an argument by reference or by address both enable the passed argument to be changed in the
+                     calling function by the called function.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">7.</td>
+               <td>return pointers to function<br />
+                  <p>C++ allows a function to return a pointer to local variable, static variable and dynamically
+                     allocated memory as well.</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

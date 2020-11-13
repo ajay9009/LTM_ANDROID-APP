@@ -1,0 +1,120 @@
+<h2 style="text-align: center;"><span style="color: #ff6600;">Java Arrays</span></h2>
+<p>Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.</p>
+<p>To declare an array, define the variable type with&nbsp;<strong>square brackets</strong>:</p>
+<div class="w3-example">
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cars<span class="token punctuation">;</span>
+</code></pre>
+</div>
+<p>We have now declared a variable that holds an array of strings. To insert values to it, we can use an array literal - place the values in a comma-separated list, inside curly braces:</p>
+<div class="w3-example">
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cars <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span> <span class="token string">"BMW"</span><span class="token punctuation">,</span> <span class="token string">"Ford"</span><span class="token punctuation">,</span> <span class="token string">"Mazda"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</div>
+<p>To create an array of integers, you could write:</p>
+<div class="w3-example">
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token keyword keyword-int">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> myNum <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</div>
+<hr />
+<h2>Access the Elements of an Array</h2>
+<p>You access an array element by referring to the index number.</p>
+<p>This statement accesses the value of the first element in cars:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cars <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span> <span class="token string">"BMW"</span><span class="token punctuation">,</span> <span class="token string">"Ford"</span><span class="token punctuation">,</span> <span class="token string">"Mazda"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cars<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Outputs Volvo</span></code></pre>
+</div>
+<div class="w3-note w3-panel">
+<p><strong>Note:</strong>&nbsp;Array indexes start with 0: [0] is the first element. [1] is the second element, etc.</p>
+</div>
+<hr />
+<h2>Change an Array Element</h2>
+<p>To change the value of a specific element, refer to the index number:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java">cars<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Opel"</span><span class="token punctuation">;</span>
+</code></pre>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cars <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span> <span class="token string">"BMW"</span><span class="token punctuation">,</span> <span class="token string">"Ford"</span><span class="token punctuation">,</span> <span class="token string">"Mazda"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+cars<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Opel"</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cars<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Now outputs Opel instead of Volvo</span></code></pre>
+</div>
+<hr />
+<div id="midcontentadcontainer">&nbsp;</div>
+<h2>Array Length</h2>
+<p>To find out how many elements an array has, use the&nbsp;<code class="w3-codespan">length</code>&nbsp;property:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cars <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span> <span class="token string">"BMW"</span><span class="token punctuation">,</span> <span class="token string">"Ford"</span><span class="token punctuation">,</span> <span class="token string">"Mazda"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cars<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Outputs 4</span>
+</code></pre>
+</div>
+<hr />
+<h2>Loop Through an Array</h2>
+<p>You can loop through the array elements with the&nbsp;<code class="w3-codespan">for</code>&nbsp;loop, and use the&nbsp;<code class="w3-codespan">length</code>&nbsp;property to specify how many times the loop should run.</p>
+<p>The following example outputs all elements in the&nbsp;<strong>cars</strong>&nbsp;array:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cars <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span> <span class="token string">"BMW"</span><span class="token punctuation">,</span> <span class="token string">"Ford"</span><span class="token punctuation">,</span> <span class="token string">"Mazda"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cars<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cars<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+<hr />
+<h2>Loop Through an Array with For-Each</h2>
+<p>There is also a "<strong>for-each</strong>" loop, which is used exclusively to loop through elements in arrays:</p>
+<div class="w3-example">
+<h3>Syntax</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><em>type</em> <em>variable</em> <span class="token operator">:</span> <em>arrayname</em><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+<p>The following example outputs all elements in the&nbsp;<strong>cars</strong>&nbsp;array, using a "<strong>for-each</strong>" loop:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> cars <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Volvo"</span><span class="token punctuation">,</span> <span class="token string">"BMW"</span><span class="token punctuation">,</span> <span class="token string">"Ford"</span><span class="token punctuation">,</span> <span class="token string">"Mazda"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> i <span class="token operator">:</span> cars<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+<p>The example above can be read like this:&nbsp;<strong>for each</strong>&nbsp;<code class="w3-codespan">String</code>&nbsp;element (called&nbsp;<strong>i</strong>&nbsp;- as in&nbsp;<strong>i</strong>ndex) in&nbsp;<strong>cars</strong>, print out the value of<strong>&nbsp;i</strong>.</p>
+<p>If you compare the&nbsp;<code class="w3-codespan">for</code>&nbsp;loop and&nbsp;<strong>for-each</strong>&nbsp;loop, you will see that the&nbsp;<strong>for-each</strong>&nbsp;method is easier to write, it does not require a counter (using the length property), and it is more readable.</p>
+<hr />
+<h2>Multidimensional Arrays</h2>
+<p>A multidimensional array is an array containing one or more arrays.</p>
+<p>To create a two-dimensional array, add each array within its own set of&nbsp;<strong>curly braces</strong>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token keyword keyword-int">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> myNumbers <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+</div>
+<p><strong>myNumbers</strong>&nbsp;is now an array with two arrays as its elements.</p>
+<p>To access the elements of the&nbsp;<strong>myNumbers</strong>&nbsp;array, specify two indexes: one for the array, and one for the element inside that array. This example accesses the third element (2) in the second array (1) of myNumbers:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token keyword keyword-int">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> myNumbers <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-int">int</span> x <span class="token operator">=</span> myNumbers<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Outputs 7</span>
+</code></pre>
+</div>
+<p>We can also use a&nbsp;<code class="w3-codespan">for loop</code>&nbsp;inside another&nbsp;<code class="w3-codespan">for loop</code>&nbsp;to get the elements of a two-dimensional array (we still have to point to the two indexes):</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java"><code class=" language-java"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">MyClass</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> myNumbers <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> myNumbers<span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> myNumbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>myNumbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><br />    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</div>

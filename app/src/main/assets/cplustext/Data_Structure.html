@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Data Structure</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Data Structures</span></h2>
+      <p>C/C++ arrays allow you to define variables that combine several data items of the same kind,
+         but <strong>structure</strong> is another user defined data type which allows you to combine data
+         items of different kinds.</p>
+      <p>Structures are used to represent a record, suppose you want to keep track of your books in a library. You might
+         want to track the following attributes about each book &minus;</p>
+      <ul class="list">
+         <li>Title</li>
+         <li>Author</li>
+         <li>Subject</li>
+         <li>Book ID</li>
+      </ul>
+      <h3>Defining a Structure</h3>
+      <p>To define a structure, you must use the struct statement. The struct statement defines a new data type, with
+         more than one member, for your program. The format of the struct statement is this &minus;</p>
+
+         <textarea id="ta" cols="50" rows="8" readonly>
+struct [structure tag] {
+   member definition;
+   member definition;
+   ...
+   member definition;
+} [one or more structure variables];
+         </textarea>
+
+      <p>The <strong>structure tag</strong> is optional and each member definition is a normal variable
+         definition, such as int i; or float f; or any other valid variable definition. At the end of the structure's
+         definition, before the final semicolon, you can specify one or more structure variables but it is optional.
+         Here is the way you would declare the Book structure &minus;</p>
+      
+         <textarea id="ta" cols="50" rows="8" readonly>
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+} book;  
+         </textarea>
+
+      <h3>Accessing Structure Members</h3>
+      <p>To access any member of a structure, we use the <strong>member access operator (.)</strong>. The member
+         access operator is coded as a period between the structure variable name and the structure member that we wish
+         to access. You would use <strong>struct</strong> keyword to define variables of structure type.</p>
+      <h3>Structures as Function Arguments</h3>
+      <p>You can pass a structure as a function argument in very similar way as you pass any other variable or pointer.
+         You would access structure variables in the similar way as you have accessed in the above.</p>
+      <h3>Pointers to Structures</h3>
+      <p>You can define pointers to structures in very similar way as you define pointer to any other variable as
+         follows &minus;</p>
+      
+      <pre><b>struct Books *struct_pointer;</b></pre>
+
+      <p>Now, you can store the address of a structure variable in the above defined pointer variable. To find the
+         address of a structure variable, place the &amp; operator before the structure's name as follows &minus;</p>
+      
+      <pre><b>struct_pointer = &amp;Book1;</b></span></pre>
+
+      <p>To access the members of a structure using a pointer to that structure, you must use the -&gt; operator as
+         follows &minus;</p>
+      <pre><b>struct_pointer-&gt;title;</b></pre>
+      <h3>The typedef Keyword</h3>
+      <p>There is an easier way to define structs or you could "alias" types you create. For example &minus;</p>
+
+      <textarea id="ta" cols="50" rows="8" readonly>
+typedef struct {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+} Books;
+      </textarea>
+
+      <p>Now, you can use <em>Books</em> directly to define variables of <em>Books</em> type without
+         using struct keyword. Following is the example &minus;</p>
+      <pre><b>Books Book1, Book2;</b></pre>
+
+      <p>You can use <strong>typedef</strong> keyword for non-structs as well as follows &minus;</p>
+
+      <textarea id="ta" cols="50" rows="4" readonly>
+typedef long int *pint32;
+ 
+pint32 x, y, z;
+      </textarea>
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

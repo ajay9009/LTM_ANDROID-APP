@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h2 style="text-align: center;"><span style="color: #ff6600;">VARIABLES</span></h2>
+        <p><span style="color: #000000;"></span></p>
+        <p>A variable is nothing but a name given to a storage area that our programs can manipulate. Each variable in C
+            has a specific type, which determines the size and layout of the variable's memory; the range of values that
+            can be stored within that memory; and the set of operations that can be applied to the variable.</p>
+        <p>The name of a variable can be composed of letters, digits, and the underscore character. It must begin with
+            either a letter or an underscore. Upper and lowercase letters are distinct because C is
+            case-sensitive.<strong></strong></p>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Type &amp; Description</th>
+                </tr>
+                <tr>
+                    <td class="ts">1.</td>
+                    <td>
+                        <p><strong>char</strong></p>
+                        <p>Typically a single octet(one byte). It is an integer type.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">2.</td>
+                    <td>
+                        <p><strong>int</strong></p>
+                        <p>The most natural size of integer for the machine.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">3.</td>
+                    <td>
+                        <p><strong>float</strong></p>
+                        <p>A single-precision floating point value.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">4.</td>
+                    <td>
+                        <p><strong>double</strong></p>
+                        <p>A double-precision floating point value.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">5.</td>
+                    <td>
+                        <p><strong>void</strong></p>
+                        <p>Represents the absence of type.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>C programming language also allows to define various other types of variables, which we will cover in
+            subsequent chapters like Enumeration, Pointer, Array, Structure, Union, etc. For this chapter, let us study
+            only basic variable types.</p>
+        <h3>Variable Definition in C</h3>
+        <p>A variable definition tells the compiler where and how much storage to create for the variable. A variable
+            definition specifies a data type and contains a list of one or more variables of that type as follows
+            &minus;</p>
+        <p> </p>
+        <p>Here, <strong>type</strong> must be a valid C data type including char, w_char, int, float, double,
+            bool, or any user-defined object; and <strong>variable_list</strong> may consist of one or more
+            identifier names separated by commas. Some valid declarations are shown here &minus;</p>
+        <p><strong>int     i, j, k;</strong></p>
+        <p><strong>char c, ch;</strong></p>
+        <p><strong>float f, salary;</strong></p>
+        <p><strong>double d;</strong> </p>
+        <p>The line <strong>int i, j, k;</strong> declares and defines the variables i, j, and k; which
+            instruct the compiler to create variables named i, j and k of type int.</p>
+        <p>Variables can be initialized (assigned an initial value) in their declaration. The initializer consists of an
+            equal sign followed by a constant expression as follows &minus;</p>
+        <p><strong>type variable_name = value;</strong></p>
+        <p>Some examples are &minus;</p>
+        <p><strong>extern int d=3, f=5;</strong></p>
+        <p><strong>int d=3, f=5;</strong></p>
+        <p><strong>byte z=22;</strong></p>
+        <p><strong>char x='x';</strong></p>
+        <p>For definition without an initializer: variables with static storage duration are implicitly initialized with
+            NULL (all bytes have the value 0); the initial value of all other variables are undefined.</p>
+        <h3>Variable Declaration in C</h3>
+        <p>A variable declaration provides assurance to the compiler that there exists a variable with the given type
+            and name so that the compiler can proceed for further compilation without requiring the complete detail
+            about the variable. A variable definition has its meaning at the time of compilation only, the compiler
+            needs actual variable definition at the time of linking the program.</p>
+        <p>A variable declaration is useful when you are using multiple files and you define your variable in one of the
+            files which will be available at the time of linking of the program. You will use the
+            keyword <strong>extern</strong> to declare a variable at any place. Though you can declare a
+            variable multiple times in your C program, it can be defined only once in a file, a function, or a block of
+            code.</p>
+        <h3>Example</h3>
+        <p>Try the following example, where variables have been declared at the top, but they have been defined and
+            initialized inside the main function &minus;</p>
+        <p> </p>
+        <p> </p>
+        <p><strong>extern int a, b;</strong></p>
+        <p><strong>extern int c;</strong></p>
+        <p><strong>extern float f;</strong></p>
+        <p><strong>int main() {</strong></p>
+        <p><strong>   int a,b;</strong></p>
+        <p><strong>   int c;</strong></p>
+        <p><strong>  floatr f; </strong></p>
+        <p><strong>  a=10;</strong></p>
+        <p><strong>  b=20;</strong></p>
+        <p><strong>  c= a+b;</strong></p>
+        <p><strong>  printf("value of c:%d \n",c);</strong></p>
+        <p><strong>  f=70.0/3.0;</strong></p>
+        <p><strong> printf("value of f:%f \n", f);</strong></p>
+        <p><strong> return 0;</strong></p>
+        <p><strong>}</strong></p>
+        <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+        <p><strong>value of c":30</strong></p>
+        <p><strong>value of f:23.333334</strong></p>
+        
+        <h2 style="text-align: center;"><span style="color: #ff6600;">Storage classes</span></h2>
+        <p></p>
+        <p>A storage class defines the scope (visibility) and life-time of variables and/or functions within a C
+            Program. They precede the type that they modify. We have four different storage classes in a C program
+            &minus;</p>
+        <ul class="list">
+            <li>auto</li>
+            <li>register</li>
+            <li>static</li>
+            <li>extern</li>
+        </ul>
+        
+        <h3>The auto Storage Class</h3>
+        <p>The <strong>auto</strong> storage class is the default storage class for all local variables.</p>
+        <p><strong>{</strong></p>
+        <p><strong>   int mount;</strong></p>
+        <p><strong>   auto int month;</strong></p>
+        <p><strong>}</strong></p>
+
+        <h3>The register Storage Class</h3>
+        <p>The <strong>register</strong> storage class is used to define local variables that should be stored
+            in a register instead of RAM. This means that the variable has a maximum size equal to the register size
+            (usually one word) and can't have the unary '&amp;' operator applied to it (as it does not have a memory
+            location).</p>
+        <p><strong>{</strong></p>
+        <p><strong>   register int miles;</strong></p>
+        <p><strong>}</strong></p>
+        <p></p>
+
+        <h3>The static Storage Class</h3>
+        <p>The <strong>static</strong> storage class instructs the compiler to keep a local variable in
+            existence during the life-time of the program instead of creating and destroying it each time it comes into
+            and goes out of scope. Therefore, making local variables static allows them to maintain their values between
+            function calls.</p>
+        <p>The static modifier may also be applied to global variables. When this is done, it causes that variable's
+            scope to be restricted to the file in which it is declared.</p>
+        <p>In C programming, when <strong>static</strong> is used on a global variable, it causes only one
+            copy of that member to be shared by all the objects of its class.</p>
+        <p><strong>static int count=a; /* global variable*/</strong></p>
+        <p></p>
+        <p> </p>
+        <p> </p>
+
+    </div>
+</body>
+
+</html>
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #008080;
+        padding: 20px 50px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px 50px;
+        box-shadow: 2px 2px 25px black;
+    }
+
+    #ta {
+        color: white;
+        background: #25383c;
+        padding: 10px 15px;
+        resize: none;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+    }
+
+    .ts {
+        text-align: center;
+    }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <h2 style="text-align: center;"><span style="color: #ff6600;">FILE I/O</span></h2>
+        <p> </p>
+        <p>The last chapter explained the standard input and output devices handled by C programming language. This
+            chapter cover how C programmers can create, open, close text or binary files for their data storage.</p>
+        <p>A file represents a sequence of bytes, regardless of it being a text file or a binary file. C programming
+            language provides access on high level functions as well as low level (OS level) calls to handle file on
+            your storage devices. This chapter will take you through the important calls for file management.</p>
+        <h2>Opening Files</h2>
+        <p>You can use the <strong>fopen( )</strong> function to create a new file or to open an existing
+            file. This call will initialize an object of the type <strong>FILE</strong>, which contains all the
+            information necessary to control the stream. The prototype of this function call is as follows &minus;</p>
+        <p><strong>FILE *fopen(const char * filename, const char * mode);</strong></p>
+        <p>Here, <strong>filename</strong> is a string literal, which you will use to name your file, and
+            access <strong>mode</strong> can have one of the following values &minus;</p>
+
+        <table>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Mode &amp; Description</th>
+            </tr>
+            <tr>
+                <td class="ts">1.</td>
+                <td>
+                    <p><strong>r</strong></p>
+                    <p>Opens an existing text file for reading purpose.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ts">2.</td>
+                <td>
+                    <p><strong>w</strong></p>
+                    <p>Opens a text file for writing. If it does not exist, then a new file is created. Here your
+                        program will start writing content from the beginning of the file.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ts">3.</td>
+                <td>
+                    <p><strong>a</strong></p>
+                    <p>Opens a text file for writing in appending mode. If it does not exist, then a new file is
+                        created. Here your program will start appending content in the existing file content.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ts">4.</td>
+                <td>
+                    <p><strong>r+</strong></p>
+                    <p>Opens a text file for both reading and writing.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ts">5.</td>
+                <td>
+                    <p><strong>w+</strong></p>
+                    <p>Opens a text file for both reading and writing. It first truncates the file to zero length if
+                        it exists, otherwise creates a file if it does not exist.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ts">6.</td>
+                <td>
+                    <p><strong>a+</strong></p>
+                    <p>Opens a text file for both reading and writing. It creates the file if it does not exist. The
+                        reading will start from the beginning but writing can only be appended.</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Closing a File</h2>
+        <p>To close a file, use the fclose( ) function. The prototype of this function is &minus;</p>
+        <p><strong>int fclose(FILE *fp);</strong></p>
+        <p> </p>
+        <p>The <strong>fclose(-)</strong> function returns zero on success,
+            or <strong>EOF</strong> if there is an error in closing the file. This function actually flushes
+            any data still pending in the buffer to the file, closes the file, and releases any memory used for the
+            file. The EOF is a constant defined in the header file <strong>stdio.h</strong>.</p>
+        <p>There are various functions provided by C standard library to read and write a file, character by character,
+            or in the form of a fixed length string.</p>
+
+        <h2>Writing a File</h2>
+        <p>Following is the simplest function to write individual characters to a stream &minus;</p>
+        <p><strong>int fputc(int c, FILE *fp);</strong></p>
+        
+        <h2>Reading a File</h2>
+        <p>Given below is the simplest function to read a single character from a file &minus;</p>
+        <p><strong>int fgetc( FILE * fp );</strong></p>
+        <p>The <strong>fgetc()</strong> function reads a character from the input file referenced by fp. The
+            return value is the character read, or in case of any error, it returns <strong>EOF</strong>. The
+            following function allows to read a string from a stream &minus;</p>
+        <p><strong>char *fgets( char *buf, int n, FILE *fp );
+        </strong></p>
+        <p>The functions <strong>fgets()</strong> reads up to n-1 characters from the input stream referenced
+            by fp. It copies the read string into the buffer <strong>buf</strong>, appending
+            a <strong>null</strong> character to terminate the string.</p>
+        <p>If this function encounters a newline character '\n' or the end of the file EOF before they have read the
+            maximum number of characters, then it returns only the characters read up to that point including the new
+            line character. You can also use <strong>int fscanf(FILE *fp, const char *format,
+                ...)</strong> function to read strings from a file, but it stops reading after encountering the
+            first space character.</p>
+
+    </div>
+</body>
+
+</html>
+
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #008080;
+        padding: 20px 50px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px 50px;
+        box-shadow: 2px 2px 25px black;
+    }
+
+    #ta {
+        color: white;
+        background: #25383c;
+        padding: 10px 15px;
+        resize: none;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+    }
+
+    .ts {
+        text-align: center;
+    }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 style="text-align: center;"><span style="color: #ff6600;">Decision Making</span></h2>
+        <p></p>
+        <p>Decision making structures require that the programmer specifies one or more conditions to be evaluated or
+            tested by the program, along with a statement or statements to be executed if the condition is determined to
+            be true, and optionally, other statements to be executed if the condition is determined to be false.</p>
+        <p>Show below is the general form of a typical decision making structure found in most of the programming
+            languages &minus;</p>
+        <img src="Capture.png" alt="Decision making statements in C" width="300px" />
+        <p>C programming language assumes any <strong>non-zero</strong> and <strong>non-null</strong> values
+            as <strong>true</strong>, and if it is
+            either <strong>zero</strong> or <strong>null</strong>, then it is assumed
+            as <strong>false</strong> value.</p>
+        <p>C programming language provides the following types of decision-making statements.</p>
+
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Statement &amp; Description</th>
+                </tr>
+                <tr>
+                    <td class="ts">1.</td>
+                    <td><strong>if statement</strong>
+                        <p>An <strong>if statement</strong> consists of a boolean expression followed by one
+                            or more statements.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">2.</td>
+                    <td><strong>if...else statement</strong>
+                        <p>An&nbsp;<strong>if statement</strong> can be followed by an optional <strong>else
+                                statement</strong>, which executes when the Boolean expression is false.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">3.</td>
+                    <td><strong>Nested if statements</strong>
+                        <p>You can use one <strong>if</strong> or <strong>else if</strong> statement
+                            inside another <strong>if</strong> or <strong>else
+                                if</strong> statement(s).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">4.</td>
+                    <td><strong>Switch statement</strong>
+                        <p>A <strong>switch</strong> statement allows a variable to be tested for equality
+                            against a list of values.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">5.</td>
+                    <td><strong>Nested switch statements</strong>
+                        <p>You can use one <strong>switch</strong> statement inside
+                            another <strong>switch</strong> statement(s).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>The ? : Operator</h3>
+        <p>We have covered the <strong>conditional operator? :</strong> in the previous chapter which can be
+            used to replace <strong>if...else</strong> statements. It has the following general form &minus;
+        </p>
+        <p>Exp1? Exp2: Exp3;</p>
+        <p>Where Exp1, Exp2, and Exp3 are expressions. Notice the use and placement of the colon.</p>
+        <p>The value of a? the expression is determined like this &minus;</p>
+        <ul class="list">
+            <li>
+                Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire?
+                expression.
+            </li>
+        </ul>
+        <ul>
+            <li>If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the
+                expression.
+            </li>
+        </ul>
+        <hr />
+        <h2 style="text-align: center;"><span style="color: #ff6600;">LOOP</span></h2>
+        <p></p>
+        <p>A loop statement allows us to execute a statement or group of statements multiple times. Given below is the
+            general form of a loop statement in most of the programming languages &minus;</p>
+        <p><img src="https://www.tutorialspoint.com/cprogramming/images/loop_architecture.jpg"
+                alt="Loop Architecture" /></p>
+        <p>C programming language provides the following types of loops to handle looping requirements.</p>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Loop Type &amp; Description</th>
+                </tr>
+                <tr>
+                    <td class="ts">1.</td>
+                    <td><strong>while loop</strong>
+                        <p>Repeats a statement or group of statements while a given condition is true. It tests the
+                            condition before executing the loop body.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">2.</td>
+                    <td><strong>for loop</strong>
+                        <p>Executes a sequence of statements multiple times and abbreviates the code that manages the
+                            loop variable.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">3.</td>
+                    <td><strong>do...while loop</strong>
+                        <p>It is more like a while statement, except that it tests the condition at the end of the loop
+                            body.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">4.</td>
+                    <td><strong>Nested loops</strong>
+                        <p>You can use one or more loops inside any other while, for, or do..while loop.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Loop Control Statements</h3>
+        <p>Loop control statements change execution from its normal sequence. When execution leaves a scope, all
+            automatic objects that were created in that scope are destroyed.</p>
+        <p>C supports the following control statements -</p>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Control Statement &amp; Description</th>
+                </tr>
+                <tr>
+                    <td class="ts">1.</td>
+                    <td><strong>break statement</strong>
+                        <p>Terminates the <strong>loop</strong> or <strong>switch</strong> statement
+                            and transfers execution to the statement immediately following the loop or switch.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">2.</td>
+                    <td><strong>continue statement</strong>
+                        <p>Causes the loop to skip the remainder of its body and immediately retest its condition prior
+                            to reiterating.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ts">3.</td>
+                    <td><strong>statement</strong>
+                        <p>Transfers control to the labeled statement.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>The Infinite Loop</h3>
+        <p>A loop becomes an infinite loop if a condition never becomes false. The <strong>for</strong> loop
+            is traditionally used for this purpose. Since none of the three expressions that form the 'for' loop are
+            required, you can make an endless loop by leaving the conditional expression empty.</p>
+        <textarea id="ta" cols="55" rows="10">
+#include <stdio.h>
+
+int main() 
+{
+    for(; ;) {
+        printf("This loop will run forever.\n");
+    }
+    return 0;
+}
+        </textarea>
+
+        <p><strong>NOTE &minus; You can terminate an infinite loop by pressing Ctrl + C keys.</strong></p>
+        <hr />
+        <h2 align="center"><span style="color: #ff9900;"><strong>FUNCTION</strong></span></h2>
+
+        <p>A function is a group of statements that together perform a task. Every C program has at least one function,
+            which is <strong>main()</strong>, and all the most trivial programs can define additional functions.
+        </p>
+        <p>You can divide up your code into separate functions. How you divide up your code among different functions is
+            up to you, but logically the division is such that each function performs a specific task.</p>
+        <p>A function <strong>declaration</strong> tells the compiler about a function's name, return type,
+            and parameters. A function <strong>definition</strong> provides the actual body of the function.
+        </p>
+        <p>The C standard library provides numerous built-in functions that your program can call. For
+            example, <strong>strcat()</strong> to concatenate two
+            strings, <strong>memcpy()</strong> to copy one memory location to another location, and many more
+            functions.</p>
+        <p>A function can also be referred as a method or a sub-routine or a procedure, etc.</p>
+        <h3>Defining a Function</h3>
+        <p>The general form of a function definition in C programming language is as follows &minus;</p>
+        <textarea id="ta" cols="40" rows="6">
+return_type function_name(parameter list)
+{
+    body of the function
+}
+        </textarea>
+        <p>A function definition in C programming consists of a <em>function header</em> and
+            a <em>function body</em>. Here are all the parts of a function &minus;</p>
+        <ul class="list">
+            <li>
+                <p><strong>Return Type</strong> &minus; A function may return a value.
+                    The <strong>return_type</strong> is the data type of the value the function returns. Some
+                    functions perform the desired operations without returning a value. In this case, the return_type is
+                    the keyword <strong>void</strong>.</p>
+            </li>
+            <li>
+                <p><strong>Function Name</strong> &minus; This is the actual name of the function. The function
+                    name and the parameter list together constitute the function signature.</p>
+            </li>
+            <li>
+                <p><strong>Parameters</strong> &minus; A parameter is like a placeholder. When a function is
+                    invoked, you pass a value to the parameter. This value is referred to as actual parameter or
+                    argument. The parameter list refers to the type, order, and number of the parameters of a function.
+                    Parameters are optional; that is, a function may contain no parameters.</p>
+            </li>
+            <li>
+                <p><strong>Function Body</strong> &minus; The function body contains a collection of statements
+                    that define what the function does.</p>
+            </li>
+        </ul>
+        <h3>Function Arguments</h3>
+        <p>If a function is to use arguments, it must declare variables that accept the values of the arguments. These
+            variables are called the <strong>formal parameters</strong> of the function.</p>
+        <p>Formal parameters behave like other local variables inside the function and are created upon entry into the
+            function and destroyed upon exit.</p>
+        <p>While calling a function, there are two ways in which arguments can be passed to a function &minus;</p>
+
+        <table>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Call Type &amp; Description</th>
+            </tr>
+            <tr>
+                <td class="ts">1.</td>
+                <td><strong>Call by value</strong>
+                    <p>This method copies the actual value of an argument into the formal parameter of the function.
+                        In this case, changes made to the parameter inside the function have no effect on the
+                        argument.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ts">2.</td>
+                <td><strong>Call by reference</strong>
+                    <p>This method copies the address of an argument into the formal parameter. Inside the function,
+                        the address is used to access the actual argument used in the call. This means that changes
+                        made to the parameter affect the argument.</p>
+                </td>
+            </tr>
+        </table>
+        <h2 align="center"><span style="color: #ff6600;">Scope value</span></h2>
+        <p></p>
+        <p>A scope in any programming is a region of the program where a defined variable can have its existence and
+            beyond that variable, it cannot be accessed. There are three places where variables can be declared in C
+            programming language &minus;</p>
+        <ul>
+            <li>
+                <p>Inside a function or a block which is called <strong>local</strong> variables.</p>
+            </li>
+            <li>
+                <p>Outside of all functions which are called <strong>global</strong> variables.</p>
+            </li>
+            <li>
+                <p>In the definition of function parameters which are
+                    called <strong>formal</strong> parameters.</p>
+            </li>
+        </ul>
+        <p>Let us understand what are <strong>local</strong> and <strong>global</strong> variables,
+            and <strong>formal</strong> parameters.</p>
+        <h3>Local Variables</h3>
+        <p>Variables that are declared inside a function or block are called local variables. They can be used only by
+            statements that are inside that function or block of code. Local variables are not known to functions
+            outside their own. The following example shows how local variables are used. Here all the variables a, b,
+            and c are local to main() function.</p>
+        <textarea id="ta" cols="55" rows="10" readonly>
+#include<stdio.h>
+int g;
+int main()
+{
+    int a,b;
+    a=10;
+    b=20;
+    g=a+b;
+    printf("value of a=%d, b=%d and g=%d\n", a,b,g);
+    return 0;
+}
+            </textarea>
+        <h3>Initializing Local and Global Variables</h3>
+        <p>When a local variable is defined, it is not initialized by the system, you must initialize it yourself.
+            Global variables are initialized automatically by the system when you define them as follows &minus;</p>
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th>Data Type</th>
+                <th>Initial Default Value</th>
+            </tr>
+            <tr>
+                <td>int</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>char</td>
+                <td>'\0'</td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>double</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>pointer</td>
+                <td>NULL</td>
+            </tr>
+        </table>
+        <p>It is a good programming practice to initialize variables properly, otherwise your program may produce
+            unexpected results, because uninitialized variables will take some garbage value already available at their
+            memory location.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </div>
+</body>
+
+</html>
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #008080;
+        padding: 20px 50px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px 50px;
+        box-shadow: 2px 2px 25px black;
+    }
+
+    #ta {
+        color: white;
+        background: #25383c;
+        padding: 10px 15px;
+        resize: none;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+    }
+
+    .ts {
+        text-align: center;
+    }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+<h2 style="text-align: center;"><span style="color: #ff6600;">Array</span></h2>
+<p>&nbsp;</p>
+<p>Arrays a kind of data structure that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type.</p>
+<p>Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.</p>
+<p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.</p>
+
+<hr>
+<h2>Declaring Arrays</h2>
+<p>To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows &minus;</p>
+<textarea rows="7" cols="50" id="ta" readonly>
+type arrayname [arraysize];
+</textarea>
+<p>This is called a&nbsp;<em>single-dimensional</em>&nbsp;array. The&nbsp;<strong>arraySize</strong>&nbsp;must be an integer constant greater than zero and&nbsp;<strong>type</strong>&nbsp;can be any valid C data type. For example, to declare a 10-element array called&nbsp;<strong>balance</strong>&nbsp;of type double, use this statement &minus;</p>
+<textarea rows="7" cols="50" id="ta" readonly>
+double balance[10];
+</textarea>
+
+<hr>
+<h2>Arrays in Detail</h2>
+<p>Arrays are important to C and should need a lot more attention. The following important concepts related to array should be clear to a C programmer &minus;</p>
+<table class="table table-bordered">
+<tbody>
+
+<tr>
+<th>Sr.No.</th>
+<th>Concept &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1.</td>
+<td>
+<p><span style="color: #00ccff;">Multi-dimensional array</span></p>
+<p>C supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2.</td>
+<td><span style="color: #00ccff;">Passing arrays to function</span><br />
+<p>You can pass to the function a pointer to an array by specifying the array's name without an index.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3.</td>
+<td><span style="color: #00ccff;">Return array from a function</span><br />
+<p>C allows a function to return an array.</p>
+</td>
+</tr>
+<tr>
+<td class="ts" style="height: 87px;">4.</td>
+<td><span style="color: #00ccff;">Pointer to an array</span><br />
+<p>You can generate a pointer to the first element of an array by simply specifying the array name, without any index.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>&nbsp;</h2>
+
+</div>
+</body>
+</html>
+
+
+
+<!-- css style-->
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+    padding: 20px 50px;
+  }
+
+  .container {
+    background: white;
+    padding: 20px 50px;
+    box-shadow: 2px 2px 25px black;
+  }
+
+  #ta {
+    color: white;
+    background: #25383c;
+    padding: 10px 15px;
+    resize: none;
+  }
+
+  hr {
+    width: 100%;
+    height: 2px;
+  }
+
+  table, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px 10px;
+  }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+
+  /*Extra small devices (phones , 600px and down)*/
+  /* @media only screen and (max-width: 600px){
+      .blog-post{
+      display: flex;
+      flex-direction:column;
+      margin-top: 3rem;
+      margin-left:1rem;
+      margin-right: 1rem;
+      justify-content: center;
+      align-items:center;
+      background-color: white;
+  }
+  
+  Medium devices (tablets landscape)
+  @media only screen and (min-width: 768px){
+  .blog-post{
+      display: flex;
+      flex-direction:column;
+      margin-top: 3rem;
+      margin-left:1rem;
+      margin-right: 1rem;
+      justify-content: center;
+      align-items:center;
+      background-color: white;
+  }   
+  
+  Large devices (laptops)
+  @media only screen and (min-width: 992px){
+      .blog-post{
+      display: flex;
+      flex-direction:row;
+      margin: 10rem;
+      justify-content: center;
+      align-items:center;
+      background-color: white;
+      }
+      .blog-post-img{
+      flex:1;
+      padding:2rem 2rem 2rem 0rem;
+  } */
+  
+  </style>

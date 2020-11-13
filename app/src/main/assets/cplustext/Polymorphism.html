@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Polymorphism</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Polymorphism</span></h2>
+      <p>The word <strong>polymorphism</strong> means having many forms. Typically, polymorphism occurs when there is a
+         hierarchy of classes and they are related by inheritance.</p>
+      <p>C++ polymorphism means that a call to a member function will cause a different function to be executed
+         depending on the type of object that invokes the function.</p>
+      <p>The reason for the incorrect output is that the call of the function area() is being set once by the compiler
+         as the version defined in the base class. This is called <strong>static resolution</strong> of the function
+         call, or <strong>static linkage</strong> - the function call is fixed before the program is executed. This is
+         also sometimes called <strong>early binding</strong> because the area() function is set during the compilation
+         of the program.</p>
+      <p>But now, let's make a slight modification in our program and precede the declaration of area() in the Shape
+         class with the keyword <strong>virtual</strong> so that it looks like this &minus;</p>
+      
+         <textarea id="ta" cols="60" rows="10" readonly>
+class Shape {
+   protected:
+      int width, height;
+               
+   public:
+      Shape( int a = 0, int b = 0) {
+         width = a;
+         height = b;
+      }
+      virtual int area() {
+         cout << "Parent class area :" <<endl;
+         return 0;
+      }
+};</textarea>
+
+      <p>After this slight modification, when the previous example code is compiled and executed, it produces the
+         following result &minus;</p>
+      <pre><b>Rectangle class area
+Triangle class area
+</b></pre>
+      <p>This time, the compiler looks at the contents of the pointer instead of it's type. Hence, since addresses of
+         objects of tri and rec classes are stored in *shape the respective area() function is called.</p>
+      <p>As you can see, each of the child classes has a separate implementation for the function area(). This is how
+         <strong>polymorphism</strong> is generally used. You have different classes with a function of the same name,
+         and even the same parameters, but with different implementations.</p>
+      <h3>Virtual Function</h3>
+      <p>A <strong>virtual</strong> function is a function in a base class that is declared using the keyword
+         <strong>virtual</strong>. Defining in a base class a virtual function, with another version in a derived class,
+         signals to the compiler that we don't want static linkage for this function.</p>
+      <p>What we do want is the selection of the function to be called at any given point in the program to be based on
+         the kind of object for which it is called. This sort of operation is referred to as <strong>dynamic
+            linkage</strong>, or <strong>late binding</strong>.</p>
+      <h3>Pure Virtual Functions</h3>
+      <p>It is possible that you want to include a virtual function in a base class so that it may be redefined in a
+         derived class to suit the objects of that class, but that there is no meaningful definition you could give for
+         the function in the base class.</p>
+      <p>We can change the virtual function area() in the base class to the following &minus;</p>
+      
+      <textarea id="ta" cols="60" rows="10" readonly>
+class Shape {
+   protected:
+      int width, height;
+         
+   public:
+      Shape(int a = 0, int b = 0) {
+         width = a;
+         height = b;
+      }
+      
+      // pure virtual function
+      virtual int area() = 0;
+};</textarea>
+
+      <p>The = 0 tells the compiler that the function has no body and above virtual function will be called <strong>pure
+            virtual function</strong>.</p>
+
+
+   </div>
+</body>
+
+</html>
+
+
+
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+  
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

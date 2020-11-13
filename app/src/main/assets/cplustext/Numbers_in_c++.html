@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Number</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Number in c++</span></h2>
+      <p> </p>
+      <p>Normally, when we work with Numbers, we use primitive data types such as int, short, long, float and double,
+         etc. The number data types, their possible values and number ranges have been explained while discussing C++
+         Data Types.</p>
+      <h3>Defining Numbers in C++</h3>
+      <p>You have already defined numbers in various examples given in previous chapters. Here is another consolidated
+         example to define various types of numbers in C++ &minus;</p>
+
+         <textarea id="ta" cols="60" rows="10" readonly>
+#include <iostream>
+using namespace std;
+                
+int main () {
+   // number definition:
+   short  s;
+   int    i;
+   long   l;
+   float  f;
+   double d;
+                  
+   // number assignments;
+   s = 10;      
+   i = 1000;    
+   l = 1000000; 
+   f = 230.47;  
+   d = 30949.374;
+                  
+   // number printing;
+   cout << "short  s :" << s << endl;
+   cout << "int    i :" << i << endl;
+   cout << "long   l :" << l << endl;
+   cout << "float  f :" << f << endl;
+   cout << "double d :" << d << endl;
+ 
+   return 0;
+}
+         </textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>short  s :10
+int    i :1000
+long   l :1000000
+float  f :230.47
+double d :30949.4</b>
+</pre>
+      <h3>Math Operations in C++</h3>
+      <p>In addition to the various functions you can create, C++ also includes some useful functions you can use. These
+         functions are available in standard C and C++ libraries and
+         called <strong>built-in</strong> functions. These are functions that can be included in your program
+         and then use.</p>
+      <p>C++ has a rich set of mathematical operations, which can be performed on various numbers. Following table lists
+         down some useful built-in mathematical functions available in C++.</p>
+      <p>To utilize these functions you need to include the math header file <strong>&lt;cmath&gt;</strong>.</p>
+      <table>
+         <tbody>
+            <tr>
+               <th>Sr.No</th>
+               <th>Function &amp; Purpose</th>
+            </tr>
+            <tr>
+               <td class="ts">1.</td>
+               <td>
+                  <p><strong>double cos(double);</strong></p>
+                  <p>This function takes an angle (as a double) and returns the cosine.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">2.</td>
+               <td>
+                  <p><strong>double sin(double);</strong></p>
+                  <p>This function takes an angle (as a double) and returns the sine.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">3.</td>
+               <td>
+                  <p><strong>double tan(double);</strong></p>
+                  <p>This function takes an angle (as a double) and returns the tangent.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">4.</td>
+               <td>
+                  <p><strong>double log(double);</strong></p>
+                  <p>This function takes a number and returns the natural log of that number.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">5.</td>
+               <td>
+                  <p><strong>double pow(double, double);</strong></p>
+                  <p>The first is a number you wish to raise and the second is the power you wish to raise it t</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">6.</td>
+               <td>
+                  <p><strong>double hypot(double, double);</strong></p>
+                  <p>If you pass this function the length of two sides of a right triangle, it will return you the
+                     length of the hypotenuse.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">7.</td>
+               <td>
+                  <p><strong>double sqrt(double);</strong></p>
+                  <p>You pass this function a number and it gives you the square root.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">8.</td>
+               <td>
+                  <p><strong>int abs(int);</strong></p>
+                  <p>This function returns the absolute value of an integer that is passed to it.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">9.</td>
+               <td>
+                  <p><strong>double fabs(double);</strong></p>
+                  <p>This function returns the absolute value of any decimal number passed to it.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">10.</td>
+               <td>
+                  <p><strong>double floor(double);</strong></p>
+                  <p>Finds the integer which is less than or equal to the argument passed to it.</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <p>Following is a simple example to show a few of the mathematical operations &minus;</p>
+      
+      <textarea id="ta" cols="60" rows="10" readonly>
+#include <iostream>
+#include <cmath>
+using namespace std;
+             
+int main () {
+   // number definition:
+   short  s = 10;
+   int    i = -1000;
+   long   l = 100000;
+   float  f = 230.47;
+   double d = 200.374;
+            
+   // mathematical operations;
+   cout << "sin(d) :" << sin(d) << endl;
+   cout << "abs(i)  :" << abs(i) << endl;
+   cout << "floor(d) :" << floor(d) << endl;
+   cout << "sqrt(f) :" << sqrt(f) << endl;
+   cout << "pow( d, 2) :" << pow(d, 2) << endl;
+             
+   return 0;
+}
+      </textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>sign(d)     :-0.634939
+abs(i)      :1000
+floor(d)    :200
+sqrt(f)     :15.1812
+pow( d, 2 ) :40149.7
+</b></pre>
+      <h3>Random Numbers in C++</h3>
+      <p>There are many cases where you will wish to generate a random number. There are actually two functions you will
+         need to know about random number generation. The first is <strong>rand()</strong>, this function will only
+         return a pseudo random number. The way to fix this is to first call
+         the <strong>srand()</strong> function.</p>
+
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

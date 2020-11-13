@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Interface</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Interface</span></h2>
+      <p> </p>
+      <p>An interface describes the behavior or capabilities of a C++ class without committing to a particular
+         implementation of that class.</p>
+      <p>The C++ interfaces are implemented using <strong>abstract classes</strong> and these abstract classes
+         should not be confused with data abstraction which is a concept of keeping implementation details separate from
+         associated data.</p>
+      <p>A class is made abstract by declaring at least one of its functions as <strong>pure
+            virtual</strong> function. A pure virtual function is specified by placing "= 0" in its declaration as
+         follows &minus;</p>
+
+         <textarea id="ta" cols="60" rows="10" readonly>
+class Box {
+   public:
+      // pure virtual function
+      virtual double getVolume() = 0;
+      
+   private:
+      double length;      // Length of a box
+      double breadth;     // Breadth of a box
+      double height;      // Height of a box
+};
+         </textarea>
+
+      <p>The purpose of an <strong>abstract class</strong> (often referred to as an ABC) is to provide an
+         appropriate base class from which other classes can inherit. Abstract classes cannot be used to instantiate
+         objects and serves only as an <strong>interface</strong>. Attempting to instantiate an object of an
+         abstract class causes a compilation error.</p>
+      <p>Thus, if a subclass of an ABC needs to be instantiated, it has to implement each of the virtual functions,
+         which means that it supports the interface declared by the ABC. Failure to override a pure virtual function in
+         a derived class, then attempting to instantiate objects of that class, is a compilation error.</p>
+      <p>Classes that can be used to instantiate objects are called <strong>concrete classes</strong>.</p>
+      <h3>Designing Strategy</h3>
+      <p>An object-oriented system might use an abstract base class to provide a common and standardized interface
+         appropriate for all the external applications. Then, through inheritance from that abstract base class, derived
+         classes are formed that operate similarly.</p>
+      <p>The capabilities (i.e., the public functions) offered by the external applications are provided as pure virtual
+         functions in the abstract base class. The implementations of these pure virtual functions are provided in the
+         derived classes that correspond to the specific types of the application.</p>
+      <p>This architecture also allows new applications to be added to a system easily, even after the system has been
+         defined.</p>
+
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

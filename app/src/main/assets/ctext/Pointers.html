@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+<div class="container">
+<h2 align = "center"><span style="color: #ff6600;">Pointers</span></h2>
+
+<h3>What are Pointers?</h3>
+<p>A <strong>pointer</strong> is a variable whose value is the address of another variable, i.e., direct address of the memory location. Like any variable or constant, you must declare a pointer before using it to store any variable address. The general form of a pointer variable declaration is &minus;</p>
+<p><strong>type *var-name;</strong></p>
+
+<h3>How to Use Pointers?</h3>
+<p>There are a few important operations, which we will do with the help of pointers very frequently. <strong>(a)</strong> We define a pointer variable, <strong>(b)</strong> assign the address of a variable to a pointer and <strong>(c)</strong> finally access the value at the address available in the pointer variable. This is done by using unary operator <strong>*</strong> that returns the value of the variable located at the address specified by its operand. The following example makes use of these operations &minus;</p>
+
+<textarea id="ta" cols="70" rows="10">
+#include <stdio.h>
+int main ()
+{
+    int var = 20; /* actual variable declaration */
+    int *ip; /* pointer variable declaration */
+        
+    ip = &var; /* store address of var in pointer variable*/
+    printf("Address of var variable: %x\n", &var );
+        
+    /* address stored in pointer variable */
+    printf("Address stored in ip variable: %x\n", ip );
+        
+    /* access the value using the pointer */
+    printf("Value of *ip variable: %d\n", *ip );
+        
+    return 0;
+}
+</textarea>
+
+<h3>NULL Pointers</h3>
+<p>It is always a good practice to assign a NULL value to a pointer variable in case you do not have an exact address to be assigned. This is done at the time of variable declaration. A pointer that is assigned NULL is called a <strong>null</strong> pointer.</p>
+<p>The NULL pointer is a constant with a value of zero defined in several standard libraries. Consider the following program &minus;</p>
+
+<textarea id="ta" cols="50" rows="10">
+#include <stdio.h>
+
+int main ()
+{
+    int *ptr = NULL;
+    printf("The value of ptr is : %x\n", ptr );
+    return 0;
+}
+</textarea>
+
+<h3>Pointers in Detail</h3>
+<p>Pointers have many but easy concepts and they are very important to C programming. The following important pointer concepts should be clear to any C programmer-</p>
+
+<table>
+<tr>
+<th>Sr.No.</th>
+<th>Concept &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1.</td>
+<td>
+<p><span style="color: #33cccc;">Pointer arithmetic</span></p>
+<p>There are four arithmetic operators that can be used in pointers: ++, --, +, -</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2.</td>
+<td>
+<p><span style="color: #33cccc;">Arrays of pointer</span></p>
+<p>You can define arrays to hold a number of pointers.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3.</td>
+<td>
+<p><span style="color: #33cccc;">Pointer to pointer</span></p>
+<p>C allows you to have pointer on a pointer and so on.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4.</td>
+<td>
+<p><span style="color: #33cccc;">Passing pointer to function in C</span></p>
+<p>Passing an argument by reference or by address enable the passed argument to be changed in the calling function by the called function.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5.</td>
+<td>
+<p><span style="color: #33cccc;">Return pointer from function in C</span></p>
+<p>C allows a function to return a pointer to the local variable, static variable, and dynamically allocated memory as well.</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #008080;
+        padding: 20px 50px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px 50px;
+        box-shadow: 2px 2px 25px black;
+    }
+
+    #ta {
+        color: white;
+        background: #25383c;
+        padding: 10px 15px;
+        resize: none;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+    }
+
+    .ts {
+        text-align: center;
+    }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

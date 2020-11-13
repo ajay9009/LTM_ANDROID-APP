@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Array</span></h2>
+      <p> </p>
+      <p>C++ provides a data structure, <strong>the array</strong>, which stores a fixed-size sequential collection
+         of elements of the same type. An array is used to store a collection of data, but it is often more useful to
+         think of an array as a collection of variables of the same type.</p>
+      <p>Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array
+         variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual
+         variables. A specific element in an array is accessed by an index.</p>
+      <p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the
+         highest address to the last element.</p>
+      <h3>Declaring Arrays</h3>
+      <p>To declare an array in C++, the programmer specifies the type of the elements and the number of elements
+         required by an array as follows &minus;</p>
+      <pre><strong>type arrayName [ arraySize ];</strong></pre>
+      <p>This is called a single-dimension array. The <strong>arraySize</strong> must be an integer constant
+         greater than zero and <strong>type</strong> can be any valid C++ data type. For example, to declare a
+         10-element array called balance of type double, use this statement &minus;</p>
+      <pre><strong>double balance[10];</strong></pre>
+      <h3>Initializing Arrays</h3>
+      <p>You can initialize C++ array elements either one by one or using a single statement as follows &minus;</p>
+      <pre><strong> balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};</strong></pre>
+      <p>The number of values between braces { } can not be larger than the number of elements that we declare for the
+         array between square brackets [ ]. Following is an example to assign a single element of the array &minus;</p>
+      <p>If you omit the size of the array, an array just big enough to hold the initialization is created. Therefore,
+         if you write &minus;</p>
+      <pre><strong>double balance[] = {1000.0, 2.0, 3.4, 17.0, 50.0};</strong></pre>
+      <p>You will create exactly the same array as you did in the previous example.</p>
+      <pre><strong>balance[4] = 50.0;</strong></pre>
+      <h3>Accessing Array Elements</h3>
+      <p>An element is accessed by indexing the array name. This is done by placing the index of the element within
+         square brackets after the name of the array. For example &minus;</p>
+      <pre><strong>double salary = balance[9];</strong></pre>
+      <p>The above statement will take 10<sup>th</sup> element from the array and assign the value to salary
+         variable. Following is an example, which will use all the above-mentioned three concepts viz. declaration,
+         assignment and accessing arrays &minus;</p>
+      
+      <textarea id="ta" cols="70" rows="10" readonly>
+#include<iostream>
+   using namespace std;
+             
+   #include <iomanip>
+   using std::setw;
+             
+   int main () {
+            
+      int n[ 10 ]; // n is an array of 10 integers
+             
+      // initialize elements of array n to 0          
+      for ( int i = 0; i < 10; i++ ) {
+         n[ i ] = i + 100; // set element at location i to i + 100
+      }
+      cout << "Element" << setw( 13 ) << "Value" << endl;
+    
+      // output each array element's value                      
+      for ( int j = 0; j < 10; j++ ) {
+         cout << setw( 7 )<< j << setw( 13 ) << n[ j ] << endl;
+      }
+    
+      return 0;
+   }
+</textarea>
+      
+            
+      <p>This program makes use of <strong>setw()</strong> function to format the output. When the above code
+         is compiled and executed, it produces the following result &minus;</p>
+      <pre class="result notranslate">Element        Value
+   0            100
+   1            101
+   2            102
+   3            103
+   4            104
+   5            105
+   6            106
+   7            107
+   8            108
+   9            109
+</pre>
+      <h3>Arrays in C++</h3>
+      <p>Arrays are important to C++ and should need lots of more detail. There are following few important concepts,
+         which should be clear to a C++ programmer &minus;</p>
+      <table class="table table-bordered">
+         <tbody>
+            <tr>
+               <th>Sr.No</th>
+               <th>Concept &amp; Description</th>
+            </tr>
+            <tr>
+               <td class="ts">1</td>
+               <td>multi-dimensional array<br />
+                  <p>C++ supports multidimensional arrays. The simplest form of the multidimensional array is the
+                     two-dimensional array.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">2</td>
+               <td>pointer to an array<br />
+                  <p>You can generate a pointer to the first element of an array by simply specifying the array name,
+                     without any index.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">3</td>
+               <td>passing array to function<br />
+                  <p>You can pass to the function a pointer to an array by specifying the array's name without an index.
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">4</td>
+               <td>return array from function<br />
+                  <p>C++ allows a function to return an array.</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+   </div>
+</body>
+
+</html>
+
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px 50px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

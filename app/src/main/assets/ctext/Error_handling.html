@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Error Handling</span></h2>
+
+      <p>As such, C programming does not provide direct support for error handling but being a system programming
+         language, it provides you access at lower level in the form of return values. Most of the C or even Unix
+         function calls return -1 or NULL in case of any error and set an error code <strong>errno</strong>. It is
+         set as a global variable and indicates an error occurred during any function call. You can find various error
+         codes defined in &lt;error.h&gt; header file.</p>
+      <p>So a C programmer can check the returned values and can take appropriate action depending on the return value.
+         It is a good practice, to set errno to 0 at the time of initializing a program. A value of 0 indicates that
+         there is no error in the program.</p>
+      <h3>errno, perror(). and strerror()</h3>
+      <p>The C programming language
+         provides <strong>perror()</strong> and <strong>strerror()</strong> functions which can be
+         used to display the text message associated with <strong>errno</strong>.</p>
+      <ul>
+         <li>
+            <p>The <strong>perror()</strong> function displays the string you pass to it, followed by a colon,
+               a space, and then the textual representation of the current errno value.</p>
+         </li>
+         <li>
+            <p>The <strong>strerror()</strong> function, which returns a pointer to the textual representation
+               of the current errno value.</p>
+         </li>
+      </ul>
+      <p>Let's try to simulate an error condition and try to open a file which does not exist. Here I'm using both the
+         functions to show the usage, but you can use one or more ways of printing your errors. Second important point
+         to note is that you should use <strong>stderr</strong> file stream to output all the errors.</p>
+
+<textarea id="ta" cols="80" rows="10" readonly>
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+      
+extern int errno ;
+int main ()
+{
+   FILE * pf;
+   int errnum;
+   pf = fopen ("unexist.txt", "rb");
+   if (pf == NULL)
+   {       
+      errnum = errno;
+      fprintf(stderr, "Value of errno: %d\n", errno);
+      perror("Error printed by perror");
+      fprintf(stderr, "Error opening file: %s\n", strerror( errnum ));
+   }
+   else
+   {
+      fclose (pf);
+   }
+   return 0;
+}
+</textarea>
+
+</span></pre>
+      <h3>Divide by Zero Errors</h3>
+      <p>It is a common problem that at the time of dividing any number, programmers do not check if a divisor is zero
+         and finally it creates a runtime error.</p>
+      <p>The code below fixes this by checking if the divisor is zero before dividing &minus;</p>
+      
+      <textarea id="ta" cols="60" rows="10">
+#include <stdio.h>
+#include <stdlib.h>
+            
+main()
+{            
+   int dividend = 20;
+   int divisor = 0;
+   int quotient;
+   if( divisor == 0)
+   {
+      fprintf(stderr, "Division by zero! Exiting...\n");
+      exit(-1);
+   }
+   quotient = dividend / divisor;
+   fprintf(stderr, "Value of quotient : %d\n", quotient );
+   exit(0);
+}
+      </textarea>
+      
+      <h3>Program Exit Status</h3>
+      <p>It is a common practice to exit with a value of EXIT_SUCCESS in case of program coming out after a successful
+         operation. Here, EXIT_SUCCESS is a macro and it is defined as 0.</p>
+      <p>If you have an error condition in your program and you are coming out then you should exit with a status
+         EXIT_FAILURE which is defined as -1. So let's write above program as follows &minus;</p>
+      
+<textarea id="ta" cols="70" rows="10">
+#include <stdio.h>
+#include <stdlib.h>
+      
+main()
+{      
+   int dividend = 20;
+   int divisor = 5;
+   int quotient; 
+
+   if( divisor == 0) {
+      fprintf(stderr, "Division by zero! Exiting...\n");
+      exit(EXIT_FAILURE);
+   }
+   quotient = dividend / divisor;
+   fprintf(stderr, "Value of quotient : %d\n", quotient );
+   exit(EXIT_SUCCESS);
+}
+</textarea>
+
+</div>
+</body>
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px 50px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

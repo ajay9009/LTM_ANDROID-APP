@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Namespace</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Namespaces</span></h2>
+      <p>A <strong>namespace</strong> is designed to overcome this difficulty and is used as additional
+         information to differentiate similar functions, classes, variables etc. with the same name available in
+         different libraries. Using namespace, you can define the context in which names are defined. In essence, a
+         namespace defines a scope.</p>
+      <h3>Defining a Namespace</h3>
+      <p>A namespace definition begins with the keyword <strong>namespace</strong> followed by the namespace
+         name as follows &minus;</p>
+      <pre><b>namespace namespace_name {
+   // code declarations
+}</b>
+</pre>
+      <p>To call the namespace-enabled version of either function or variable, prepend (::) the namespace name as
+         follows &minus;</p>
+      <pre><b>name::code;  // code could be variable or function.</b>
+</pre>
+      <p>Let us see how namespace scope the entities including variable and functions &minus;</p>
+
+      <textarea id="ta" cols="60" rows="10" readonly>
+#include <iostream>
+using namespace std;
+            
+// first name space
+namespace first_space {
+   void func() {
+      cout << "Inside first_space" << endl;
+   }
+}
+            
+// second name space
+namespace second_space {
+   void func() {
+      cout << "Inside second_space" << endl;
+   }
+}
+            
+int main () {
+   // Calls function from first name space.
+   first_space::func();
+   
+   // Calls function from second name space.
+   second_space::func(); 
+
+   return 0;
+}
+      </textarea>
+
+      <p>If we compile and run above code, this would produce the following result &minus;</p>
+      <pre><b>Inside first_space
+Inside second_space</b>
+</pre>
+      <h3>The using directive</h3>
+      <p>You can also avoid prepending of namespaces with the <strong>using namespace</strong> directive. This
+         directive tells the compiler that the subsequent code is making use of names in the specified namespace. The
+         namespace is thus implied for the following code &minus;</p>
+         
+         <textarea id="ta" cols="60" rows="10" readonly>
+#include <iostream>
+using namespace std;
+               
+// first name space
+namespace first_space {
+   void func() {
+      cout << "Inside first_space" << endl;
+   }
+}
+               
+// second name space
+namespace second_space {
+   void func() {
+      cout << "Inside second_space" << endl;
+   }
+}
+               
+using namespace first_space;
+int main () {
+   // This calls function from first name space.
+   func();
+   
+   return 0;
+}
+         </textarea>
+
+      <p>If we compile and run above code, this would produce the following result &minus;</p>
+      <pre><b>Inside first_space</b>
+</pre>
+      <p>The &lsquo;using&rsquo; directive can also be used to refer to a particular item within a namespace. For
+         example, if the only part of the std namespace that you intend to use is cout, you can refer to it as follows
+         &minus;</p>
+      <pre><b>using std::cout;</b>
+</pre>
+      <p>Subsequent code can refer to cout without prepending the namespace, but other items in
+         the <strong>std </strong>namespace will still need to be explicit as follows &minus;</p>
+     
+         <textarea id="ta" cols="60" rows="10" readonly>
+#include <iostream>
+using std::cout;
+               
+int main () {
+   cout << "std::endl is used with std!" << std::endl;
+               
+   return 0;
+}
+         </textarea>
+
+      <p>If we compile and run above code, this would produce the following result &minus;</p>
+      <pre><b>std::endl is used with std!</b>
+</pre>
+      <p>Names introduced in a <strong>using</strong> directive obey normal scope rules. The name is visible
+         from the point of the <strong>using</strong> directive to the end of the scope in which the directive
+         is found. Entities with the same name defined in an outer scope are hidden.</p>
+      <h3>Discontiguous Namespaces</h3>
+      <p>A namespace can be defined in several parts and so a namespace is made up of the sum of its separately defined
+         parts. The separate parts of a namespace can be spread over multiple files.</p>
+      <p>So, if one part of the namespace requires a name defined in another file, that name must still be declared.
+         Writing a following namespace definition either defines a new namespace or adds new elements to an existing one
+         &minus;</p>
+      <pre><b>namespace namespace_name {
+   // code declarations
+}</b>
+</pre>
+      <h3>Nested Namespaces</h3>
+      <p>Namespaces can be nested where you can define one namespace inside another name space as follows &minus;</p>
+      <pre><b>namespace namespace_name1 {
+   // code declarations
+   namespace namespace_name2 {
+      // code declarations
+   }
+}</b></pre>
+
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

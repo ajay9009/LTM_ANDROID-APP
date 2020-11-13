@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Constant</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Constant</span></h2>
+      <p>Constants refer to fixed values that the program may not alter and they are called <strong>literals</strong>.
+      </p>
+      <p>Constants can be of any of the basic data types and can be divided into Integer Numerals, Floating-Point
+         Numerals, Characters, Strings and Boolean Values.</p>
+      <p>Again, constants are treated just like regular variables except that their values cannot be modified after
+         their definition.</p>
+      <h3>Integer Literals</h3>
+      <p>An integer literal can be a decimal, octal, or hexadecimal constant. A prefix specifies the base or radix: 0x
+         or 0X for hexadecimal, 0 for octal, and nothing for decimal.</p>
+      <p>An integer literal can also have a suffix that is a combination of U and L, for unsigned and long,
+         respectively. The suffix can be uppercase or lowercase and can be in any order.</p>
+      <h3>Floating-point Literals</h3>
+      <p>A floating-point literal has an integer part, a decimal point, a fractional part, and an exponent part. You can
+         represent floating point literals either in decimal form or exponential form.</p>
+      <p>While representing using the decimal form, you must include the decimal point, the exponent, or both and while
+         representing using the exponential form, you must include the integer part, the fractional part, or both. The
+         signed exponent is introduced by e or E.</p>
+      <h3>Boolean Literals</h3>
+      <p>There are two Boolean literals and they are part of standard C++ keywords &minus;</p>
+      <ul>
+         <li>
+            <p>A value of <strong>true</strong> representing true.</p>
+         </li>
+         <li>
+            <p>A value of <strong>false</strong> representing false.</p>
+         </li>
+      </ul>
+      <p>You should not consider the value of true equal to 1 and the value of false equal to 0.</p>
+      <h3>Character Literals</h3>
+      <p>Character literals are enclosed in single quotes. If the literal begins with L (uppercase only), it is a
+         wide-character literal (e.g., L'x') and should be stored in <strong>wchar_t</strong> type of variable.
+         Otherwise, it is a narrow character literal (e.g., 'x') and can be stored in a simple variable of
+         <strong>char</strong> type.</p>
+      <p>A character literal can be a plain character (e.g., 'x'), an escape sequence (e.g., '\t'), or a universal
+         character (e.g., '\u02C0').</p>
+      <p>There are certain characters in C++ when they are preceded by a backslash they will have a special meaning and
+         they are used to represent like newline (\n) or tab (\t). Here, you have a list of some of such escape sequence
+         codes &minus;</p>
+      <table>
+         <tr>
+            <th>Escape sequence</th>
+            <th>Meaning</th>
+         </tr>
+         <tr>
+            <td>\\</td>
+            <td>\ character</td>
+         </tr>
+         <tr>
+            <td>\'</td>
+            <td>' character</td>
+         </tr>
+         <tr>
+            <td>\"</td>
+            <td>" character</td>
+         </tr>
+         <tr>
+            <td>\?</td>
+            <td>? character</td>
+         </tr>
+         <tr>
+            <td>\a</td>
+            <td>Alert or bell</td>
+         </tr>
+         <tr>
+            <td>\b</td>
+            <td>Backspace</td>
+         </tr>
+         <tr>
+            <td>\f</td>
+            <td>Form feed</td>
+         </tr>
+         <tr>
+            <td>\n</td>
+            <td>Newline</td>
+         </tr>
+         <tr>
+            <td>\r</td>
+            <td>Carriage return</td>
+         </tr>
+         <tr>
+            <td>\t</td>
+            <td>Horizontal tab</td>
+         </tr>
+         <tr>
+            <td>\v</td>
+            <td>Vertical tab</td>
+         </tr>
+         <tr>
+            <td>\ooo</td>
+            <td>Octal number of one to three digits</td>
+         </tr>
+         <tr>
+            <td>\xhh . . .</td>
+            <td>Hexadecimal number of one or more digits</td>
+         </tr>
+      </table>
+      <p>Following is the example to show a few escape sequence characters &minus;</p>
+
+      <textarea id="ta" cols="50" rows="8" readonly>
+#include <iostream>
+   using namespace std;
+            
+   int main() {
+      cout << "Hello\tWorld\n\n";
+      return 0;
+   }
+</textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>Hello   World</b></pre>
+      <h3>String Literals</h3>
+      <p>String literals are enclosed in double-quotes. A string contains characters that are similar to character
+         literals: plain characters, escape sequences, and universal characters.</p>
+      <p>You can break a long line into multiple lines using string literals and separate them using whitespaces.</p>
+      <p>Here are some examples of string literals. All three forms are identical strings.</p>
+      
+      <textarea id="ta" cols="50" rows="8" readonly>
+"hello, dear"
+
+"hello, \
+         
+dear"
+         
+"hello, " "d" "ear"
+      </textarea>
+
+      <h3>Defining Constants</h3>
+      <p>There are two simple ways in C++ to define constants &minus;</p>
+      <ul class="list">
+         <li>
+            <p>Using <strong>#define</strong> preprocessor.</p>
+         </li>
+         <li>
+            <p>Using the <strong>const</strong> keyword.</p>
+         </li>
+      </ul>
+      <h3>The #define Preprocessor</h3>
+      <p>Following is the form to use #define preprocessor to define a constant &minus;</p>
+      <pre><b>#define identifier value</b></pre>
+
+      <p><b>The following example explains it in detail &minus;</b></p>
+      
+      <textarea id="ta" cols="50" rows="10" readonly>
+#include <iostream>
+   using namespace std;
+   
+   #define LENGTH 10   
+   #define WIDTH  5
+   #define NEWLINE '\n'
+   
+   int main() {
+      int area;  
+      
+      area = LENGTH * WIDTH;
+      cout << area;
+      cout << NEWLINE;
+      return 0;
+   }
+      </textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>50</b></pre>
+      <h3>The const Keyword</h3>
+      <p>You can use a <strong>const</strong> prefix to declare constants with a specific type as follows &minus;</p>
+      <pre><b>const type variable = value;</b></pre>
+      <p><b>The following example explains it in detail &minus;</b></p>
+
+      <textarea id="ta" cols="50" rows="10" readonly>
+#include <iostream>
+   using namespace std;
+            
+   int main() {
+      const int  LENGTH = 10;
+      const int  WIDTH  = 5;
+      const char NEWLINE = '\n';
+      int area;  
+               
+      area = LENGTH * WIDTH;
+      cout << area;
+      cout << NEWLINE;
+      return 0;
+   }
+      </textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>50</b></pre>
+      <p>Note that it is a good programming practice to define constants in CAPITALS.</p>
+
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px 50px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

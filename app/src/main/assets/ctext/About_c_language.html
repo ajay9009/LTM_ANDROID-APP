@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h3 style="text-align: center;"><span style="color: #050505;">About C language</span></h3>
+    <p style="text-align: left;">The C programming language is a structure-oriented programming language.</p>
+    <ul style="list-style-type: square;">
+      <li style="text-align: left;">C programming language features were derived from an earlier language called "B"
+        (basic combined programming language- BCPL).</li>
+      <li style="text-align: left;">C language was invented for implementing UNIX operating system.</li>
+      <li style="text-align: left;">in 1978, Dennis Ritchie and Brian Kernighan published the first edition "the C
+        programming language"&nbsp; and commonly known as K&amp;R C.</li>
+      <li style="text-align: left;">in 1983, the American national standards institute (ANSI)&nbsp; established a
+        committee to provide a modern, comprehensive definition of c. the resulting definition, the ANSI standard or
+        "ANSI C", was completed late 1988.</li>
+    </ul>
+
+    <hr>
+    <h4><span style="color: #050505;">Structure of c program</span></h4>
+    <textarea rows="7" cols="50" id="ta" readonly>
+//header
+#include stdio.h
+
+//main()
+int main()
+{
+  //variable declaration
+  int a = 10;
+ 
+  //body
+  print("%d", a);
+
+  //return
+  return 0;
+}
+</textarea>
+</div>
+</body>
+
+</html>
+
+<!-- css style-->
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+    padding: 20px 50px;
+  }
+
+  .container {
+    background: white;
+    padding: 20px 50px;
+    box-shadow: 2px 2px 25px black;
+  }
+
+  #ta {
+    color: white;
+    background: #25383c;
+    padding: 10px 15px;
+    resize: none;
+  }
+
+  hr {
+    width: 100%;
+    height: 2px;
+  }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+
+  /*Extra small devices (phones , 600px and down)*/
+  /* @media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+
+Medium devices (tablets landscape)
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+
+Large devices (laptops)
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+} */
+</style>

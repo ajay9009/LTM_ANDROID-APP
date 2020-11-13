@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 style="text-align: center;"><span style="color: #ff6600;">Input and Output</span></h2>
+        <p> </p>
+        <p>When we say <strong>Input</strong>, it means to feed some data into a program. An input can be given in the
+            form of a file or from the command line. C programming provides a set of built-in functions to read the
+            given input and feed it to the program as per requirement.</p>
+        <p>When we say <strong>Output</strong>, it means to display some data on screen, printer, or in any file. C
+            programming provides a set of built-in functions to output the data on the computer screen as well as to
+            save it in text or binary files.</p>
+
+        <h3>The Standard Files</h3>
+        <p>C programming treats all the devices as files. So devices such as the display are addressed in the same way
+            as files and the following three files are automatically opened when a program executes to provide access to
+            the keyboard and screen.</p>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Standard File</th>
+                    <th>File Pointer</th>
+                    <th>Device</th>
+                </tr>
+                <tr>
+                    <td>Standard input</td>
+                    <td>stdin</td>
+                    <td>Keyboard</td>
+                </tr>
+                <tr>
+                    <td>Standard output</td>
+                    <td>stdout</td>
+                    <td>Screen</td>
+                </tr>
+                <tr>
+                    <td>Standard error</td>
+                    <td>stderr</td>
+                    <td>Your screen</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The file pointers are the means to access the file for reading and writing purpose. This section explains how
+            to read values from the screen and how to print the result on the screen.</p>
+        <hr />
+
+        <h3>The getchar() and putchar() Functions</h3>
+        <p>The <strong>int getchar(void)</strong> function reads the next available character from the screen and
+            returns it as an integer. This function reads only single character at a time. You can use this method in
+            the loop in case you want to read more than one character from the screen.</p>
+        <p>The <strong>int putchar(int c)</strong> function puts the passed character on the screen and returns the same
+            character. This function puts only single character at a time. You can use this method in the loop in case
+            you want to display more than one character on the screen. Check the following example &minus;</p>
+
+<textarea id="ta" cols="50" rows="10">
+#include <stdio.h>
+
+int main()
+{
+    int c;
+    printf("enter a value:");
+    c=getchar();
+    printf("\nyou entered:");
+    putchar(c);
+    return 0;
+}
+</textarea>
+
+        <h3>The gets() and puts() Functions</h3>
+        <p>The <strong>char *gets(char *s)</strong> function reads a line from <strong>stdin</strong> into the buffer
+            pointed to by <strong>s</strong> until either a terminating newline or EOF (End of File).</p>
+        <p>The <strong>int puts(const char *s)</strong> function writes the string 's' and 'a' trailing newline to
+            <strong>stdout</strong>.</p>
+        <p><strong>NOTE: </strong>though it has been deprecated to use gets() function, instead of using gets, you want
+            fgets()</p>
+        <hr />
+
+        <h3>The scanf() and printf() Functions</h3>
+        <p>The <strong>int scanf(const char *format, ...)</strong> function reads the input from the standard input
+            stream <strong>stdin</strong> and scans that input according to the <strong>format</strong> provided.</p>
+        <p>The <strong>int printf(const char *format, ...)</strong> function writes the output to the standard output
+            stream <strong>stdout</strong> and produces the output according to the format provided.</p>
+        <p>The <strong>format</strong> can be a simple constant string, but you can specify %s, %d, %c, %f, etc., to
+            print or read strings, integer, character or float respectively. There are many other formatting options
+            available which can be used based on requirements.</p>
+    </div>
+</body>
+
+</html>
+
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #008080;
+        padding: 20px 50px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px 50px;
+        box-shadow: 2px 2px 25px black;
+    }
+
+    #ta {
+        color: white;
+        background: #25383c;
+        padding: 10px 15px;
+        resize: none;
+    }
+
+    hr {
+        width: 100%;
+        height: 2px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+    }
+
+    .ts {
+        text-align: center;
+    }
+@media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

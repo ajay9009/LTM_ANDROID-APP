@@ -1,0 +1,60 @@
+<h1 style="text-align: center;"><span style="color: #ff6600;">Java&nbsp;<span class="color_h1">Break and Continue</span></span></h1>
+<h2>Java Break</h2>
+<p>You have already seen the&nbsp;<code class="w3-codespan">break</code>&nbsp;statement used in an earlier chapter of this tutorial. It was used to "jump out" of a&nbsp;<code class="w3-codespan">switch</code>&nbsp;statement.</p>
+<p>The&nbsp;<code class="w3-codespan">break</code>&nbsp;statement can also be used to jump out of a&nbsp;<strong>loop</strong>.</p>
+<p>This example jumps out of the loop when i is equal to 4:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java" data-line="3"><code class=" language-java"><span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<div class=" line-highlight" aria-hidden="true" data-range="3" data-start="3">&nbsp;</div>
+<pre class=" w3-white language-java" data-line="3"><code class=" language-java"></code></pre>
+</div>
+<hr />
+<h2>Java Continue</h2>
+<p>The&nbsp;<code class="w3-codespan">continue</code>&nbsp;statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.</p>
+<p>This example skips the value of 4:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class=" w3-white language-java" data-line="3"><code class=" language-java"><span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-continue">continue</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<div class=" line-highlight" aria-hidden="true" data-range="3" data-start="3">&nbsp;</div>
+<pre class=" w3-white language-java" data-line="3"><code class=" language-java"></code></pre>
+<p>&nbsp;</p>
+</div>
+<hr />
+<div id="midcontentadcontainer">&nbsp;</div>
+<h2>Break and Continue in While Loop</h2>
+<p>You can also use&nbsp;<code class="w3-codespan">break</code>&nbsp;and&nbsp;<code class="w3-codespan">continue</code>&nbsp;in while loops:</p>
+<div class="w3-example">
+<h3>Break Example</h3>
+<pre class=" w3-white language-java" data-line="6"><code class=" language-java"><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-break">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" w3-white language-java" data-line="6"><code class=" language-java"></code></pre>
+</div>
+<div class="w3-example">
+<h3>Continue Example</h3>
+<pre class=" w3-white language-java" data-line="5"><code class=" language-java"><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    i<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-continue">continue</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</div>

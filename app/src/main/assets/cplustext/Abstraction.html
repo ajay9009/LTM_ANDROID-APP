@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Data Abstraction</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Data abstraction</span></h2>
+      <p> </p>
+      <p>Data abstraction refers to providing only essential information to the outside world and hiding their
+         background details, i.e., to represent the needed information in program without presenting the details.</p>
+      <p>Data abstraction is a programming (and design) technique that relies on the separation of interface and
+         implementation.</p>
+      <p>Let's take one real life example of a TV, which you can turn on and off, change the channel, adjust the volume,
+         and add external components such as speakers, VCRs, and DVD players, BUT you do not know its internal details,
+         that is, you do not know how it receives signals over the air or through a cable, how it translates them, and
+         finally displays them on the screen.</p>
+      <p>In C++, we use <strong>classes</strong> to define our own abstract data types (ADT). You can use the
+         <strong>cout</strong> object of class <strong>ostream</strong> to stream data to standard output like this
+         &minus;</p>
+
+      <textarea id="ta" cols="50" rows="7" readonly>
+#include <iostream>
+   using namespace std;
+   
+   int main() {
+      cout<<"Hello C++"<<endl;
+      return 0;
+   }
+</textarea>
+
+      <p>Here, you don't need to understand how <strong>cout</strong> displays the text on the user's screen. You need
+         to only know the public interface and the underlying implementation of &lsquo;cout&rsquo; is free to change.
+      </p>
+
+      <h3>Access Labels Enforce Abstraction</h3>
+      <p>In C++, we use access labels to define the abstract interface to the class. A class may contain zero or more
+         access labels &minus;</p>
+      <ul>
+         <li>
+            <p>Members defined with a public label are accessible to all parts of the program. The data-abstraction view
+               of a type is defined by its public members.</p>
+         </li>
+         <li>
+            <p>Members defined with a private label are not accessible to code that uses the class. The private sections
+               hide the implementation from code that uses the type.</p>
+         </li>
+      </ul>
+      <p>There are no restrictions on how often an access label may appear. Each access label specifies the access level
+         of the succeeding member definitions. The specified access level remains in effect until the next access label
+         is encountered or the closing right brace of the class body is seen.</p>
+
+      <h3>Benefits of Data Abstraction</h3>
+      <p>Data abstraction provides two important advantages &minus;</p>
+      <ul>
+         <li>
+            <p>Class internals are protected from inadvertent user-level errors, which might corrupt the state of the
+               object.</p>
+         </li>
+         <li>
+            <p>The class implementation may evolve over time in response to changing requirements or bug reports without
+               requiring change in user-level code.</p>
+         </li>
+      </ul>
+      <p>By defining data members only in the private section of the class, the class author is free to make changes in
+         the data. If the implementation changes, only the class code needs to be examined to see what affect the change
+         may have. If data is public, then any function that directly access the data members of the old representation
+         might be broken.</p>
+
+      <h3>Data Abstraction Example</h3>
+      <p>Any C++ program where you implement a class with public and private members is an example of data abstraction.
+         Consider the following example &minus;</p>
+
+      <textarea id="ta" cols="50" rows="10" readonly>
+#include <iostream>
+   using namespace std;
+               
+   class Adder {
+      public:
+         // constructor
+         Adder(int i = 0) {
+            total = i;
+         }
+         
+         // interface to outside world
+         void addNum(int number) {
+            total += number;
+         }
+         
+         // interface to outside world
+         int getTotal() {
+            return total;
+         };
+                     
+      private:
+         // hidden data from outside world
+         int total;
+   };
+               
+   int main() {
+      Adder a;
+                  
+      a.addNum(10);
+      a.addNum(20);
+      a.addNum(30);
+               
+      cout << "Total " << a.getTotal() <<endl;
+      return 0;
+   }
+</textarea>
+
+      <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+      <pre><b>Total 60</b></pre>
+      <p>Above class adds numbers together, and returns the sum. The public members - <strong>addNum</strong> and
+         <strong>getTotal</strong> are the interfaces to the outside world and a user needs to know them to use the
+         class. The private member <strong>total</strong> is something that the user doesn't need to know about, but is
+         needed for the class to operate properly.</p>
+      <h3>Designing Strategy</h3>
+      <p>Abstraction separates code into interface and implementation. So while designing your component, you must keep
+         interface independent of the implementation so that if you change underlying implementation then interface
+         would remain intact.</p>
+      <p>In this case whatever programs are using these interfaces, they would not be impacted and would just need a
+         recompilation with the latest implementation.</p>
+
+   </div>
+</body>
+
+</html>
+
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>

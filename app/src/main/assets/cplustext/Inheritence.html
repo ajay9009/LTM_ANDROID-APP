@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h2 style="text-align: center;"><span style="color: #ff6600;">Inheritance</span></h2>
+        <p>One of the most important concepts in object-oriented programming is that of inheritance. Inheritance allows
+            us to define a class in terms of another class, which makes it easier to create and maintain an application.
+            This also provides an opportunity to reuse the code functionality and fast implementation time.</p>
+        <p>When creating a class, instead of writing completely new data members and member functions, the programmer
+            can designate that the new class should inherit the members of an existing class. This existing class is
+            called the <strong>base</strong> class, and the new class is referred to as
+            the <strong>derived</strong> class.</p>
+        <p>The idea of inheritance implements the <strong>is a</strong> relationship. For example, mammal IS-A
+            animal, dog IS-A mammal hence dog IS-A animal as well and so on.</p>
+        <h3>Base and Derived Classes</h3>
+        <p>A class can be derived from more than one classes, which means it can inherit data and functions from
+            multiple base classes. To define a derived class, we use a class derivation list to specify the base
+            class(es). A class derivation list names one or more base classes and has the form &minus;</p>
+        
+            <pre><b>class derived-class: access-specifier base-class</b>
+</pre>
+        <p>Where access-specifier is one of <strong>public,
+                protected,</strong> or <strong>private</strong>, and base-class is the name of a previously
+            defined class. If the access-specifier is not used, then it is private by default.</p>
+        <h3>Access Control and Inheritance</h3>
+        <p>A derived class can access all the non-private members of its base class. Thus base-class members that should
+            not be accessible to the member functions of derived classes should be declared private in the base class.
+        </p>
+        <p>We can summarize the different access types according to - who can access them in the following way &minus;
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th class="ts">Access</th>
+                    <th class="ts">public</th>
+                    <th class="ts">protected</th>
+                    <th class="ts">private</th>
+                </tr>
+                <tr>
+                    <td>Same class</td>
+                    <td>yes</td>
+                    <td>yes</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>Derived classes</td>
+                    <td>yes</td>
+                    <td>yes</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>Outside classes</td>
+                    <td>yes</td>
+                    <td>no</td>
+                    <td>no</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>A derived class inherits all base class methods with the following exceptions &minus;</p>
+        <ul class="list">
+            <li>Constructors, destructors and copy constructors of the base class.</li>
+            <li>Overloaded operators of the base class.</li>
+            <li>The friend functions of the base class.</li>
+        </ul>
+        <h3>Type of Inheritance</h3>
+        <p>When deriving a class from a base class, the base class may be inherited through <strong>public,
+                protected</strong> or <strong>private</strong> inheritance. The type of inheritance is
+            specified by the access-specifier as explained above.</p>
+        <p>We hardly use <strong>protected</strong> or <strong>private</strong> inheritance,
+            but <strong>public</strong> inheritance is commonly used. While using different type of
+            inheritance, following rules are applied &minus;</p>
+        <ul class="list">
+            <li>
+                <p><strong>Public Inheritance</strong> &minus; When deriving a class from
+                    a <strong>public</strong> base class, <strong>public</strong> members of the
+                    base class become <strong>public</strong> members of the derived class
+                    and <strong>protected</strong> members of the base class
+                    become <strong>protected</strong> members of the derived class. A base
+                    class's <strong>private</strong> members are never accessible directly from a derived
+                    class, but can be accessed through calls to
+                    the <strong>public</strong> and <strong>protected</strong> members of the base
+                    class.</p>
+            </li>
+            <li>
+                <p><strong>Protected Inheritance</strong> &minus; When deriving from
+                    a <strong>protected</strong> base
+                    class, <strong>public</strong> and <strong>protected</strong> members of the
+                    base class become <strong>protected</strong> members of the derived class.</p>
+            </li>
+            <li>
+                <p><strong>Private Inheritance</strong> &minus; When deriving from
+                    a <strong>private</strong> base
+                    class, <strong>public</strong> and <strong>protected</strong> members of the
+                    base class become <strong>private</strong> members of the derived class.</p>
+            </li>
+        </ul>
+        <h3>Multiple Inheritance</h3>
+        <p>A C++ class can inherit members from more than one class and here is the extended syntax &minus;</p>
+        <pre><b>class derived-class: access baseA, access baseB....</b>
+</pre>
+        <p>Where access is one of <strong>public,
+                protected,</strong> or <strong>private</strong> and would be given for every base class
+            and they will be separated by comma as shown above. </p>
+
+    </div>
+</body>
+
+</html>
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+ 
+ 
+    body {
+       font-family: 'Poppins', sans-serif;
+       background-color: #008080;
+       padding: 20px;
+    }
+ 
+    .container {
+       background: white;
+       padding: 20px 50px;
+       box-shadow: 2px 2px 25px black;
+    }
+ 
+    hr {
+       width: 100%;
+       height: 2px;
+    }
+ 
+    table,
+    td,
+    th {
+       border: 1px solid black;
+       border-collapse: collapse;
+       padding: 5px 10px;
+    }
+ 
+    .ts {
+       text-align: center;
+    }
+ 
+ 
+ 
+    @media only screen and (max-width: 600px) {
+ 
+       body {
+          padding: 10px;
+          font-size: 10px;
+       }
+ 
+       .container {
+          box-shadow: 1px 1px 18px;
+          padding: 10px;
+       }
+    }
+ </style>

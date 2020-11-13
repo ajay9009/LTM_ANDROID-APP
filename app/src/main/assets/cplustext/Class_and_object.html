@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Class and Object</title>
+</head>
+
+<body>
+
+
+   <div class="container">
+      <h2 style="text-align: center;"><span style="color: #ff6600;">Class and Object</span></h2>
+
+      <h3>C++ Class Definitions</h3>
+      <p>When you define a class, you define a blueprint for a data type. This doesn't actually define any data, but it
+         does define what the class name means, that is, what an object of the class will consist of and what operations
+         can be performed on such an object.</p>
+      <p>A class definition starts with the keyword <strong>class</strong> followed by the class name; and the class
+         body, enclosed by a pair of curly braces. A class definition must be followed either by a semicolon or a list
+         of declarations. For example, we defined the Box data type using the keyword <strong>class</strong> as follows
+         &minus;</p>
+
+         <textarea id="ta" cols="60" rows="7" readonly>
+class Box {
+   public:
+      double length;   // Length of a box
+      double breadth;  // Breadth of a box
+      double height;   // Height of a box
+};
+   
+         </textarea>
+
+      <p>The keyword <strong>public</strong> determines the access attributes of the members of the class that follows
+         it. A public member can be accessed from outside the class anywhere within the scope of the class object. You
+         can also specify the members of a class as <strong>private</strong> or <strong>protected</strong> which we will
+         discuss in a sub-section.</p>
+      <h3>Define C++ Objects</h3>
+      <p>A class provides the blueprints for objects, so basically an object is created from a class. We declare objects
+         of a class with exactly the same sort of declaration that we declare variables of basic types. Following
+         statements declare two objects of class Box &minus;</p>
+
+         <textarea id="ta" cols="60" rows="3" readonly>
+Box Box1;          // Declare Box1 of type Box
+Box Box2;          // Declare Box2 of type Box
+         </textarea>
+
+      <p>Both of the objects Box1 and Box2 will have their own copy of data members.</p>
+      <h3>Accessing the Data Members</h3>
+      <p>The public data members of objects of a class can be accessed using the direct member access operator (.).</p>
+      <p>It is important to note that private and protected members can not be accessed directly using direct member
+         access operator (.). We will learn how private and protected members can be accessed.</p>
+      <h3>Classes and Objects in Detail</h3>
+      <p>So far, you have got very basic idea about C++ Classes and Objects. There are further interesting concepts
+         related to C++ Classes and Objects which we will discuss in various sub-sections listed below &minus;</p>
+      <table>
+            <tr>
+               <th>Sr.No</th>
+               <th>Concept &amp; Description</th>
+            </tr>
+            <tr>
+               <td class="ts">1.</td>
+               <td>
+                  <p><strong>Class member function</strong></p>
+                  <p>A member function of a class is a function that has its definition or its prototype within the
+                     class definition like any other variable.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">2.</td>
+               <td>
+                  <p><strong>Class access modifiers</strong></p>
+                  <p>A class member can be defined as public, private or protected. By default, members would be assumed
+                     as private.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">3.</td>
+               <td>
+                  <p><strong>Constructor &amp; Destructor</strong></p>
+                  <p>A class constructor is a special function in a class that is called when a new object of the class
+                     is created. A destructor is also a special function which is called when a created object is
+                     deleted.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">4.</td>
+               <td>
+                  <p><strong>copy construtor</strong></p>
+                  <p>The copy constructor is a constructor which creates an object by initializing it with an object of
+                     the same class, which has been created previously.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">5.</td>
+               <td>
+                  <p><strong>Friend Function</strong></p>
+                  <p>A <strong>friend</strong> function is permitted full access to private and protected members of a
+                     class.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">6.</td>
+               <td>
+                  <p><strong>Inline function</strong></p>
+                  <p>With an inline function, the compiler tries to expand the code in the body of the function in place
+                     of a call to the function.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">7.</td>
+               <td>
+                  <p><strong>this pointer</strong></p>
+                  <p>Every object has a special pointer <strong>this</strong> which points to the object itself.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">8.</td>
+               <td>
+                  <p><strong>Pointer to c++ classes</strong></p>
+                  <p>A pointer to a class is done exactly the same way a pointer to a structure is. In fact a class is
+                     really just a structure with functions in it.</p>
+               </td>
+            </tr>
+            <tr>
+               <td class="ts">9.</td>
+               <td>
+                  <p><strong>Static members of a class</strong></p>
+                  <p>Both data members and function members of a class can be declared as static.</p>
+               </td>
+            </tr>
+      </table>
+
+   </div>
+</body>
+
+</html>
+
+<style type="text/css">
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+   body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #008080;
+      padding: 20px 50px;
+   }
+
+   .container {
+      background: white;
+      padding: 20px 50px;
+      box-shadow: 2px 2px 25px black;
+   }
+
+   #ta {
+      color: white;
+      background: #25383c;
+      padding: 10px 15px;
+      resize: none;
+   }
+
+   hr {
+      width: 100%;
+      height: 2px;
+   }
+
+   table,
+   td,
+   th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+   }
+
+   .ts {
+      text-align: center;
+   }
+
+   @media only screen and (max-width: 600px) {
+      #ta {
+         width: 80%;
+         font-size: 10px;
+         padding: 7px;
+      }
+
+      body {
+         padding: 10px;
+         font-size: 10px;
+      }
+
+      .container {
+         /* width: 90%; */
+         box-shadow: 1px 1px 18px;
+         padding: 10px;
+      }
+   }
+</style>
