@@ -25,4 +25,11 @@
     <color name="menu_backgorund">#212121</color>
     <color name="menu_text">#FDD835</color>
 
+    <color name="live_red">#FF5733</color>
+    <color name="white_50">#fff</color>
+    <color name="white_20">#f2f5df</color>
+    <color name="white2">#ffffff</color>
+    <color name="black_50">#f0f0f0</color>
+    <color name="black2">#616161</color>
+
 </resources>

@@ -26,7 +26,7 @@
 
     <!--  3_cards_names  -->
     <string name="video_lecture">Video</string>
-    <string name="audio_lecture">Audio</string>
+    <string name="quiz">Quiz</string>
     <string name="text_lecture">Text</string>
 
     <!-- Categories-->

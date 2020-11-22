@@ -2,6 +2,7 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,10 +10,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class Description_Activity_Cplus extends AppCompatActivity {
-    private static final String TAG = "Description_Activity_Cplus";
+    private static final String TAG1 = "Description_Activity_Cplus";
     private Context mContext;
     private Bundle extras;
     private WebView webView;
+    @SuppressLint("LongLogTag")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +27,8 @@ public class Description_Activity_Cplus extends AppCompatActivity {
         extras = getIntent().getExtras();
         if(!extras.equals(null)){
             String data = extras.getString("titles");
-            Log.d(TAG, "onCreate: the coming data is "+data);
-            String url = "file:///android_asset/ctext/"+data+".html";
+            Log.d(TAG1, "onCreate: the coming data is "+data);
+            String url = "file:///android_asset/cplustext/"+data+".html";
 
             webView.loadUrl(url);
             WebSettings webSettings = webView.getSettings();

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
-    android:background="#12C0CA33"
+    android:background="@color/home_background"
     tools:context=".SearchCategory">
 
 
@@ -17,31 +16,30 @@
         android:queryHint="Search Here..."
         android:iconifiedByDefault="false"
         android:id="@+id/searchView"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@android:color/white"
         android:elevation="8dp">
     </SearchView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find Languages"
+        android:text="FIND LANGUAGES"
         android:textAlignment="center"
         android:gravity="center_horizontal"
-        android:textSize="20sp"
-        android:layout_marginTop="30dp"/>
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="30dp"
+        android:elevation="5dp"/>
     <ListView
-        android:outlineAmbientShadowColor="@color/black"
+
         android:outlineSpotShadowColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="20dp"
-        android:id="@+id/myList"
-        android:scrollbarSize="5sp"
-        android:background="@android:color/white"
-        >
+        android:layout_marginTop="30dp"
+        android:id="@+id/myList">
 
 
     </ListView>

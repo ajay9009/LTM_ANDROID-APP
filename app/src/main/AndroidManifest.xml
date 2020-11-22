@@ -9,7 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Description_Activity_Cplus"></activity>
+        <activity android:name=".Description_Activity_python"></activity>
+        <activity android:name=".Activity_index_python" />
+        <activity android:name=".Description_activity_js" />
+        <activity android:name=".Js_index_activity" />
+        <activity android:name=".Description_activity_css" />
+        <activity android:name=".Css_index_activity" />
+        <activity android:name=".Description_Activity_Html" />
+        <activity android:name=".Html_index_activity" />
+        <activity android:name=".VideoApp" />
+        <activity
+            android:name=".Fullscreen"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Description_Activity_Cplus" />
         <activity android:name=".Cplus_Index_Activity" />
         <activity android:name=".C_Index_Activity" />
         <activity android:name=".Description_Activity_C" />

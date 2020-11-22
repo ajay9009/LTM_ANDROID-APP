@@ -49,7 +49,11 @@ public class AllCategories extends AppCompatActivity {
         cplusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AllCategories.this,"You have selected C++",Toast.LENGTH_SHORT).show();
+                if (useraccess == null) {
+                    Toast.makeText(AllCategories.this, "login to access", Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(AllCategories.this, Cplus_Index_Activity.class));
+                }
             }
         });
         javacorebtn.setOnClickListener(new View.OnClickListener() {
@@ -79,25 +83,44 @@ public class AllCategories extends AppCompatActivity {
         pythonbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AllCategories.this,"You have selected Python",Toast.LENGTH_SHORT).show();
+                if(useraccess == null){
+                    Toast.makeText(AllCategories.this,"login to access",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    startActivity(new Intent(AllCategories.this, Activity_index_python.class));
+                }
             }
         });
         htmlbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AllCategories.this,"You have selected HTML",Toast.LENGTH_SHORT).show();
+                if (useraccess == null) {
+                    Toast.makeText(AllCategories.this, "login to access", Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(AllCategories.this, Html_index_activity.class));
+                }
             }
         });
         cssbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AllCategories.this,"You have selected CSS",Toast.LENGTH_SHORT).show();
+                if(useraccess == null){
+                    Toast.makeText(AllCategories.this,"login to access",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    startActivity(new Intent(AllCategories.this, Css_index_activity.class));
+                }
             }
         });
         jsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AllCategories.this,"You have selected JS",Toast.LENGTH_SHORT).show();
+                if(useraccess == null){
+                    Toast.makeText(AllCategories.this,"login to access",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    startActivity(new Intent(AllCategories.this, Js_index_activity.class));
+                }
             }
         });
         vbnetbtn.setOnClickListener(new View.OnClickListener() {
