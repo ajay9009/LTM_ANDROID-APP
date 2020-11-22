@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>CSS Margins</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p><h2>CSS Margins</h2>
+The CSS margin properties are used to create space around elements, outside of any defined borders.
+
+With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left).
+
+<h2>Margin - Individual Sides</h2>
+CSS has properties for specifying the margin for each side of an element:
+<ul>
+    <li>margin-top</li>
+    <li>margin-right</li>
+    <li>margin-bottom</li>
+    <li>margin-left</li>
+</ul></p>
+<p>All the margin properties can have the following values:
+<ul>
+    <li>auto - the browser calculates the margin</li>
+    <li>length - specifies a margin in px, pt, cm, etc.</li>
+    <li>% - specifies a margin in % of the width of the containing element</li>
+    <li>inherit - specifies that the margin should be inherited from the parent element</li>
+</ul>
+</p>
+<p>Example
+Set different margins for all four sides of a "p" element:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+        </textarea><br>
+        <p><h2>Margin - Shorthand Property</h2>
+To shorten the code, it is possible to specify all the margin properties in one property.
+
+The margin property is a shorthand property for the following individual margin properties:</p>
+<ul>
+    <li>margin-top</li>
+    <li>margin-right</li>
+    <li>margin-bottom</li>
+    <li>margin-left</li>
+</ul>
+<p>So, here is how it works:
+
+If the margin property has four values:
+<b>margin: 25px 50px 75px 100px;</b><br>
+top margin is 25px<br>
+right margin is 50px<br>
+bottom margin is 75px<br>
+left margin is 100px
+</p>
+<p><h2>Example</h2>
+Use the margin shorthand property with four values:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p {
+  margin: 25px 50px 75px 100px;
+}
+        </textarea><br>
+        <p>If the margin property has three values:
+
+<b>margin: 25px 50px 75px;</b><br>
+top margin is 25px<br>
+right and left margins are 50px<br>
+bottom margin is 75px</p>
+<p><h2>Example</h2>
+Use the margin shorthand property with three values: </p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly=""> 
+            p {
+  margin: 25px 50px 75px;
+}
+           
+        </textarea><br>
+        <p>If the margin property has two values:
+            <b>margin: 25px 50px;</b><br>
+top and bottom margins are 25px<br>
+right and left margins are 50px
+        </p>
+
+        <p><h2>Example</h2>
+Use the margin shorthand property with two values: </p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p {
+  margin: 25px 50px;
+}
+        </textarea><br>
+        <p>If the margin property has one value:
+
+<b>margin: 25px;</b><br>
+all four margins are 25px
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p {
+  margin: 25px;
+}
+        </textarea><br>
+        <p><h2>The auto Value</h2>
+You can set the margin property to auto to horizontally center the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+
+<h2>Example</h2>
+Use margin: auto:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           div {
+  width: 300px;
+  margin: auto;
+  border: 1px solid red;
+}
+        </textarea><br>
+        <p><h2>The inherit Value</h2>
+This example lets the left margin of the <p class="ex1"> element be inherited from the parent element (<div>):
+
+<h2>Example</h2>
+Use of the inherit value:</p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           div {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+p.ex1 {
+  margin-left: inherit;
+}
+        </textarea><br>
+
+       
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

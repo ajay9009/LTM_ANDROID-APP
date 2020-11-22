@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>React Lifecycle</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        
+        <h2>Lifecycle of Components</h2>
+<p>Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+The three phases are: Mounting, Updating, and Unmounting.</p>
+<h3>Mounting</h3>
+<p>Mounting means putting elements into the DOM.
+React has four built-in methods that gets called, in this order, when mounting a component:
+constructor()
+getDerivedStateFromProps()
+render()
+componentDidMount()
+The render() method is required and will always be called, the others are optional and will be called if you define them.</p>
+        <h3>constructor</h3>
+        <p>The constructor() method is called before anything else, when the component is initiated, and it is the natural place to set up the initial state and other initial values.
+The constructor() method is called with the props, as arguments, and you should always start by calling the super(props) before anything else, this will initiate the parent's constructor method and allows the component to inherit methods from its parent (React.Component). </p> 
+        <h3>Example</h3>
+        <p>The constructor method is called, by React, every time you make a component:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+		class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+         </textarea><br>
+<h3>render </h3>
+<p>The render() method is required, and is the method that actually outputs the HTML to the DOM</p>
+<h3>example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+class Header extends React.Component {
+  render() {
+    return (
+      <h1>This is the content of the Header component</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+</textarea><br>
+<h3>Updating </h3>
+<p>The next phase in the lifecycle is when a component is updated.
+React has five built-in methods that gets called, in this order, when a component is updated:
+getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+The render() method is required and will always be called, the others are optional and will be called if you define them.
+getDerivedStateFromProps
+Also at updates the getDerivedStateFromProps method is called. This is the first method that is called when a component gets updated.
+The example below has a button that changes the favorite color to blue, but since the getDerivedStateFromProps() method is called, which updates the state with the color from the favcol attribute, the favorite color is still rendered as yellow:</p>
+<h3>example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favoritecolor: props.favcol };
+  }
+  changeColor = () => {
+    this.setState({favoritecolor: "blue"});
+  }
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <button type="button" onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('root'));
+  </textarea><br>
+  <h3>Unmounting</h3>
+<p>The next phase in the lifecycle is when a component is removed from the DOM, or unmounting as React likes to call it.
+React has only one built-in method that gets called when a component is unmounted:
+componentWillUnmount()
+componentWillUnmount
+The componentWillUnmount method is called when the component is about to be removed from the DOM.</p>
+<h3>example</h3>
+   <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+   class Container extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {show: true};
+  }
+  delHeader = () => {
+    this.setState({show: false});
+  }
+  render() {
+    let myheader;
+    if (this.state.show) {
+      myheader = <Child />;
+    };
+    return (
+      <div>
+      {myheader}
+      <button type="button" onClick={this.delHeader}>Delete Header</button>
+      </div>
+    );
+  }
+}
+
+class Child extends React.Component {
+  componentWillUnmount() {
+    alert("The component named Header is about to be unmounted.");
+  }
+  render() {
+    return (
+      <h1>Hello World!</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Container />, document.getElementById('root'));
+</textarea><br>
+</div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ n

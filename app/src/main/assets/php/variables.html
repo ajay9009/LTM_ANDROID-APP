@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    /image of the header-->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>PHP Variables</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+
+<h2>Creating (Declaring) PHP Variables</h2>
+<p>In PHP, a variable starts with the $ sign, followed by the name of the variable:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <br>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+        $txt = "Hello world!";
+        $x = 5;
+        $y = 10.5;
+        ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+        <p>After the execution of the statements above, the variable&nbsp;<code class="w3-codespan">$txt</code>&nbsp;will hold the value&nbsp;<code class="w3-codespan">Hello world!</code>, the variable $x will hold the value&nbsp;<code class="w3-codespan">5</code>, and the variable $y will hold the value&nbsp;<code class="w3-codespan">10.5</code>.</p>
+<p><strong>Note:</strong>&nbsp;When you assign a text value to a variable, put quotes around the value.</p>
+<p><strong>Note:</strong>&nbsp;Unlike other programming languages, PHP has no command for declaring a variable. It is created the moment you first assign a value to it.</p>
+<div class="w3-panel w3-note">
+<p>Think of variables as containers for storing data.</p>
+</div>
+<hr />
+
+<h2>PHP Variables</h2>
+<p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume).</p>
+<p>Rules for PHP variables:</p>
+<ul>
+<li>A variable starts with the&nbsp;<code class="w3-codespan">$</code>&nbsp;sign, followed by the name of the variable</li>
+<li>A variable name must start with a letter or the underscore character</li>
+<li>A variable name cannot start with a number</li>
+<li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+<li>Variable names are case-sensitive ($age and $AGE are two different variables)</li>
+</ul>
+<h2>Output Variables</h2>
+<p>The PHP&nbsp;<code class="w3-codespan">echo</code>&nbsp;the statement is often used to output data to the screen.</p>
+<p>The following example will show how to output text and a variable:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $txt = "LTM";
+    echo "I love $txt!";
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+
+<p>The following example will produce the same output as the example above:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $txt = "LTM";
+    echo "I love " . $txt . "!";
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+
+<p>The following example will output the sum of two variables:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $x = 5;
+    $y = 4;
+    echo $x + $y;
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+<p><strong>Note:</strong>&nbsp;You will learn more about the&nbsp;<code class="w3-codespan">echo</code>&nbsp;statement and how to output data to the screen in the next chapter.</p>
+<hr />
+
+<h2>PHP is a Loosely Typed Language</h2>
+<p>In the example above, notice that we did not have to tell PHP which data type the variable is.</p>
+<p>PHP automatically associates a data type to the variable, depending on its value. Since the data types are not set in a strict sense, you can do things like adding a string to an integer without causing an error.</p>
+<p>In PHP 7, type declarations were added. This gives an option to specify the data type expected when declaring a function, and by enabling the strict requirement, it will throw a "Fatal Error" on a type mismatch.</p>
+<p>You will learn more about&nbsp;<code class="w3-codespan">strict</code>&nbsp;and&nbsp;<code class="w3-codespan">non-strict</code>&nbsp;requirements, and data type declarations in the PHP FUNCTION chapter.</p>
+<hr />
+<h2>PHP Variables Scope</h2>
+<p>In PHP, variables can be declared anywhere in the script.</p>
+<p>The scope of a variable is the part of the script where the variable can be referenced/used.</p>
+<p>PHP has three different variable scopes:</p>
+<ul>
+<li>local</li>
+<li>global</li>
+<li>static</li>
+</ul>
+<hr />
+<h2>Global and Local Scope</h2>
+<p>A variable declared&nbsp;<strong>outside</strong>&nbsp;a function has a GLOBAL SCOPE and can only be accessed outside a function:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Variable with global scope:</p>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="10" cols="60" readonly="">
+        <?php
+    $x = 5; // global scope
+
+    function myTest() {
+    // using x inside this function will generate an error
+    echo "<p>Variable x inside function is: $x</p>";
+    }
+    myTest();
+
+    echo "<p>Variable x outside function is: $x</p>";
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+
+<p>A variable declared&nbsp;<strong>within</strong>&nbsp;a function has a LOCAL SCOPE and can only be accessed within that function:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Variable with local scope:</p>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="10" cols="60" readonly="">
+        <?php
+    function myTest() {
+    $x = 5; // local scope
+    echo "<p>Variable x inside function is: $x</p>";
+    }
+    myTest();
+
+    // using x outside the function will generate an error
+    echo "<p>Variable x outside function is: $x</p>";
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+
+<p>You can have local variables with the same name in different functions, because local variables are only recognized by the function in which they are declared.</p>
+
+<hr />
+<h2>PHP The global Keyword</h2>
+<p>The&nbsp;<code class="w3-codespan">global</code>&nbsp;keyword is used to access a global variable from within a function.</p>
+<p>To do this, use the&nbsp;<code class="w3-codespan">global</code>&nbsp;keyword before the variables (inside the function):</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="10" cols="60" readonly="">
+        <?php
+    $x = 5;
+    $y = 10;
+
+    function myTest() {
+    global $x, $y;
+    $y = $x + $y;
+    }
+
+    myTest();
+    echo $y; // outputs 15
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+
+<p>PHP also stores all global variables in an array called&nbsp;<code class="w3-codespan">$GLOBALS[<em>index</em>]</code>. The&nbsp;<em><code class="w3-codespan">index</code></em>&nbsp;holds the name of the variable. This array is also accessible from within functions and can be used to update global variables directly.</p>
+<p>The example above can be rewritten like this:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="10" cols="60" readonly="">
+        <?php
+    $x = 5;
+    $y = 10;
+
+    function myTest() {
+    $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
+    }
+
+    myTest();
+    echo $y; // outputs 15
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+
+<hr />
+<h2>PHP The static Keyword</h2>
+<p>Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a local variable NOT to be deleted. We need it for a further job.</p>
+<p>To do this, use the&nbsp;<code class="w3-codespan">static</code>&nbsp;keyword when you first declare the variable:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="10" cols="60" readonly="">
+       <?php
+    function myTest() {
+    static $x = 0;
+    echo $x;
+    $x++;
+    }
+
+    myTest();
+    myTest();
+    myTest();
+    ?>
+    </textarea><br>
+        <!-- /Code_Container-->
+
+
+    </p>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- css style-->
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>

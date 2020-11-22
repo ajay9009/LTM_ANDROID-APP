@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Variables</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        
+        <p>JavaScript variables are containers for storing data values.
+
+In this example, x, y, and z, are variables, declared with the var keyword:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x = 5;
+var y = 6;
+var z = x + y;
+        </textarea><br>
+
+
+<p>From the example above, you can expect:
+<ul>
+    <li>x stores the value 5</li>
+    <li>y stores the value 6</li>
+    <li>z stores the value 11</li>
+</ul></p>
+
+<p><h2>Using let and const (2015)</h2>
+Before 2015, using the var keyword was the only way to declare a JavaScript variable.
+
+The 2015 version of JavaScript (ES6 - ECMAScript 2015) allows the use of the const keyword to define a variable that cannot be reassigned, and the let keyword to define a variable with restricted scope.
+
+Because it is a little complicated to describe the difference between these keywords, and because they are not supported in older browsers, the first part of this tutorial will most often use var.
+
+Safari 10 and Edge 14 were the first browsers to fully support ES6</p>
+
+<p><h2>Much Like Algebra</h2>
+In this example, price1, price2, and total, are variables:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var price1 = 5;
+var price2 = 6;
+var total = price1 + price2;
+        </textarea><br>
+
+<p>In programming, just like in algebra, we use variables (like price1) to hold values.
+
+In programming, just like in algebra, we use variables in expressions (total = price1 + price2).
+
+From the example above, you can calculate the total to be 11.
+
+JavaScript variables are containers for storing data values.
+
+<h2>JavaScript Identifiers</h2>
+All JavaScript variables must be identified with unique names.
+
+These unique names are called identifiers.
+
+Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+
+The general rules for constructing names for variables (unique identifiers) are:
+<ul>
+    <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+    <li>Names must begin with a letter</li>
+    <li>Names can also begin with $ and _ (but we will not use it in this tutorial)</li>
+    <li>Names are case sensitive (y and Y are different variables)</li>
+    <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+</ul></p>
+
+<p><h2>The Assignment Operator</h2>
+In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.
+
+This is different from algebra. The following does not make sense in algebra:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           x = x + 5
+        </textarea><br>
+
+
+<p>In JavaScript, however, it makes perfect sense: it assigns the value of x + 5 to x.
+
+(It calculates the value of x + 5 and puts the result into x. The value of x is incremented by 5.)
+
+The "equal to" operator is written like == in JavaScript.</p>
+
+<p><h2>JavaScript Data Types</h2>
+JavaScript variables can hold numbers like 100 and text values like "John Doe".
+
+In programming, text values are called text strings.
+
+JavaScript can handle many types of data, but for now, just think of numbers and strings.
+
+Strings are written inside double or single quotes. Numbers are written without quotes.
+
+If you put a number in quotes, it will be treated as a text string.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var pi = 3.14;
+var person = "John Doe";
+var answer = 'Yes I am!';
+        </textarea><br>
+        <p><h2>Declaring (Creating) JavaScript Variables</h2>
+Creating a variable in JavaScript is called "declaring" a variable.
+
+You declare a JavaScript variable with the var keyword:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var carName;
+        </textarea><br>
+
+<p>After the declaration, the variable has no value (technically it has the value of undefined).
+
+To assign a value to the variable, use the equal sign:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           carName = "Volvo";
+        </textarea><br>
+        You can also assign a value to the variable when you declare it:
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var carName = "Volvo";
+        </textarea><br>
+
+
+
+<p>In the example below, we create a variable called carName and assign the value "Volvo" to it.
+
+Then we "output" the value inside an HTML paragraph with id="demo":
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <p id="demo"></p>
+
+<script>
+var carName = "Volvo";
+document.getElementById("demo").innerHTML = carName;
+</script>
+        </textarea><br>
+
+<p><h2>One Statement, Many Variables</h2>
+You can declare many variables in one statement.
+
+Start the statement with var and separate the variables by comma:
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var person = "John Doe", carName = "Volvo", price = 200;</p>
+
+</textarea>
+    <p><h2>JavaScript Arithmetic</h2>
+As with algebra, you can do arithmetic with JavaScript variables, using operators like = and +:</p>        
+
+    <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x = 5 + 2 + 3;
+
+        </textarea><br>
+
+
+        <p>You can also add strings, but strings will be concatenated:
+
+<h3>Example</p>
+       
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

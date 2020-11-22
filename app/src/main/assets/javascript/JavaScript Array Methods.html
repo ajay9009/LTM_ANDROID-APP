@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Array Methods</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        
+        <p><h3>Converting Arrays to Strings</h3>
+The JavaScript method toString() converts an array to a string of (comma separated) array values.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits.toString();  
+        </textarea><br>
+
+<p>The join() method also joins all array elements into a string.
+
+It behaves just like toString(), but in addition you can specify the separator:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = fruits.join(" * ");
+        </textarea><br>
+
+<b>Result:
+
+Banana * Orange * Apple * Mango</b>
+
+<p><h3>Popping and Pushing</h3>
+When you work with arrays, it is easy to remove elements and add new elements.
+
+This is what popping and pushing is:
+
+Popping items out of an array, or pushing items into an array.
+
+<h3>Popping</h3>
+The pop() method removes the last element from an array:
+
+Example</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.pop();              // Removes the last element ("Mango") from fruits
+        </textarea><br>
+
+<p>The pop() method returns the value that was "popped out":
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            var x = fruits.pop();      // the value of x is "Mango"
+
+        </textarea><br>
+
+
+<p><h3>Pushing</h3>
+The push() method adds a new element to an array (at the end):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
+        </textarea><br>
+
+<p>The push() method returns the new array length:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            var x = fruits.push("Kiwi");   //  the value of x is 5
+        </textarea><br>
+<p><h3>Shifting Elements</h3>
+Shifting is equivalent to popping, working on the first element instead of the last.
+
+The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.shift();            // Removes the first element "Banana" from fruits
+        </textarea><br>
+<p>The shift() method returns the string that was "shifted out":</p>
+<h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            var x = fruits.shift();    // the value of x is "Banana"
+        </textarea><br>
+
+<p>The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+
+Example</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+        </textarea><br>
+<p>The unshift() method returns the new array length.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.unshift("Lemon");    // Returns 5
+        </textarea><br>
+<p><h3>Changing Elements</h3>
+Array elements are accessed using their index number:
+
+<b>Array indexes start with 0. [0] is the first array element, [1] is the second, [2] is the third ...</b>
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+          var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi" 
+        </textarea><br>
+<p>The length property provides an easy way to append a new element to an array:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits[fruits.length] = "Kiwi";          // Appends "Kiwi" to fruits
+        </textarea><br>
+<p><h3>Deleting Elements</h3>
+Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            delete fruits[0];           // Changes the first element in fruits to undefined
+        </textarea><br>
+<p><h3>Splicing an Array</h3>
+The splice() method can be used to add new items to an array:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.splice(2, 0, "Lemon", "Kiwi");
+        </textarea><br>
+<p>The first parameter (2) defines the position where new elements should be added (spliced in).
+
+The second parameter (0) defines how many elements should be removed.
+
+The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
+
+The splice() method returns an array with the deleted items:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.splice(2, 2, "Lemon", "Kiwi");
+        </textarea><br>
+        <p><h3>Using splice() to Remove Elements</h3>
+With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+
+Example</p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.splice(0, 1);        // Removes the first element of fruits
+        </textarea><br>   
+     <p>The first parameter (0) defines the position where new elements should be added (spliced in).
+
+The second parameter (1) defines how many elements should be removed.
+
+The rest of the parameters are omitted. No new elements will be added.
+
+<h3>Merging (Concatenating) Arrays</h3>
+The concat() method creates a new array by merging (concatenating) existing arrays:
+
+<h3>Example (Merging Two Arrays) </h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys
+</textarea>
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

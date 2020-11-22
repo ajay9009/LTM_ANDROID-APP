@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>HTML Links</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>Links are found in nearly all web pages. Links allow users to click their way from page to page.</p>
+        <h2>HTML Links - Hyperlinks</h2>
+        <p>HTML links are hyperlinks.
+
+You can click on a link and jump to another document.
+
+When you move the mouse over a link, the mouse arrow will turn into a little hand.
+
+<b>Note: A link does not have to be text. A link can be an image or any other HTML element!</b>></p>
+        <h2>HTML Links - Syntax</h2>
+        <p>The HTML <a> tag defines a hyperlink. It has the following syntax:</p>
+        
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <a href="url">link text</a>
+        </textarea><br>
+
+        <p>The most important attribute of the <a> element is the href attribute, which indicates the link's destination.
+
+The link text is the part that will be visible to the reader.
+
+Clicking on the link text, will send the reader to the specified URL address.</p>
+        <h3>Example</h3>
+        <p>This example shows how to create a link to W3Schools.com:</p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+        </textarea><br>
+        <p>By default, links will appear as follows in all browsers:</p>
+        <ul>
+            <li>An unvisited link is underlined and blue</li>
+            <li>A visited link is underlined and purple</li>
+            <li>An active link is underlined and red</li>
+        </ul>
+        <b>Tip: Links can of course be styled with CSS, to get another look!</b>
+        <h2>HTML Links - The target Attribute</h2>
+        <p>By default, the linked page will be displayed in the current browser window. To change this, you must specify another target for the link.
+
+The target attribute specifies where to open the linked document.
+
+The target attribute can have one of the following values:</p>
+<ul>
+    <li>_self - Default. Opens the document in the same window/tab as it was clicked</li>
+    <li>_blank - Opens the document in a new window or tab</li>
+    <li>_parent - Opens the document in the parent frame</li>
+    <li>_top - Opens the document in the full body of the window</li>
+</ul>
+        <h2>Example</h2>
+        <p>Use target="_blank" to open the linked document in a new browser window or tab:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+        </textarea><br>
+        <h2>Absolute URLs vs. Relative URLs</h2>
+        <p>Both examples above are using an absolute URL (a full web address) in the href attribute.
+
+A local link (a link to a page within the same website) is specified with a relative URL (without the "https://www" part):</p>
+        <h3>Example</h3>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <h2>Absolute URLs</h2>
+            <p><a href="https://www.w3.org/">W3C</a></p>
+            <p><a href="https://www.google.com/">Google</a></p>
+
+            <h2>Relative URLs</h2>
+            <p><a href="html_images.asp">HTML Images</a></p>
+            <p><a href="/css/default.asp">CSS Tutorial</a></p>
+        </textarea><br>
+
+        <h2>HTML Links - Use an Image as a Link</h2>
+        <p>To use an image as a link, just put the <img> tag inside the <a> tag:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <a href="default.asp">
+<img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+        </textarea><br>
+            <h2>Link to an Email Address</h2>
+            <p>Use mailto: inside the href attribute to create a link that opens the user's email program (to let them send a new email):</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <a href="mailto:someone@example.com">Send email</a>
+        </textarea><br>
+        <h2>Button as a Link</h2>
+        <p>To use an HTML button as a link, you have to add some JavaScript code.
+
+JavaScript allows you to specify what happens at certain events, such as a click of a button:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <button onclick="document.location='default.asp'">HTML Tutorial</button>
+        </textarea><br>
+
+        <p><h2>Link Titles</h2><br>
+The title attribute specifies extra information about an element. The information is most often shown as a tooltip text when the mouse moves over the element.
+
+<h3>Example</h3>
+
+       
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+        </textarea><br>
+        <h2>More on Absolute URLs and Relative URLs</h2>
+        <p>Example</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <a href="https://www.w3schools.com/html/default.asp">HTML tutorial</a>
+        </textarea><br>
+
+
+      
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

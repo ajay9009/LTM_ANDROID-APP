@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>React JSX</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        
+        <p><br>What is JSX?</br>
+<br>JSX stands for JavaScript XML.</br>
+<br>JSX allows us to write HTML in React.</br>
+<br>JSX makes it easier to write and add HTML in React.
+</br></p>
+        <h2>Coding JSX</h2>
+        <p>JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+jSX converts HTML tags into react elements.
+You are not required to use JSX, but JSX makes it easier to write React applications.
+Let us demonstrate with two examples, the first uses JSX and the second does not: </p> 
+        <h3>Example 1</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+		const myelement = <h1>I Love JSX!</h1>;
+
+ReactDOM.render(myelement, document.getElementById('root'));
+         </textarea><br>
+         <h3>Example 2</h3>
+         <p>Without JSX:</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+const myelement = React.createElement('h1', {}, 'I do not use JSX!');
+
+ReactDOM.render(myelement, document.getElementById('root'));
+</textarea><br>
+<p>As you can see in the first example, JSX allows us to write HTML directly within the JavaScript code.
+JSX is an extension of the JavaScript language based on ES6, and is translated into regular JavaScript at runtime.</p>
+<h2>Expressions in JSX</h2>
+<p>With JSX you can write expressions inside curly braces { }.
+The expression can be a React variable, or property, or any other valid JavaScript expression. JSX will execute the expression and return the result:</p>
+<h3>Example</h3>
+         <p>Execute the expression 5 + 5:</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+const myelement = <h1>React is {5 + 5} times better with JSX</h1>;
+   </textarea><br>
+   <h2>Inserting a Large Block of HTML</h2>
+   <p>To write HTML on multiple lines, put the HTML inside parentheses:</p>
+   <h3>Example</h3>
+         <p>Create a list with three list items:</p>
+   <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+   const myelement = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+   </textarea><br>
+   <h2>One Top Level Element</h2>
+<p>The HTML code must be wrapped in ONE top level element.
+So if you like to write two headers, you must put them inside a parent element, like a div element</p>
+<h3>Example</h3>
+         <p>Wrap two headers inside one DIV element:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           const myelement = (
+  <div>
+    <h1>I am a Header.</h1>
+    <h1>I am a Header too.</h1>
+  </div>
+);
+        </textarea><br>
+        <p>JSX will throw an error if the HTML is not correct, or if the HTML misses a parent element.</p>
+<h2>Elements Must be Closed</h2>
+<p>JSX follows XML rules, and therefore HTML elements must be properly closed.</p>
+<h3>Example</h3>
+         <p>Close empty elements with /></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+          const myelement = <input type="text" />; 
+        </textarea><br>
+<p>JSX will throw an error if the HTML is not properly closed.</p>
+ </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ n

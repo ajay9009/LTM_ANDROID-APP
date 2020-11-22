@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Events</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>HTML events are "things" that happen to HTML elements.
+
+When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+
+<h3>HTML Events</h3>
+An HTML event can be something the browser does, or something a user does.
+
+Here are some examples of HTML events:
+<ul>
+    <li>An HTML web page has finished loading</li>
+    <li>An HTML input field was changed</li>
+    <li>An HTML button was clicked</li>
+</ul></p>
+
+<p>Often, when events happen, you may want to do something.
+
+JavaScript lets you execute code when events are detected.
+
+HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.
+
+With single quotes:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <element event='some JavaScript'>
+        </textarea><br>
+<p>With double quotes:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <element event="some JavaScript">
+        </textarea><br>
+
+
+<p>In the following example, an onclick attribute (with code), is added to a <button> element:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+        </textarea><br>
+
+<p>In the example above, the JavaScript code changes the content of the element with id="demo".
+
+In the next example, the code changes the content of its own element (using this.innerHTML):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <button onclick="this.innerHTML = Date()">The time is?</button>
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        </textarea><br>
+
+
+<h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <button onclick="displayDate()">The time is?</button>
+
+        </textarea><br>
+
+<p><h3>Common HTML Events</h3>
+Here is a list of some common HTML events:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+Event    Description
+onchange    An HTML element has been changed
+onclick The user clicks an HTML element
+onmouseover The user moves the mouse over an HTML element
+onmouseout  The user moves the mouse away from an HTML element
+onkeydown   The user pushes a keyboard key
+onload  The browser has finished loading the page
+        </textarea><br>
+
+        
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

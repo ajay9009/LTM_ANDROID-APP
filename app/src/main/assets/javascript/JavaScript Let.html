@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Let</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+       <p><h2>ECMAScript 2015</h2>
+ES2015 introduced two important new JavaScript keywords: let and const.
+
+These two keywords provide Block Scope variables (and constants) in JavaScript.
+
+Before ES2015, JavaScript had only two types of scope: Global Scope and Function Scope. 
+
+<h3>Global Scope</h3>
+Variables declared Globally (outside any function) have Global Scope.
+
+<h3>Example</h3></p> 
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var carName = "Volvo";
+
+// code here can use carName
+
+function myFunction() {
+  // code here can also use carName
+}       
+        </textarea><br>
+
+
+<p>Global variables can be accessed from anywhere in a JavaScript program.
+
+<h3>Function Scope</h3>
+Variables declared Locally (inside a function) have Function Scope.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ // code here can NOT use carName
+
+function myFunction() {
+  var carName = "Volvo";
+  // code here CAN use carName
+}
+
+// code here can NOT use carName          
+        </textarea><br>
+
+
+<p>Local variables can only be accessed from inside the function where they are declared.
+
+<h3>JavaScript Block Scope</h3>
+Variables declared with the var keyword cannot have Block Scope.
+
+Variables declared inside a block {} can be accessed from outside the block.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ {
+  var x = 2;
+}
+// x CAN be used here          
+        </textarea><br>
+
+
+<p>Before ES2015 JavaScript did not have Block Scope.
+
+Variables declared with the let keyword can have Block Scope.
+
+Variables declared inside a block {} cannot be accessed from outside the block:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ {
+  let x = 2;
+}
+// x can NOT be used here          
+        </textarea><br>
+
+
+<p><h3>Redeclaring Variables</h3>
+Redeclaring a variable using the var keyword can impose problems.
+
+Redeclaring a variable inside a block will also redeclare the variable outside the block:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var x = 10;
+// Here x is 10
+{
+  var x = 2;
+  // Here x is 2
+}
+// Here x is 2          
+        </textarea><br>
+
+<p>Redeclaring a variable using the let keyword can solve this problem.
+
+Redeclaring a variable inside a block will not redeclare the variable outside the block:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 10;
+// Here x is 10
+{
+  let x = 2;
+  // Here x is 2
+}
+// Here x is 10
+           
+        </textarea><br>
+<p><h3>Browser Support</h3>
+The let keyword is not fully supported in Internet Explorer 11 or earlier.
+
+The following table defines the first browser versions with full support for the let keyword:</p>
+
+<p><h3>Loop Scope</h3>
+Using var in a loop:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var i = 5;
+for (var i = 0; i < 10; i++) {
+  // some statements
+}
+// Here i is 10          
+        </textarea><br>
+
+
+<p>Using let in a loop:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+let i = 5;
+for (let i = 0; i < 10; i++) {
+  // some statements
+}
+// Here i is 5           
+        </textarea><br>
+
+
+<p>In the first example, using var, the variable declared in the loop redeclares the variable outside the loop.
+
+In the second example, using let, the variable declared in the loop does not redeclare the variable outside the loop.
+
+When let is used to declare the i variable in a loop, the i variable will only be visible within the loop.
+
+<h3>Function Scope</h3>
+Variables declared with var and let are quite similar when declared inside a function.
+
+They will both have Function Scope:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ <p>function myFunction() {
+  var carName = "Volvo";   // Function Scope
+}</p>          
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+function myFunction() {
+  let carName = "Volvo";   // Function Scope
+}           
+        </textarea><br>
+<p><h3>Global Scope</h3>
+Variables declared with var and let are quite similar when declared outside a block.
+
+They will both have Global Scope:</p>
+
+         <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 2;       // Global scope           
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+let x = 2;       // Global scope           
+        </textarea><br>
+<p><h3>Global Variables in HTML</h3>
+With JavaScript, the global scope is the JavaScript environment.
+
+In HTML, the global scope is the window object.
+
+Global variables defined with the var keyword belong to the window object:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var carName = "Volvo";
+// code here can use window.carName       
+        </textarea><br>
+<p>Global variables defined with the let keyword do not belong to the window object:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ let carName = "Volvo";
+// code here cannot use window.carName          
+        </textarea><br>
+
+
+<p><h3>Redeclaring</h3>
+Redeclaring a JavaScript variable with var is allowed anywhere in a program:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var x = 2;
+
+// Now x is 2
+ 
+var x = 3;
+
+// Now x is 3          
+        </textarea><br>
+
+
+<p>Redeclaring a var variable with let, in the same scope, or in the same block, is not allowed:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 2;       // Allowed
+let x = 3;       // Not allowed
+
+{
+  var x = 4;   // Allowed
+  let x = 5   // Not allowed
+}            
+           </textarea>
+<p>Redeclaring a let variable with let, in the same scope, or in the same block, is not allowed:
+
+<h3>Example</h3></p>
+            <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+let x = 2;       // Allowed
+let x = 3;       // Not allowed
+
+{
+  let x = 4;   // Allowed
+  let x = 5;   // Not allowed
+}           
+        </textarea><br>
+<p>Redeclaring a let variable with var, in the same scope, or in the same block, is not allowed:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+let x = 2;       // Allowed
+var x = 3;       // Not allowed
+
+{
+  let x = 4;   // Allowed
+  var x = 5;   // Not allowed
+}           
+        </textarea><br>
+
+<p>Redeclaring a variable with let, in another scope, or in another block, is allowed:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+let x = 2;       // Allowed
+
+{
+  let x = 3;   // Allowed
+}
+
+{
+  let x = 4;   // Allowed
+}        
+        </textarea><br>
+<p><h3>Hoisting</h3>
+Variables defined with var are hoisted to the top and can be initialized at any time (if you don't know what Hoisting is, read our Hoisting Chapter).
+
+Meaning: You can use the variable before it is declared:
+
+<h3>Example</h3>
+This is OK:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ carName = "Volvo";
+alert(carName);
+var carName;          
+        </textarea><br>
+<p>Variables defined with let are hoisted to the top of the block, but not initialized.
+
+Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared.
+
+Using a let variable before it is declared will result in a ReferenceError.
+
+The variable is in a "temporal dead zone" from the start of the block until it is declared:
+
+<h3>Example</h3>
+This will result in a ReferenceError:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ carName = "Volvo";
+alert(carname);
+let carName;          
+        </textarea><br>
+
+        
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    /image of the header-->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>PHP Loops</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+
+        p>Often when you write code, you want the same block of code to run over and over again a certain number of times. So, instead of adding several almost equal code-lines in a script, we can use loops.</p>
+<p>Loops are used to execute the same block of code again and again, as long as a certain condition is true.</p>
+<p>In PHP, we have the following loop types:</p>
+<ul>
+<li>while - loops through a block of code as long as the specified condition is true</li>
+<li>do...while - loops through a block of code once, and then repeats the loop as long as the specified condition is true</li>
+<li>for - loops through a block of code a specified number of times</li>
+<li>foreach - loops through a block of code for each element in an array</li>
+</ul>
+<p>The following chapters will explain and give examples of each loop type.</p>
+<h2>The PHP while Loop</h2>
+<p>The While loop executes a block of code as long as the specified condition is true.</p>
+<h3>Syntax</h3>
+<div class="w3-code w3-border notranslate">
+<div>while (<em>condition is true</em>) {<br /><em>&nbsp;&nbsp;code to be executed</em>;<br />}</div>
+</div>
+<h3>Examples</h3>
+<p>The example below displays the numbers from 1 to 5:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+        $x = 1;
+
+        while($x <= 5) {
+         echo "The number is: $x <br>";
+         $x++;
+        }
+        ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h3>Example Explained</h3>
+<ul>
+<li>$x = 1; - Initialize the loop counter ($x), and set the start value to 1</li>
+<li>$x &lt;= 5 - Continue the loop as long as $x is less than or equal to 5</li>
+<li>$x++; - Increase the loop counter value by 1 for each iteration</li>
+</ul>
+<p>This example counts to 100 by tens:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       <?php
+        $x = 0;
+
+        while($x <= 100) {
+        echo "The number is: $x <br>";
+        $x+=10;
+        }
+        ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>The PHP do...while Loop</h2>
+<p>The do...while loop will always execute the block of code once, it will then check the condition, and repeat the loop while the specified condition is true.</p>
+<h3>Syntax</h3>
+<div class="w3-code w3-border notranslate">
+<div>do {<br /><em>&nbsp; code to be executed;<br /></em>} while (<em>condition is true</em>);</div>
+</div>
+<h3>Examples</h3>
+<p>The example below first sets a variable $x to 1 ($x = 1). Then, the do-while loop will write some output, and then increment the variable $x with 1. Then the condition is checked (is $x less than, or equal to 5?), and the loop will continue to run as long as $x is less than, or equal to 5:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       <?Php
+    $x = 1;
+
+    do { 
+      echo "The number is: $x <br>";
+   $x++;
+     } while ($x <= 5);
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>The PHP for Loop</h2>
+<p>The for loop is used when you know in advance how many times the script should run.</p>
+<h3>Syntax</h3>
+<div class="w3-code w3-border notranslate">
+<div>for (<em>init counter; test counter; increment counter</em>) {<br />&nbsp;&nbsp;<em>code to be executed for each iteration;</em><br />}</div>
+</div>
+<p>Parameters:</p>
+<ul>
+<li><em>init counter</em>: Initialize the loop counter value</li>
+<li><em>test counter</em>: Evaluated for each loop iteration. If it evaluates to TRUE, the loop continues. If it evaluates to FALSE, the loop ends.</li>
+<li><em>increment counter</em>: Increases the loop counter value</li>
+</ul>
+<h3>Examples</h3>
+<p>The example below displays the numbers from 0 to 10:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       <?php
+    for ($x = 0; $x <= 10; $x++) {
+    echo "The number is: $x <br>";
+        }
+        ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>The PHP foreach Loop</h2>
+<p>The foreach loop works only on arrays and is used to loop through each key/value pair in an array.</p>
+<h3>Syntax</h3>
+<div class="w3-code w3-border notranslate">
+<div>foreach ($<em>array&nbsp;</em>as<em>&nbsp;</em>$<em>value</em>) {<br />&nbsp;&nbsp;<em>code to be executed;</em><br />}</div>
+</div>
+<p>For every loop iteration, the value of the current array element is assigned to $value and the array pointer is moved by one, until it reaches the last array element.</p>
+<h3>Examples</h3>
+<p>The following example will output the values of the given array ($colors):</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       <?php
+     $colors = array("red", "green", "blue", "yellow");
+
+    foreach ($colors as $value) {
+    echo "$value <br>";
+    }
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>PHP Break</h2>
+<p>You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" of a&nbsp;<code class="w3-codespan">switch</code>&nbsp;statement.</p>
+<p>The&nbsp;<code class="w3-codespan">break</code>&nbsp;statement can also be used to jump out of a loop.</p>
+<p>This example jumps out of the loop when&nbsp;<strong>x</strong>&nbsp;is equal to&nbsp;<strong>4</strong>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       <?php
+    for ($x = 0; $x < 10; $x++) {
+    if ($x == 4) {
+    break;
+    }
+    echo "The number is: $x <br>";
+    }
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>PHP Continue</h2>
+<p>The&nbsp;<code class="w3-codespan">continue</code>&nbsp;statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.</p>
+<p>This example skips the value of&nbsp;<strong>4</strong>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       <?php
+    for ($x = 0; $x < 10; $x++) {
+      if ($x == 4) {
+       continue;
+    }
+    echo "The number is: $x <br>";
+    }
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>Break and Continue in While Loop</h2>
+<p>You can also use&nbsp;<code class="w3-codespan">break</code>&nbsp;and&nbsp;<code class="w3-codespan">continue</code>&nbsp;in&nbsp;<code class="w3-codespan">while</code>&nbsp;loops:</p>
+<div class="w3-example">
+<h3>Break Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       <?php
+    $x = 0;
+
+    while($x < 10) {
+      if ($x == 4) {
+       break;
+     }
+     echo "The number is: $x <br>";
+      $x++;
+    }
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+    </p>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- css style-->
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>

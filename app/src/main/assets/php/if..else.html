@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    /image of the header-->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>PHP if...else...else if Statements</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+<p class="intro">Conditional statements are used to perform different actions based on different conditions.</p>
+<hr />
+<h2>PHP Conditional Statements</h2>
+<p>Very often when you write code, you want to perform different actions for different conditions. You can use conditional statements in your code to do this.</p>
+<p>In PHP we have the following conditional statements:</p>
+<ul>
+<li>if statement - executes some code if one condition is true</li>
+<li>if...else statement - executes some code if a condition is true and another code if that condition is false</li>
+<li>if...elseif...else statement - executes different codes for more than two conditions</li>
+<li><code class="w3-codespan">switch</code>&nbsp;statement - selects one of many blocks of code to be executed</li>
+</ul>
+<hr />
+<h2>PHP - The if Statement</h2>
+<p>The if statement executes some code if one condition is true.</p>
+<h3>Syntax</h3>
+<div class="w3-code w3-border notranslate">
+<div>if (<em>condition</em>) {<em><br />&nbsp; code to be executed if condition is true</em>;<br />}</div>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Output "Have a good day!" if the current time (HOUR) is less than 20:</p>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $t = date("H");
+
+    if ($t < "20") {
+      echo "Have a good day!";
+    }
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>PHP - The if...else Statement</h2>
+<p>The if...else statement executes some code if a condition is true and another code if that condition is false.</p>
+<h3>Syntax</h3>
+<div class="w3-code w3-border notranslate">
+<div>if (<em>condition</em>)&nbsp;{<br />&nbsp;&nbsp;<em>code to be executed if condition is true;</em><br />} else {<br />&nbsp;&nbsp;<em>code to be executed if condition is false;<br /></em>}</div>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Output "Have a good day!" if the current time is less than 20, and "Have a good night!" otherwise:</p>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $t = date("H");
+
+    if ($t < "20") {
+     echo "Have a good day!";
+    } else {
+      echo "Have a good night!";
+    }
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>PHP - The if...elseif...else Statement</h2>
+<p>The if...elseif...else statement executes different codes for more than two conditions.</p>
+<h3>Syntax</h3>
+<div class="w3-code w3-border notranslate">
+<div>if (<em>condition</em>) {<br />&nbsp;&nbsp;<em>code to be executed if this condition is true;<br /></em>} elseif (<em>condition</em>) {<br />&nbsp;<em>&nbsp;code to be executed if first condition is false and this condition is true;<br /></em>} else {<br />&nbsp;&nbsp;<em>code to be executed if all conditions are false;<br /></em>}</div>
+<div>
+
+
+
+    </p>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- css style-->
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>

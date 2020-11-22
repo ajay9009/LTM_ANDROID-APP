@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>HTML Text Formatting</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>HTML contains several elements for defining text with a special meaning.</p>
+
+        <br><br>
+        <h2>HTML Formatting Elements</h2>
+        <p>Formatting elements were designed to display special types of text:</p>
+        <ul>
+            <li><b> - Bold text</li>
+            <li><strong> - Important text</li>
+            <li><i> - Italic text</li>
+            <li><em> - Emphasized text</li>
+            <li><mark> - Marked text</li>
+            <li><small> - Smaller text</li>
+            <li><del> - Deleted text</li>
+            <li><ins> - Inserted text</li>
+            <li><sub> - Subscript text</li>
+            <li><sup> - Superscript text</li>
+        </ul>
+        <h2>HTML <b> and <strong> Elements</h2>
+            <p>The HTML <b> element defines bold text, without any extra importance.</p>
+       
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <b>This text is bold</b>
+        </textarea><br>
+        <p>The HTML <strong> element defines text with strong importance. The content inside is typically displayed in bold.</p>
+        <h3>Example</h3>
+
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <strong>This text is important!</strong>
+        </textarea><br>
+        <h2>HTML <i> and <em> Elements</h2>
+            <p>The HTML <i> element defines a part of text in an alternate voice or mood. The content inside is typically displayed in italic.
+
+Tip: The <i> tag is often used to indicate a technical term, a phrase from another language, a thought, a ship name, etc.</p>
+    <h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <i>This text is italic</i>
+        </textarea><br>
+        <p>The HTML <em> element defines emphasized text. The content inside is typically displayed in italic.
+
+Tip: A screen reader will pronounce the words in <em> with an emphasis, using verbal stress.</p>
+    <h2>Example</h2>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <em>This text is emphasized</em>
+        </textarea><br>
+        <h2>HTML <small> Element</h2>
+            <p>The HTML <small> element defines smaller text:</p>
+            <h2>Example</h2>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <small>This is some smaller text.</small>
+        </textarea><br>
+
+        <h2>HTML <mark> Element</h2>
+            <p>The HTML <mark> element defines text that should be marked or highlighted:</p>
+                <h2>Example</h2>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <p>Do not forget to buy <mark>milk</mark> today.</p>
+        </textarea><br>
+        <h2>HTML <del> Element</h2>
+            <p>The HTML <del> element defines text that has been deleted from a document. Browsers will usually strike a line through deleted text:</p>
+            <h2>Example</h2>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <p>My favorite color is <del>blue</del> red.</p>
+        </textarea><br>
+        <h2>HTML <ins> Element</h2>
+        <p>The HTML <ins> element defines a text that has been inserted into a document. Browsers will usually underline inserted text:</p>
+            <h2>Example</h2>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+        </textarea><br>
+        <h2>HTML <sub> Element</h2>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           The HTML <sub> element defines subscript text. Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font. Subscript text can be used for chemical formulas, like H2O:
+            </textarea><br>
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

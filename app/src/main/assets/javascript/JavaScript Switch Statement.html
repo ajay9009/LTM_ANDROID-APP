@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Switch Statement</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>The switch statement is used to perform different actions based on different conditions.
+
+<h3>The JavaScript Switch Statement</h3>
+Use the switch statement to select one of many code blocks to be executed.
+
+Syntax</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+        </textarea><br>
+<p>This is how it works:
+<ul>
+    <li>The switch expression is evaluated once.</li>
+    <li>The value of the expression is compared with the values of each case</li>
+    <li>If there is a match, the associated block of code is executed.</li>
+    <li>If there is no match, the default code block is executed.</li>
+</ul></p>
+<p><h3>Example</h3>
+The getDay() method returns the weekday as a number between 0 and 6.
+
+(Sunday=0, Monday=1, Tuesday=2 ..)
+
+This example uses the weekday number to calculate the weekday name:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}           
+        </textarea><br>
+<p><h3>The break Keyword</h3>
+When JavaScript reaches a break keyword, it breaks out of the switch block.
+
+This will stop the execution of inside the block.
+
+It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.</p>
+<p>The default Keyword
+The default keyword specifies the code to run if there is no case match:
+
+Example
+The getDay() method returns the weekday as a number between 0 and 6.
+
+If today is neither Saturday (6) nor Sunday (0), write a default message:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+switch (new Date().getDay()) {
+  case 6:
+    text = "Today is Saturday";
+    break;
+  case 0:
+    text = "Today is Sunday";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}           
+        </textarea><br>
+<p>The default case does not have to be the last case in a switch block:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ switch (new Date().getDay()) {
+  default:
+    text = "Looking forward to the Weekend";
+    break;
+  case 6:
+    text = "Today is Saturday";
+    break;
+  case 0:
+    text = "Today is Sunday";
+}          
+        </textarea><br>
+<p><h3>Common Code Blocks</h3>
+Sometimes you will want different switch cases to use the same code.
+
+In this example case 4 and 5 share the same code block, and 0 and 6 share another code block:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    text = "Soon it is Weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}          
+        </textarea><br>
+<p><h3>Switching Details</h3>
+If multiple cases matches a case value, the first case is selected.
+
+If no matching cases are found, the program continues to the default label.
+
+If no default label is found, the program continues to the statement(s) after the switch.
+
+<h3>Strict Comparison</h3>
+Switch cases use strict comparison (===).
+
+The values must be of the same type to match.
+
+A strict comparison can only be true if the operands are of the same type.
+
+In this example there will be no match for x:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = "0";
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}           
+        </textarea><br>
+
+ 
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

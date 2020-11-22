@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Syntax</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>JavaScript syntax is the set of rules, how JavaScript programs are constructed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x, y, z;       // Declare Variables
+x = 5; y = 6;      // Assign Values
+z = x + y;         // Compute Values
+        </textarea><br>
+        <p>JavaScript Values
+The JavaScript syntax defines two types of values:<br>
+<b>Fixed values</b><br>
+<b>Variable values</b></p>
+
+
+<p>Fixed values are called Literals.
+
+Variable values are called Variables.
+
+JavaScript Literals
+The two most important syntax rules for fixed values are:
+
+1. Numbers are written with or without decimals:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           10.50
+
+1001
+        </textarea><br>
+
+<p>2. Strings are text, written within double or single quotes:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           "John Doe"
+
+'John Doe'
+        </textarea><br>
+
+
+<p><h2>JavaScript Variables</h2>
+In a programming language, variables are used to store data values.
+
+JavaScript uses the var keyword to declare variables.
+
+An equal sign is used to assign values to variables.
+
+In this example, x is defined as a variable. Then, x is assigned (given) the value 6:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x;
+
+x = 6;
+        </textarea><br>
+
+
+
+<p><h2>JavaScript Operators</h2>
+JavaScript uses arithmetic operators ( + - * / ) to compute values:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           (5 + 6) * 10
+        </textarea><br>
+
+
+<p>JavaScript uses an assignment operator ( = ) to assign values to variables:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x, y;
+x = 5;
+y = 6;
+        </textarea><br>
+
+
+
+<p>JavaScript Expressions
+An expression is a combination of values, variables, and operators, which computes to a value.
+
+The computation is called an evaluation.
+
+For example, 5 * 10 evaluates to 50</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           5 * 10
+        </textarea><br>
+
+
+
+<p>Expressions can also contain variable values:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           x * 10
+        </textarea><br>
+
+
+
+<p>The values can be of various types, such as numbers and strings.
+
+For example, "John" + " " + "Doe", evaluates to "John Doe":</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           "John" + " " + "Doe"
+        
+        </textarea>
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

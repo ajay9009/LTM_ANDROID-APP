@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Sorting Arrays</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p><h3>Sorting an Array</h3>
+The sort() method sorts an array alphabetically:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.sort();        // Sorts the elements of fruits        
+        </textarea><br>
+<p><h3>Reversing an Array</h3>
+The reverse() method reverses the elements in an array.
+
+You can use it to sort an array in descending order:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.sort();        // First sort the elements of fruits
+            fruits.reverse();     // Then reverse the order of the elements
+        </textarea><br>
+<p><h3>Numeric Sort</h3>
+By default, the sort() function sorts values as strings.
+
+This works well for strings ("Apple" comes before "Banana").
+
+However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+
+You can fix this by providing a compare function:
+
+<h3>Example</h3>
+</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return a - b});
+
+        </textarea><br>
+
+<p>Use the same trick to sort an array descending:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return b - a});
+        </textarea><br>
+<p><h3>The Compare Function</h3>
+The purpose of the compare function is to define an alternative sort order.
+
+The compare function should return a negative, zero, or positive value, depending on the arguments:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           function(a, b){return a - b}
+        </textarea><br>
+<p>When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+
+If the result is negative a is sorted before b.
+
+If the result is positive b is sorted before a.
+
+If the result is 0 no changes are done with the sort order of the two values.
+
+<h3>Example:</h3>
+
+The compare function compares all the values in the array, two values at a time (a, b).
+
+When comparing 40 and 100, the sort() method calls the compare function(40, 100).
+
+The function calculates 40 - 100 (a - b), and since the result is negative (-60),  the sort function will sort 40 as a value lower than 100.
+
+You can use this code snippet to experiment with numerically and alphabetically sorting:</p>
+     <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+<button onclick="myFunction1()">Sort Alphabetically</button>
+<button onclick="myFunction2()">Sort Numerically</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+
+function myFunction1() {
+  points.sort();
+  document.getElementById("demo").innerHTML = points;
+}
+
+function myFunction2() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+        </textarea><br>
+<p><h2>Sorting an Array in Random Order
+Example</h2></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return 0.5 - Math.random()});
+
+
+        </textarea><br>
+        <p><h3>The Fisher Yates Method</h3>
+The above example, array.sort(), is not accurate, it will favor some numbers over the others.
+
+The most popular correct method, is called the Fisher Yates shuffle, and was introduced in data science as early as 1938!
+
+In JavaScript the method can be translated to this:
+
+<h3>Example</h3></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var points = [40, 100, 1, 5, 25, 10];
+
+for (i = points.length -1; i > 0; i--) {
+  j = Math.floor(Math.random() * i)
+  k = points[i]
+  points[i] = points[j]
+  points[j] = k
+}
+        </textarea><br>
+<p><h3>Find the Highest (or Lowest) Array Value</h3>
+There are no built-in functions for finding the max or min value in an array.
+
+However, after you have sorted an array, you can use the index to obtain the highest and lowest values.
+
+Sorting ascending:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+// now points[0] contains the lowest value
+// and points[points.length-1] contains the highest value
+</textarea><br>
+<p><h3>Using Math.max() on an Array</h3>
+You can use Math.max.apply to find the highest number in an array:</p>
+ 
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+        </textarea><br>
+
+<p>Math.max.apply(null, [1, 2, 3]) is equivalent to Math.max(1, 2, 3).
+
+<h3>Using Math.min() on an Array</h3>
+You can use Math.min.apply to find the lowest number in an array:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+  function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+        </textarea><br>
+<p><h3>My Min / Max JavaScript Methods</h3>
+The fastest solution is to use a "home made" method.
+
+This function loops through an array comparing each value with the highest value found:
+
+<h3>Example (Find Max)</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+function myArrayMax(arr) {
+  var len = arr.length;
+  var max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+        </textarea><br>
+<p>This function loops through an array comparing each value with the lowest value found:
+
+<h3>Example (Find Min)</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+  function myArrayMin(arr) {
+  var len = arr.length;
+  var min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
+    }
+  }
+  return min;
+}
+        </textarea><br>
+<p><h3>Sorting Object Arrays</h3>
+JavaScript arrays often contain objects:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+        </textarea><br>
+<p>Even if objects have properties of different data types, the sort() method can be used to sort the array.
+
+The solution is to write a compare function to compare the property values:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           cars.sort(function(a, b){return a.year - b.year});
+        </textarea><br>
+<p>Comparing string properties is a little more complex:
+
+Example</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    cars.sort(function(a, b){
+  var x = a.type.toLowerCase();
+  var y = b.type.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+});
+        </textarea><br>
+
+       
+
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

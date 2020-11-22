@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>HTML Tables</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>HTML tables allow web developers to arrange data into rows and columns.</p>
+        <h2>Define an HTML Table</h2>
+        <p>The <table> tag defines an HTML table.
+
+Each table row is defined with a <tr> tag. Each table header is defined with a <th> tag. Each table data/cell is defined with a <td> tag.
+
+By default, the text in <th> elements are bold and centered.
+
+By default, the text in <td> elements are regular and left-aligned.</p>
+    <h2>Example</h2>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+        </textarea><br>
+        <b>Note: The <td> elements are the data containers of the table.
+They can contain all sorts of HTML elements; text, images, lists, other tables, etc.</b><br>
+<h2>HTML Table - Add a Border</h2>
+<p>To add a border to a table, use the CSS border property:</p>
+<h3>Example</h3>
+
+    
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           table, th, td {
+  border: 1px solid black;
+}
+        </textarea><br>
+            <h2>HTML Table - Collapsed Borders</h2>
+            <p>To let the borders collapse into one border, add the CSS border-collapse property:</p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+        </textarea><br>
+        <h2>HTML Table - Add Cell Padding</h2>
+        <p>Cell padding specifies the space between the cell content and its borders.
+
+If you do not specify a padding, the table cells will be displayed without padding.
+
+To set the padding, use the CSS padding property:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           th, td {
+  padding: 15px;
+}
+        </textarea><br>
+       <p> <h2>HTML Table - Left-align Headings</h2>
+By default, table headings are bold and centered.
+
+To left-align the table headings, use the CSS text-align property:</p>
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           th {
+  text-align: left;
+}
+        </textarea><br>
+        <p><h2>HTML Table - Add Border Spacing</h2>
+Border spacing specifies the space between the cells.
+
+To set the border spacing for a table, use the CSS border-spacing property:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           table {
+  border-spacing: 5px;
+}
+        </textarea><br>
+        <p><h2>HTML Table - Cell that Span Many Columns</h2>
+To make a cell span more than one column, use the colspan attribute:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th colspan="2">Telephone</th>
+  </tr>
+  <tr>
+    <td>Bill Gates</td>
+    <td>55577854</td>
+    <td>55577855</td>
+  </tr>
+</table>
+        </textarea><br>
+
+        <p><h2>HTML Table - Cell that Span Many Rows</h2>
+To make a cell span more than one row, use the rowspan attribute:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            <table style="width:100%">
+  <tr>
+    <th>Name:</th>
+    <td>Bill Gates</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Telephone:</th>
+    <td>55577854</td>
+  </tr>
+  <tr>
+    <td>55577855</td>
+  </tr>
+</table>
+           
+        </textarea><br>
+        <p><h2>HTML Table - Add a Caption</h2>
+To add a caption to a table, use the <caption> tag:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            <table style="width:100%">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr>
+</table>
+<p><h2>A Special Style for One Table</h2>
+To define a special style for one particular table, add an id attribute to the table:</p>
+           
+           <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            <table id="t01">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+           
+        </textarea><br>
+        <h2>Chapter Summary</h2>
+        <ul>
+            <li>Use the HTML <table> element to define a table</table>
+<li>Use the HTML <tr> element to define a table row</li>
+<li>Use the HTML <td> element to define a table data</li>
+<li>Use the HTML <th> element to define a table heading</li>
+<li>Use the HTML <caption> element to define a table caption</li>
+<li>Use the CSS border property to define a border</li>
+<li>Use the CSS border-collapse property to collapse cell borders</li>
+<li>Use the CSS padding property to add padding to cells</li>
+<li>Use the CSS text-align property to align cell text</li>
+<li>Use the CSS border-spacing property to set the spacing between cells</li>
+<li>Use the colspan attribute to make a cell span many columns</li>
+<li>Use the rowspan attribute to make a cell span many rows</li>
+<li>Use the id attribute to uniquely define one table</li>
+        </ul>
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

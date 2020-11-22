@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Array Iteration Methods</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>Array iteration methods operate on every array item.
+
+<h3>Array.forEach()</h3>
+The forEach() method calls a function (a callback function) once for each array element.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+  txt = txt + value + "<br>";
+}
+
+        </textarea><br>
+<p>Note that the function takes 3 arguments:
+<ul>
+    <li>The item value</li>
+    <li>The item index</li>
+    <li>The array itself</li>
+    
+</ul>
+The example above uses only the value parameter. The example can be rewritten to:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value) {
+  txt = txt + value + "<br>";
+}
+        </textarea><br>
+<p><h3>Array.map()</h3>
+The map() method creates a new array by performing a function on each array element.
+
+The map() method does not execute the function for array elements without values.
+
+The map() method does not change the original array.
+
+This example multiplies each array value by 2:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+
+function myFunction(value, index, array) {
+  return value * 2;
+}
+        </textarea><br>
+<p>Note that the function takes 3 arguments:
+<ul>
+    <li>The item value</li>
+    <li>The item index</li>
+    <li>The array itself</li>
+    
+</ul>
+When a callback function uses only the value parameter, the index and array parameters can be omitted:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+
+function myFunction(value) {
+  return value * 2;
+}
+        </textarea><br>
+<p><h3>Array.filter()</h3>
+The filter() method creates a new array with array elements that passes a test.
+
+This example creates a new array from elements with a value larger than 18:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+        </textarea><br>
+<p>Note that the function takes 3 arguments:
+<ul>
+    <li>The item value</li>
+    <li>The item index</li>
+    <li>The array itself</li>
+    
+</ul>
+In the example above, the callback function does not use the index and array parameters, so they can be omitted:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value) {
+  return value > 18;
+}
+        </textarea><br>
+<p><h3>Array.reduce()</h3>
+The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+
+The reduce() method works from left-to-right in the array. See also reduceRight().
+
+The reduce() method does not reduce the original array.
+
+This example finds the sum of all numbers in an array:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+}
+        </textarea><br>
+<p><h3>Array.reduceRight()</h3>
+The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+
+The reduceRight() works from right-to-left in the array. See also reduce().
+
+The reduceRight() method does not reduce the original array.
+
+This example finds the sum of all numbers in an array:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduceRight(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+}
+        </textarea><br>
+<p>Note that the function takes 4 arguments:
+    <ul>
+    <li>The total (the initial value / previously returned value)</li>
+    <li>The item value</li>
+    <li>The item index</li>
+    <li>The array itself</li>
+    
+</ul>
+<p>The example above does not use the index and array parameters. It can be rewritten to:
+
+<h3>Example</h3></p>
+</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduceRight(myFunction);
+
+function myFunction(total, value) {
+  return total + value;
+}
+</textarea>
+<p><h3>Array.indexOf()</h3>
+The indexOf() method searches an array for an element value and returns its position.
+
+Note: The first item has position 0, the second item has position 1, and so on.
+
+<h3>Example</h3>
+Search an array for the item "Apple":</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");
+</textarea><br>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

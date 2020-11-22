@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    /image of the header-->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>PHP echo and print Statements</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+
+        <p class="intro">With PHP, there are two basic ways to get output:&nbsp;<code class="w3-codespan">echo</code>&nbsp;and&nbsp;<code class="w3-codespan">print</code>.</p>
+<p class="intro">In this tutorial we use&nbsp;<code class="w3-codespan">echo</code>&nbsp;or&nbsp;<code class="w3-codespan">print</code>&nbsp;in almost every example. So, this chapter contains a little more info about those two output statements.</p>
+<hr />
+<h2>PHP echo and print Statements</h2>
+<p><code class="w3-codespan">echo</code>&nbsp;and&nbsp;<code class="w3-codespan">print</code>&nbsp;are more or less the same. They are both used to output data to the screen.</p>
+<p>The differences are small:&nbsp;<code class="w3-codespan">echo</code>&nbsp;has no return value while print has a return value of 1 so it can be used in expressions.&nbsp;<code class="w3-codespan">echo</code>&nbsp;can take multiple parameters (although such usage is rare) while print can take one argument.&nbsp;<code class="w3-codespan">echo</code>&nbsp;is marginally faster than&nbsp;<code class="w3-codespan">print</code>.</p>
+<hr />
+<h2>The PHP echo Statement</h2>
+<p>The&nbsp;<code class="w3-codespan">echo</code>&nbsp;statement can be used with or without parentheses:&nbsp;<code class="w3-codespan">echo</code>&nbsp;or&nbsp;<code class="w3-codespan">echo()</code>.</p>
+<p><strong>Display Text</strong></p>
+<p>The following example shows how to output text with the&nbsp;<code class="w3-codespan">echo</code>&nbsp;command (notice that the text can contain HTML markup):</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    echo "<h2>PHP is Fun!</h2>";
+    echo "Hello world!<br>";
+    echo "I'm about to learn PHP!<br>";
+    echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<p><strong>Display Variables</strong></p>
+<p>The following example shows how to output text and variables with the&nbsp;<code class="w3-codespan">echo</code>&nbsp;statement:</p>
+<div class="w3-example">
+<h3>Example</h3>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $txt1 = "Learn PHP";
+    $txt2 = "W3Schools.com";
+    $x = 5;
+    $y = 4;
+
+    echo "<h2>" . $txt1 . "</h2>";
+    echo "Study PHP at " . $txt2 . "<br>";
+    echo $x + $y;
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>The PHP print Statement</h2>
+<p>The&nbsp;<code class="w3-codespan">print</code>&nbsp;statement can be used with or without parentheses:&nbsp;<code class="w3-codespan">print</code>&nbsp;or&nbsp;<code class="w3-codespan">print()</code>.</p>
+<p><strong>Display Text</strong></p>
+<p>The following example shows how to output text with the&nbsp;<code class="w3-codespan">print</code>&nbsp;command (notice that the text can contain HTML markup):</p>
+<div class="w3-example">
+<h3>Example</h3>
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    print "<h2>PHP is Fun!</h2>";
+    print "Hello world!<br>";
+    print "I'm about to learn PHP!";
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+
+
+
+    </p>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- css style-->
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>

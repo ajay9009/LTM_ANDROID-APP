@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>CSS Pseudo-elements</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p><h2>What are Pseudo-Elements?</h2>
+A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+<ul>
+    <li>Style the first letter, or line, of an element</li>
+    <li>Insert content before, or after, the content of an element
+</li>
+</ul></p>
+<p><h2>Syntax</h2>
+The syntax of pseudo-elements:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           selector::pseudo-element {
+  property: value;
+}
+        </textarea><br>
+        <p><h2>The ::first-line Pseudo-element</h2>
+The ::first-line pseudo-element is used to add a special style to the first line of a text.
+
+The following example formats the first line of the text in all p elements:
+
+<h2>Example </h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p::first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+        </textarea><br>
+        <p>Note: The ::first-line pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-line pseudo-element:
+<ul>
+    <li>font properties</li>
+    <li>color properties</li>
+    <li>background properties</li>
+    <li>word-spacing</li>
+    <li>letter-spacing</li>
+    <li>text-decoration</li>
+    <li>vertical-align</li>
+    <li>text-transform</li>
+    <li>line-height</li>
+    <li>clear</li>
+</ul></p>
+<b>Notice the double colon notation - ::first-line versus :first-line
+
+The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was an attempt from W3C to distinguish between pseudo-classes and pseudo-elements.
+
+The single-colon syntax was used for both pseudo-classes and pseudo-elements in CSS2 and CSS1.
+
+For backward compatibility, the single-colon syntax is acceptable for CSS2 and CSS1 pseudo-elements.</b>
+<p><b>The ::first-letter Pseudo-element</b>
+The ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+
+The following example formats the first letter of the text in all <p> elements: 
+
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+        </textarea><br>
+        <p><b>Note:</b> The ::first-letter pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-letter pseudo- element:<ul>
+    <li>font properties</li>
+    <li>color properties </li>
+    <li>background properties</li>
+    <li>margin properties</li>
+    <li>padding properties</li>
+    <li>border properties</li>
+    <li>text-decoration</li>
+    <li>vertical-align (only if "float" is "none")</li>
+    <li>text-transform</li>
+    <li>line-height</li>
+    <li>float</li>
+    <li>clear</li>
+</ul> </p>
+<p><h2>Pseudo-elements and CSS Classes</h2>
+Pseudo-elements can be combined with CSS classes: 
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p.intro::first-letter {
+  color: #ff0000;
+  font-size: 200%;
+}
+        </textarea><br>
+        <p>The example above will display the first letter of paragraphs with class="intro", in red and in a larger size.
+
+<h2>Multiple Pseudo-elements</h2>
+Several pseudo-elements can also be combined.
+
+In the following example, the first letter of a paragraph will be red, in an xx-large font size. The rest of the first line will be blue, and in small-caps. The rest of the paragraph will be the default font size and color:
+
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+        </textarea><br>
+        <p><h2>CSS - The ::before Pseudo-element</h2>
+The ::before pseudo-element can be used to insert some content before the content of an element.
+
+The following example inserts an image before the content of each <h1> element:
+
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           h1::before {
+  content: url(smiley.gif);
+}
+        </textarea><br>
+        <p><h2>CSS - The ::after Pseudo-element</h2>
+The ::after pseudo-element can be used to insert some content after the content of an element.
+
+The following example inserts an image after the content of each <h1> element:
+
+<h2>Example</h2></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           h1::after {
+  content: url(smiley.gif);
+}
+        </textarea><br>
+        <p><h2>CSS - The ::selection Pseudo-element</h2>
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+
+The following CSS properties can be applied to ::selection: color, background, cursor, and outline.
+
+The following example makes the selected text red on a yellow background:</p>
+<h2>Example</h2>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           ::selection {
+  color: red;
+  background: yellow;
+}
+        </textarea><br>
+
+        
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

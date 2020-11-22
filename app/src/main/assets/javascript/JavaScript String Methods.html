@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript String Methods</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>String methods help you to work with strings.
+
+<h3>String Methods and Properties</h3>
+Primitive values, like "John Doe", cannot have properties or methods (because they are not objects).
+
+But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.
+
+<h3>String Length</h3>
+The length property returns the length of a string:</p>
+<h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var sln = txt.length;
+        </textarea><br>
+
+
+<p><h3>Finding a String in a String</h3>
+The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var str = "Please locate where 'locate' occurs!";
+            var pos = str.indexOf("locate");
+        </textarea><br>
+
+<p>The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var str = "Please locate where 'locate' occurs!";
+            var pos = str.lastIndexOf("locate");
+        </textarea><br>
+
+<p>Both indexOf(), and lastIndexOf() return -1 if the text is not found.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var str = "Please locate where 'locate' occurs!";
+            var pos = str.lastIndexOf("John");
+        </textarea><br>
+
+        <p>Both methods accept a second parameter as the starting position for the search:
+
+<h3>Example</h3></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            var str = "Please locate where 'locate' occurs!";
+            var pos = str.indexOf("locate", 15);           
+        </textarea><br>
+<p>The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var str = "Please locate where 'locate' occurs!";
+            var pos = str.lastIndexOf("locate", 15);
+        </textarea><br>
+
+        <p><h3>Searching for a String in a String</h3>
+The search() method searches a string for a specified value and returns the position of the match:
+
+<h3>Example</h3></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var str = "Please locate where 'locate' occurs!";
+            var pos = str.search("locate");
+        </textarea><br>
+
+
+<p><h3>Did You Notice?</h3>
+The two methods, indexOf() and search(), are equal?
+
+They accept the same arguments (parameters), and return the same value?
+
+The two methods are NOT equal. These are the differences:
+<ul>
+    <li>The search() method cannot take a second start position argument.</li>
+    <li>The indexOf() method cannot take powerful search values (regular expressions).</li>
+</ul></p>
+<p>You will learn more about regular expressions in a later chapter.
+
+<h2>Extracting String Parts</h2>
+There are 3 methods for extracting a part of a string:
+<ul>
+    <li>slice(start, end)</li>
+    <li>substring(start, end)</li>
+    <li>substr(start, length)</li>
+</ul></p>
+<p><h3>The slice() Method</h3>
+slice() extracts a part of a string and returns the extracted part in a new string.
+
+The method takes 2 parameters: the start position, and the end position (end not included).
+
+This example slices out a portion of a string from position 7 to position 12 (13-1):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var str = "Apple, Banana, Kiwi";
+            var res = str.slice(7, 13);
+        </textarea><br>
+<p>If a parameter is negative, the position is counted from the end of the string.
+
+This example slices out a portion of a string from position -12 to position -6:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var str = "Apple, Banana, Kiwi";
+var res = str.slice(-12, -6);
+</textarea><br>
+        <p><h3>The substring() Method</h3>
+substring() is similar to slice().
+
+The difference is that substring() cannot accept negative indexes.
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var str = "Apple, Banana, Kiwi";
+var res = str.substring(7, 13);
+</textarea><br>
+<p>If you omit the second parameter, substring() will slice out the rest of the string.
+
+<h3>The substr() Method</h3>
+substr() is similar to slice().
+
+The difference is that the second parameter specifies the length of the extracted part.
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var str = "Apple, Banana, Kiwi";
+var res = str.substr(7, 6);
+</textarea><br>
+
+<p>If you omit the second parameter, substr() will slice out the rest of the string.
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var str = "Apple, Banana, Kiwi";
+var res = str.substr(7);
+</textarea><br>
+<p>If the first parameter is negative, the position counts from the end of the string.
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(-4);
+</textarea><br>
+
+<p><h3>Replacing String Content</h3>
+The replace() method replaces a specified value with another value in a string:
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    str = "Please visit Microsoft!";
+    var n = str.replace("Microsoft", "W3Schools");
+</textarea><br>
+
+<p>By default, the replace() method replaces only the first match:
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+str = "Please visit Microsoft and Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+</textarea><br>
+
+<p>By default, the replace() method is case sensitive. Writing MICROSOFT (with upper-case) will not work:
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+str = "Please visit Microsoft!";
+var n = str.replace("MICROSOFT", "W3Schools");
+</textarea><br>
+<p>To replace case insensitive, use a regular expression with an /i flag (insensitive):
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+str = "Please visit Microsoft!";
+var n = str.replace(/MICROSOFT/i, "W3Schools");
+</textarea><br>
+<p><h3>Converting to Upper and Lower Case</h3>
+A string is converted to upper case with toUpperCase():
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var text1 = "Hello World!";       // String
+var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+</textarea><br>
+
+
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

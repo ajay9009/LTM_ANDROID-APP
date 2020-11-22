@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>React Sass</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        
+        <p><br>What is Sass</br>
+<br>Sass is a CSS pre-processor.</br>
+
+<br>Sass files are executed on the server and sends CSS to the browser.</br>
+
+<br>You can learn more about Sass in our Sass Tutorial</br>
+<br>Can I use Sass?
+<br>If you use the create-react-app in your project, you can easily install and use Sass in your React projects.</br>
+
+<br>Install Sass by running this command in your terminal:</br>
+
+<br>C:\Users\Your Name>npm install node-sass</br>
+<br>Now you are ready to include Sass files in your project! </br></p>
+         <br><br>
+        <h2>Create a Sass file</h2>
+        <p>Create a Sass file the same way as you create CSS files, but Sass files have the file extension .scss
+
+In Sass files you can use variables and other Sass functions: </p> 
+        <h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+		$myColor: red;
+
+h1 {
+  color: $myColor;
+}
+         </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './mysass.scss';
+
+class MyHeader extends React.Component {
+  render() {
+    return (
+      <div>
+      <h1>Hello Style!</h1>
+      <p>Add a little style!.</p>
+      </div>
+    );
+   
+}
+}
+
+ReactDOM.render(<MyHeader />, document.getElementById('root'));
+/*
+Notice that you now have three files in your project:
+'index.js', 'index.html', and 'mysass.scss'.
+*/
+</textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Test extends React.Component {
+  render() {
+    return <h1>Hello World!</h1>;
+  }
+}
+
+ReactDOM.render(<Test />, document.getElementById('root'));
+
+/*
+The examples in this tutorial are created using the
+create-react-app. Install the create-react-app,
+and you will be able to run the same examples on your computer.
+
+In this example we create a component called 'Test'.
+The component is rendered in a container called 'root'.
+Click the 'index.html' tab to see the container.
+*/
+   </textarea><br>
+   <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+   
+   </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        </textarea><br>
+
+        
+           
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ n

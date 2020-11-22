@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Style Guide and Coding Conventions</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>Always use the same coding conventions for all your JavaScript projects.
+
+<h3>JavaScript Coding Conventions</h3>
+Coding conventions are style guidelines for programming. They typically cover:
+<ul>
+    <li>Naming and declaration rules for variables and functions.</li>
+    <li>Rules for the use of white space, indentation, and comments.</li>
+    <li>Programming practices and principles</li>
+</ul>
+<b>Coding conventions secure quality:</b>
+<ul>
+    <li>Improves code readability</li>
+    <li>Make code maintenance easier</li>
+</ul></p>
+
+<p>Coding conventions can be documented rules for teams to follow, or just be your individual coding practice.
+
+This page describes the general JavaScript code conventions used by W3Schools.
+You should also read the next chapter "Best Practices", and learn how to avoid coding pitfalls.
+
+<h2>Variable Names</h2>
+At W3schools we use camelCase for identifier names (variables and functions).
+
+All names start with a letter.
+
+At the bottom of this page, you will find a wider discussion about naming rules.</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ firstName = "John";
+lastName = "Doe";
+
+price = 19.90;
+tax = 0.20;
+
+fullPrice = price + (price * tax);       
+        </textarea><br>
+<p><h3>Spaces Around Operators</h3>
+Always put spaces around operators ( = + - * / ), and after commas:
+
+<h3>Examples:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var x = y + z;
+var values = ["Volvo", "Saab", "Fiat"];          
+        </textarea><br>
+<p><h2>Code Indentation</h2>
+Always use 2 spaces for indentation of code blocks:
+
+<h3>Functions:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+function toCelsius(fahrenheit) {
+  return (5 / 9) * (fahrenheit - 32);
+}           
+        </textarea><br>
+<p>Do not use tabs (tabulators) for indentation. Different editors interpret tabs differently.
+
+<h3>Statement Rules</h3>
+General rules for simple statements:
+<ul>
+    <li>Always end a simple statement with a semicolon.</li>
+</ul></p>
+<h3>Examples</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var values = ["Volvo", "Saab", "Fiat"];
+
+var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};          
+        </textarea><br>
+<p>General rules for complex (compound) statements:
+<ul>
+    <li>Put the opening bracket at the end of the first line.</li>
+    <li>Use one space before the opening bracket.</li>
+    <li>Put the closing bracket on a new line, without leading spaces.</li>
+    <li>Do not end a complex statement with a semicolon.</li>
+</ul></p>
+<h3>Functions:
+</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+function toCelsius(fahrenheit) {
+  return (5 / 9) * (fahrenheit - 32);
+}2X           
+        </textarea><br>
+<H3>Loops</H3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ for (i = 0; i < 5; i++) {
+  x += i;
+}          
+        </textarea><br>
+<H3>Conditionals:</H3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}          
+        </textarea><br>
+        <P><h3>Object Rules</h3>
+General rules for object definitions:
+<ul>
+    <li>Place the opening bracket on the same line as the object name.</li>
+    <li>Use colon plus one space between each property and its value.</li>
+    <li>Use quotes around string values, not around numeric values.</li>
+    <li>Do not add a comma after the last property-value pair.</li>
+    <li>Place the closing bracket on a new line, without leading spaces.</li>
+    <li>Always end an object definition with a semicolon.</li>
+</ul></P>
+<h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};          
+        </textarea><br>
+<b>Short objects can be written compressed, on one line, using spaces only between properties, like this:</b>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};           
+        </textarea><br>
+<p><h3>Line Length < 80</h3>
+For readability, avoid lines longer than 80 characters.
+
+If a JavaScript statement does not fit on one line, the best place to break it, is after an operator or a comma.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ document.getElementById("demo").innerHTML =
+"Hello Dolly.";          
+        </textarea><br>
+<p><h3>Naming Conventions</h3>
+Always use the same naming convention for all your code. For example:<ul>
+    <li>Variable and function names written as camelCase</li>
+    <li>Global variables written in UPPERCASE (We don't, but it's quite common)</li>
+    <li>Constants (like PI) written in UPPERCASE</li>
+</ul></p>
+<p>Should you use hyp-hens, camelCase, or under_scores in variable names?
+
+This is a question programmers often discuss. The answer depends on who you ask:
+
+<h4>Hyphens in HTML and CSS:</h4>
+
+HTML5 attributes can start with data- (data-quantity, data-price).
+
+CSS uses hyphens in property-names (font-size).
+
+Hyphens can be mistaken as subtraction attempts. Hyphens are not allowed in JavaScript names.
+
+<b>Underscores:</b>
+
+Many programmers prefer to use underscores (date_of_birth), especially in SQL databases.
+
+Underscores are often used in PHP documentation.
+
+PascalCase:
+
+PascalCase is often preferred by C programmers.
+
+camelCase:
+
+camelCase is used by JavaScript itself, by jQuery, and other JavaScript libraries.
+
+<b>Do not start names with a $ sign. It will put you in conflict with many JavaScript library names.</b>
+
+<h3>Loading JavaScript in HTML</h3>
+Use simple syntax for loading external scripts (the type attribute is not necessary):</p>
+         <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+<script src="myscript.js"></script>           
+        </textarea><br>
+<p><h3>Accessing HTML Elements</h3>
+A consequence of using "untidy" HTML styles, might result in JavaScript errors.
+
+These two JavaScript statements will produce different results:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var obj = getElementById("Demo")
+
+var obj = getElementById("demo")           
+        </textarea><br>
+
+<p>If possible, use the same naming convention (as JavaScript) in HTML.
+
+Visit the HTML Style Guide.
+
+<h3>File Extensions</h3>
+HTML files should have a .html extension (not .htm).
+
+CSS files should have a .css extension.
+
+JavaScript files should have a .js extension.
+
+<h3>Use Lower Case File Names</h3>
+Most web servers (Apache, Unix) are case sensitive about file names:
+
+london.jpg cannot be accessed as London.jpg.
+
+Other web servers (Microsoft, IIS) are not case sensitive:
+
+london.jpg can be accessed as London.jpg or london.jpg.
+
+If you use a mix of upper and lower case, you have to be extremely consistent.
+
+If you move from a case insensitive, to a case sensitive server, even small errors can break your web site.
+
+To avoid these problems, always use lower case file names (if possible).
+
+<h3>Performance</h3>
+Coding conventions are not used by computers. Most rules have little impact on the execution of programs.
+
+Indentation and extra spaces are not significant in small scripts.
+
+For code in development, readability should be preferred. Larger production scripts should be minified. </p>
+        
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

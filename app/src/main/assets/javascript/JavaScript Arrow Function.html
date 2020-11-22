@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Arrow Function</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>Arrow functions were introduced in ES6.
+
+Arrow functions allow us to write shorter function syntax:
+
+<h3>Before:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ hello = function() {
+  return "Hello World!";
+}       
+        </textarea><br>
+<h3>With Arrow Function:</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ hello = () => {
+  return "Hello World!";
+}          
+        </textarea><br>
+<p>It gets shorter! If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
+
+<h3>Arrow Functions Return Value by Default:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+hello = () => "Hello World!";           
+        </textarea><br>
+<b>Note: This works only if the function has only one statement.</b>
+<p>If you have parameters, you pass them inside the parentheses:
+
+<h3>Arrow Function With Parameters:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ hello = (val) => "Hello " + val;          
+        </textarea><br>
+<p>In fact, if you have only one parameter, you can skip the parentheses as well:
+
+<h3>Arrow Function Without Parentheses:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ hello = val => "Hello " + val;          
+        </textarea><br>
+<p><h3>What About this?</h3>
+The handling of this is also different in arrow functions compared to regular functions.
+
+In short, with arrow functions there are no binding of this.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+Let us take a look at two examples to understand the difference.
+
+Both examples call a method twice, first when the page loads, and once again when the user clicks a button.
+
+The first example uses a regular function, and the second example uses an arrow function.
+
+The result shows that the first example returns two different objects (window and button), and the second example returns the window object twice, because the window object is the "owner" of the function.
+
+<h3>Example</h3>
+With a regular function this represents the object that calls the function:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+hello = () => {
+  document.getElementById("demo").innerHTML += this;
+}
+
+// The window object calls the function:
+window.addEventListener("load", hello);
+
+// A button object calls the function:
+document.getElementById("btn").addEventListener("click", hello);           
+        </textarea><br>
+<p>Remember these differences when you are working with functions. Sometimes the behavior of regular functions is what you want, if not, use arrow functions.
+
+<h3>Browser Support</h3>
+The following table defines the first browser versions with full support for Arrow Functions in JavaScript:</p>
+        
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Output</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p><h2>JavaScript Display Possibilities</h2>
+JavaScript can "display" data in different ways:
+<ul>
+    <li>Writing into an HTML element, using innerHTML.</li>
+    <li>Writing into the HTML output using document.write().</li>
+    <li>Writing into an alert box, using window.alert().</li>
+    <li>Writing into the browser console, using console.log().</li>
+</ul></p>
+<p><h2>Using innerHTML</h2>
+To access an HTML element, JavaScript can use the document.getElementById(id) method.
+
+The id attribute defines the HTML element. The innerHTML property defines the HTML content:
+
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My First Paragraph</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+</script>
+
+</body>
+</html>
+        </textarea><br>
+        <p><h2>Using document.write()</h2>
+For testing purposes, it is convenient to use document.write():
+
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+document.write(5 + 6);
+</script>
+
+</body>
+</html>
+        </textarea><br>
+        <b>Using document.write() after an HTML document is loaded, will delete all existing HTML:</b>
+        <h2>Example</h2>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+</body>
+</html>
+        </textarea><br>
+        <p><h2>Using window.alert()</h2>
+You can use an alert box to display data:
+
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+window.alert(5 + 6);
+</script>
+
+</body>
+</html>
+        </textarea><br>
+
+        <p>You can skip the window keyword.
+
+In JavaScript, the window object is the global scope object, that means that variables, properties, and methods by default belong to the window object. This also means that specifying the window keyword is optional:</p>
+<h2>Example</h2>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+alert(5 + 6);
+</script>
+
+</body>
+</html>
+        </textarea><br>
+        <p><h2>Using console.log()</h2>
+For debugging purposes, you can call the console.log() method in the browser to display data.</p>
+<h2>Example</h2>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <!DOCTYPE html>
+<html>
+<body>
+
+<script>
+console.log(5 + 6);
+</script>
+
+</body>
+</html>
+        </textarea><br>
+        <p><h2>JavaScript Print</h2>
+JavaScript does not have any print object or print methods.
+
+You cannot access output devices from JavaScript.
+
+The only exception is that you can call the window.print() method in the browser to print the content of the current window.
+
+<h2>Example</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           <!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="window.print()">Print this page</button>
+
+</body>
+</html>
+        </textarea><br>
+
+           
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

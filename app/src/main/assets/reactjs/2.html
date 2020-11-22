@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>React Tutorial</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        
+        <p><br>React is a JavaScript library for building user interfaces.</br>
+
+<br>React is used to build single page applications.</br>
+
+<br>React allows us to create reusable UI components.</br>
+</p>
+         <br><br>
+        <h2>Learning by Examples</h2>       
+		<p>Our "Show React" tool makes it easy to demonstrate React, it shows both the code and the result.</p> 
+        <h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+		import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Test extends React.Component {
+  render() {
+    return <h1>Hello World!</h1>;
+  }
+}
+
+ReactDOM.render(<Test />, document.getElementById('root'));
+
+/*
+The examples in this tutorial are created using the
+create-react-app. Install the create-react-app,
+and you will be able to run the same examples on your computer.
+
+In this example we create a component called 'Test'.
+The component is rendered in a container called 'root'.
+Click the 'index.html' tab to see the container.
+*/
+         </textarea><br>
+		 <h2>Create React App</h2>
+		<p><br>In order to learn and test React, you should set up a React Environment on your computer.</br>
+
+<br>This tutorial uses the create-react-app.</br>
+
+<br>The create-react-app is an officially supported way to create React applications.</br>
+
+<br>If you have NPM and Node.js installed, you can create a React application by first installing the create-react-app.</br>
+
+<br>Install create-react-app by running this command in your terminal:</br>
+
+<br>C:\Users\Your Name>npm install -g create-react-app</br>
+<br>You are now ready to create your first React application!</br>
+
+<br>Run this command to create a React application named myfirstreact:</br>
+
+<br>C:\Users\Your Name>npx create-react-app myfirstreact</br>
+<br>The create-react-app will set up everything you need to run a React application.</br>
+
+<br>Note: This tutorial uses create-react-app to demonstrate React examples. You will not be able to run the same examples on your computer if you do not install the create-react-app environment.
+
+</br></p>
+     <h2>Run the React Application</h2>
+		<p><br>If you followed the two commands above, you are ready to run your first real React application!
+
+<br>Run this command to move to the myfirstreact directory:</br>
+
+<br>C:\Users\Your Name>cd myfirstreact</br>
+<br>Run this command to execute the React application myfirstreact:</br>
+
+<br>C:\Users\Your Name\myfirstreact>npm start</br>
+<br>A new browser window will pop up with your newly created React App! If not, open your browser and type localhost:3000 in the address bar.</br></p>
+<h3>What You Should Already Know</h3>
+<p>Before starting with React.JS, you should have intermediate experience in:<br>
+
+HTML<br>
+CSS<br>
+JavaScript<br>
+You should also have some experience with the new JavaScript features introduced in ECMAScript 6 (ES6), you will learn about them in the React ES6 chapter</p>
+
+      
+
+        
+           
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

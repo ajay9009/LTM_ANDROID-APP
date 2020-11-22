@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Numbers</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>JavaScript has only one type of number. Numbers can be written with or without decimals.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 3.14;    // A number with decimals
+var y = 3;       // A number without decimals
+        </textarea><br>
+<p>Extra large or extra small numbers can be written with scientific (exponent) notation:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 123e5;    // 12300000
+var y = 123e-5;   // 0.00123
+        </textarea><br>
+<p><h3>JavaScript Numbers are Always 64-bit Floating Point</h3>
+Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc.
+
+JavaScript numbers are always stored as double precision floating point numbers, following the international IEEE 754 standard.
+
+This format stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+Value (aka Fraction/Mantissa)    Exponent    Sign
+52 bits (0 - 51)    11 bits (52 - 62)   1 bit (63)
+
+        </textarea><br>
+        <p><h3>Precision</h3>
+Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+
+<h3>Example</h3></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 999999999999999;   // x will be 999999999999999
+var y = 9999999999999999;  // y will be 10000000000000000
+        </textarea><br>
+
+        <p>The maximum number of decimals is 17, but floating point arithmetic is not always 100% accurate:
+
+<h3>Example</h3></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x = 0.2 + 0.1;         // x will be 0.30000000000000004
+        </textarea><br>
+
+<p>To solve the problem above, it helps to multiply and divide:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x = (0.2 * 10 + 0.1 * 10) / 10;       // x will be 0.3
+        </textarea><br>
+<p><h3>Adding Numbers and Strings</h3>
+<b>WARNING !!
+
+JavaScript uses the + operator for both addition and concatenation.
+
+Numbers are added. Strings are concatenated.</b>
+
+If you add two numbers, the result will be a number:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 10;
+var y = 20;
+var z = x + y;           // z will be 30 (a number)
+        </textarea><br>
+        <p>If you add two strings, the result will be a string concatenation:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = "10";
+var y = "20";
+var z = x + y;           // z will be 1020 (a string)
+        </textarea><br>
+
+<p>If you add a number and a string, the result will be a string concatenation:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+var x = 10;
+var y = "20";
+var z = x + y;           // z will be 1020 (a string)
+</textarea><br>
+<p>A common mistake is to expect this result to be 102030:
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 10;
+var y = 20;
+var z = "30";
+var result = x + y + z;
+</textarea><br>
+<p><h3>Numeric Strings</h3>
+JavaScript strings can have numeric content:</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var x = 100;         // x is a number
+
+var y = "100";       // y is a string
+</textarea><br>
+<p>JavaScript will try to convert strings to numbers in all numeric operations:
+
+This will work:</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var x = "100";
+var y = "10";
+var z = x / y;       // z will be 10
+</textarea><br>
+<p><h3>NaN - Not a Number</h3>
+NaN is a JavaScript reserved word indicating that a number is not a legal number.
+
+Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):
+
+<h3>Example</h3></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var x = 100 / "Apple";  // x will be NaN (Not a Number)
+</textarea><br>
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

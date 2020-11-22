@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>Python Booleans</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+       <h3> Boolean Values</h3>
+<p>In programming you often need to know if an expression is True or False.
+
+You can evaluate any expression in Python, and get one of two answers, True or False.
+
+When you compare two values, the expression is evaluated and Python returns the Boolean answer:</p>
+
+
+      <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        Example
+print(10 > 9)
+print(10 == 9)
+print(10 < 9)
+
+
+        </textarea><br>
+        When you run a condition in an if statement, Python returns True or False:
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Print a message based on whether the condition is True or False:
+
+a = 200
+b = 33
+
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
+        </textarea><br>
+        <h3>Evaluate Values and Variables</h3>
+The bool() function allows you to evaluate any value, and give you True or False in return,
+
+
+
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Evaluate a string and a number:
+
+print(bool("Hello"))
+print(bool(15)
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Evaluate two variables:
+
+x = "Hello"
+y = 15
+
+print(bool(x))
+print(bool(y)
+        </textarea><br>
+       <h3> Most Values are True</h3>
+Almost any value is evaluated to True if it has some sort of content.
+
+Any string is True, except empty strings.
+
+Any number is True, except 0.
+
+Any list, tuple, set, and dictionary are True, except empty ones.
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+The following will return True:
+
+bool("abc")
+bool(123)
+bool(["apple", "cherry", "banana"])
+Try it Yourself »
+        </textarea><br>
+      <h3>  Some Values are False</h3>
+In fact, there are not many values that evaluates to False, except empty values, such as (), [], {}, "", the number 0, and the value None. And of course the value False evaluates to False.
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+The following will return False:
+
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({})
+        </textarea><br>
+        One more value, or object in this case, evaluates to False, and that is if you have an object that is made from a class with a __len__ function that returns 0 or False:
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+class myclass():
+  def __len__(self):
+    return 0
+
+myobj = myclass()
+print(bool(myobj))
+Try it Yourself »
+        </textarea><br>
+        <h3>Functions can Return a Boolean</h3>
+You can create functions that returns a Boolean Value:
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Print the answer of a function:
+
+def myFunction() :
+  return True
+
+print(myFunction())
+        </textarea><br>
+
+You can execute code based on the Boolean answer of a function:
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Print "YES!" if the function returns True, otherwise print "NO!":
+
+def myFunction() :
+  return True
+
+if myFunction():
+  print("YES!")
+else:
+  print("NO!")
+        </textarea><br>
+
+Python also has many built-in functions that returns a boolean value, like the isinstance() function, which can be used to determine if an object is of a certain data type:
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Check if an object is an integer or not:
+
+x = 200
+print(isinstance(x, int))
+        </textarea><br>
+
+
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    /image of the header-->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>PHP Numbers</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+
+        <p class="intro">In this chapter we will look in depth into Integers, Floats, and Number Strings.</p>
+<hr />
+<h2>PHP Numbers</h2>
+<p>One thing to notice about PHP is that it provides automatic data type conversion.</p>
+<p>So, if you assign an integer value to a variable, the type of that variable will automatically be an integer. Then, if you assign a string to the same variable, the type will change to a string.</p>
+<p>This automatic conversion can sometimes break your code.</p>
+<hr />
+<h2>PHP Integers</h2>
+<p>An integer is a number without any decimal part.</p>
+<p>2, 256, -256, 10358, -179567 are all integers. While 7.56, 10.0, 150.67 are floats.</p>
+<p>So, an integer data type is a non-decimal number between -2147483648 and 2147483647. A value greater (or lower) than this, will be stored as float, because it exceeds the limit of an integer.</p>
+<p>Another important thing to know is that even if 4 * 2.5 is 10, the result is stored as float, because one of the operands is a float (2.5).</p>
+<p>Here are some rules for integers:</p>
+<ul>
+<li>An integer must have at least one digit</li>
+<li>An integer must not have a decimal point</li>
+<li>An integer can be either positive or negative</li>
+<li>Integers can be specified in three formats: decimal (10-based), hexadecimal (16-based - prefixed with 0x) or octal (8-based - prefixed with 0)</li>
+</ul>
+<p>PHP has the following functions to check if the type of a variable is integer:</p>
+<ul>
+<li>is_int()</li>
+<li>is_integer() - alias of is_int()</li>
+<li>is_long() - alias of is_int()</li>
+</ul>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Check if the type of a variable is integer:</p>
+
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $x = 5985;
+    var_dump(is_int($x));
+
+    $x = 59.85;
+    var_dump(is_int($x));
+    ?>
+        </textarea><br>
+        <!-- /Code_Container-->
+
+<h2>PHP Floats</h2>
+<p>A float is a number with a decimal point or a number in exponential form.</p>
+<p>2.0, 256.4, 10.358, 7.64E+5, 5.56E-5 are all floats.</p>
+<p>The float data type can commonly store a value up to 1.7976931348623E+308 (platform dependent), and have a maximum precision of 14 digits.</p>
+<p>PHP has the following functions to check if the type of a variable is float:</p>
+<ul>
+<li>is_float()</li>
+<li>is_double() - alias of is_float()</li>
+</ul>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Check if the type of a variable is float:</p>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+    $x = 10.365;
+    var_dump(is_float($x));
+        ?>
+        </textarea><br>
+        <!-- /Code_Container-->  
+
+<h2>PHP Infinity</h2>
+<p>A numeric value that is larger than PHP_FLOAT_MAX is considered infinite.</p>
+<p>PHP has the following functions to check if a numeric value is finite or infinite:</p>
+<ul>
+<li>is_finite()</li>
+<li>is_infinite()</li>
+</ul>
+<p>However, the PHP var_dump() function returns the data type and value:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Check if a numeric value is finite or infinite:</p>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+        $x = 1.9e411;
+        var_dump($x);
+        ?>
+        </textarea><br>
+        <!-- /Code_Container-->  
+
+<h2>PHP NaN</h2>
+<p>NaN stands for Not a Number.</p>
+<p>NaN is used for impossible mathematical operations.</p>
+<p>PHP has the following functions to check if a value is not a number:</p>
+<ul>
+<li>is_nan()</li>
+</ul>
+<p>However, the PHP var_dump() function returns the data type and value:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Invalid calculation will return a NaN value:</p>
+
+<!-- Code_Container-->
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        <?php
+        $x = acos(8);
+        var_dump($x);
+        ?>
+        </textarea><br>
+        <!-- /Code_Container--> 
+
+<h2>PHP Numerical Strings</h2>
+<p>The PHP is_numeric() function can be used to find whether a variable is numeric. The function returns true if the variable is a number or a numeric string, false otherwise.</p>
+<h2>PHP Casting Strings and Floats to Integers</h2>
+<p>Sometimes you need to cast a numerical value into another data type.</p>
+<p>The (int), (integer), or intval() function are often used to convert a value to an integer.</p>
+
+
+    </p>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- css style-->
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>

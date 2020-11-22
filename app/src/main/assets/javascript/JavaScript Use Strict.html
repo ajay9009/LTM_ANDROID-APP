@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Use Strict</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>"use strict"; Defines that JavaScript code should be executed in "strict mode".
+
+<h3>The "use strict" Directive</h3>
+The "use strict" directive was new in ECMAScript version 5.
+
+It is not a statement, but a literal expression, ignored by earlier versions of JavaScript.
+
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+
+With strict mode, you can not, for example, use undeclared variables.
+
+All modern browsers support "use strict" except Internet Explorer 9 and lower:</p>
+
+<p>The numbers in the table specify the first browser version that fully supports the directive.
+
+<b>You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables.</b>
+
+"use strict" is just a string, so IE 9 will not throw an error even if it does not understand it.
+
+<h3>Declaring Strict Mode</h3>
+Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+
+Declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+x = 3.14;       // This will cause an error because x is not declared        
+        </textarea><br>
+
+<h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+myFunction();
+
+function myFunction() {
+  y = 3.14;   // This will also cause an error because y is not declared
+}           
+        </textarea><br>
+
+<p>Declared inside a function, it has local scope (only the code inside the function is in strict mode):</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ 
+
+ x = 3.14;       // This will not cause an error.
+myFunction();
+
+function myFunction() {
+  "use strict";
+  y = 3.14;   // This will cause an error
+}          
+        </textarea><br>
+
+
+<p><h3>The "use strict"; Syntax</h3>
+The syntax, for declaring strict mode, was designed to be compatible with older versions of JavaScript.
+
+Compiling a numeric literal (4 + 5;) or a string literal ("John Doe";) in a JavaScript program has no side effects. It simply compiles to a non existing variable and dies.
+
+So "use strict"; only matters to new compilers that "understand" the meaning of it.
+
+<h3>Why Strict Mode?</h3>
+Strict mode makes it easier to write "secure" JavaScript.
+
+Strict mode changes previously accepted "bad syntax" into real errors.
+
+As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.
+
+In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.
+
+In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+
+<h3>Not Allowed in Strict Mode</h3>
+Using a variable, without declaring it, is not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+x = 3.14;                // This will cause an error
+
+          
+        </textarea><br>
+
+
+<p>Using an object, without declaring it, is not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+x = {p1:10, p2:20};      // This will cause an error           
+        </textarea><br>
+
+
+<p>Deleting a variable (or object) is not allowed.</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+var x = 3.14;
+delete x;                // This will cause an error           
+        </textarea><br>
+<p>Deleting a function is not allowed.</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+function x(p1, p2) {};
+delete x;          
+        </textarea><br>
+<p>Duplicating a parameter name is not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+function x(p1, p1) {};           
+        </textarea><br>
+<p>Octal numeric literals are not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+var x = 010;            
+        </textarea><br>
+<p>Octal escape characters are not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+var x = "\010";          
+        </textarea><br>
+<p>Writing to a read-only property is not allowed:</p>
+         <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+var obj = {};
+Object.defineProperty(obj, "x", {value:0, writable:false});
+
+obj.x = 3.14;             
+        </textarea><br>
+<p>Writing to a get-only property is not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+var obj = {get x() {return 0} };
+
+obj.x = 3.14;           
+        </textarea><br>
+<p>Deleting an undeletable property is not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+delete Object.prototype;        
+        </textarea><br>
+<p>The word eval cannot be used as a variable:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+var eval = 3.14;           
+        </textarea><br>
+<p>The word arguments cannot be used as a variable:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+var arguments = 3.14;           
+        </textarea><br>
+
+<p>The with statement is not allowed:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+"use strict";
+with (Math){x = cos(2)}; // This will cause an error
+           </textarea>
+<p>For security reasons, eval() is not allowed to create variables in the scope from which it was called:</p>
+            <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+eval ("var x = 2");
+alert (x);               
+        </textarea><br>
+
+<p>The this keyword in functions behaves differently in strict mode.
+
+The this keyword refers to the object that called the function.
+
+If the object is not specified, functions in strict mode will return undefined and functions in normal mode will return the global object (window):</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+function myFunction() {
+  alert(this); // will alert "undefined"
+}
+myFunction();          
+        </textarea><br>
+
+<p><h3>Future Proof!</h3>
+Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode.
+
+These are:
+<ul>
+    <li>implements</li>
+    <li>interface</li>
+    <li>let</li>
+    <li>package</li>
+    <li>private</li>
+    <li>protected</li>
+    <li>public
+</li>
+    <li>static</li>
+    <li>yield</li>
+</ul></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ "use strict";
+var public = 1500;       
+        </textarea><br>
+<b><h2>Watch Out!</h2>
+The "use strict" directive is only recognized at the beginning of a script or a function.</b>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           
+        </textarea><br>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           </textarea>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

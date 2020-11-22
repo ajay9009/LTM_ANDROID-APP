@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>Python Datetime</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+      <h3>  Python Dates</h3>
+A date in Python is not a data type of its own, but we can import a module named datetime to work with dates as date objects.
+
+Example
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        Example
+Import the datetime module and display the current date:
+
+import datetime
+
+x = datetime.datetime.now()
+print(x)
+Try it Yourself »
+        </textarea><br>
+
+<h3>Date Output</h3>
+When we execute the code from the example above the result will be:
+
+2020-10-20 22:57:45.943103
+The date contains year, month, day, hour, minute, second, and microsecond.
+
+The datetime module has many methods to return information about the date object.
+
+Here are a few examples, you will learn more about them later in this chapter:
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Return the year and name of weekday:
+
+import datetime
+
+x = datetime.datetime.now()
+
+print(x.year)
+print(x.strftime("%A"))
+Try it Yourself »
+        </textarea><br>
+<h3>Creating Date Objects</h3>
+To create a date, we can use the datetime() class (constructor) of the datetime module.
+
+The datetime() class requires three parameters to create a date: year, month, day.
+
+Example
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Create a date object:
+
+import datetime
+
+x = datetime.datetime(2020, 5, 17)
+
+print(x)
+Try it Yourself »
+        </textarea><br>
+<h3>The strftime() Method</h3>
+The datetime object has a method for formatting date objects into readable strings.
+
+The method is called strftime(), and takes one parameter, format, to specify the format of the returned string:
+       <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            Example
+Display the name of the month:
+
+import datetime
+
+x = datetime.datetime(2018, 6, 1)
+
+print(x.strftime("%B"))
+Try it Yourself »
+        </textarea><br>
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            Directive   Description Example Try it
+%a  Weekday, short version  Wed Try it »
+%A  Weekday, full version   Wednesday   Try it »
+%w  Weekday as a number 0-6, 0 is Sunday    3   Try it »
+%d  Day of month 01-31  31  Try it »
+%b  Month name, short version   Dec Try it »
+%B  Month name, full version    December    Try it »
+%m  Month as a number 01-12 12  Try it »
+%y  Year, short version, without century    18  Try it »
+%Y  Year, full version  2018    Try it »
+%H  Hour 00-23  17  Try it »
+%I  Hour 00-12  05  Try it »
+%p  AM/PM   PM  Try it »
+%M  Minute 00-59    41  Try it »
+%S  Second 00-59    08  Try it »
+%f  Microsecond 000000-999999   548513  Try it »
+%z  UTC offset  +0100   
+%Z  Timezone    CST 
+%j  Day number of year 001-366  365 Try it »
+%U  Week number of year, Sunday as the first day of week, 00-53 52  Try it »
+%W  Week number of year, Monday as the first day of week, 00-53 52  Try it »
+%c  Local version of date and time  Mon Dec 31 17:41:00 2018    Try it »
+%x  Local version of date   12/31/18    Try it »
+%X  Local version of time   17:41:00    Try it »
+%%  A % character   %   Try it
+        </textarea><br>
+
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

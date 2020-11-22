@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Number Methods</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>Number methods help you work with numbers.
+
+<h3>Number Methods and Properties</h3>
+Primitive values (like 3.14 or 2014), cannot have properties and methods (because they are not objects).
+
+But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.
+
+<h3>The toString() Method</h3>
+The toString() method returns a number as a string.
+
+All number methods can be used on any type of numbers (literals, variables, or expressions):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 123;
+x.toString();            // returns 123 from variable x
+(123).toString();        // returns 123 from literal 123
+(100 + 23).toString();   // returns 123 from expression 100 + 23
+        </textarea><br>
+
+<p><h3>The toExponential() Method</h3>
+toExponential() returns a string, with a number rounded and written using exponential notation.
+
+A parameter defines the number of characters behind the decimal point:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 9.656;
+x.toExponential(2);     // returns 9.66e+0
+x.toExponential(4);     // returns 9.6560e+0
+x.toExponential(6);     // returns 9.656000e+0
+        </textarea><br>
+
+
+<p>The parameter is optional. If you don't specify it, JavaScript will not round the number.
+
+<h3>The toFixed() Method</h3>
+toFixed() returns a string, with the number written with a specified number of decimals:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 9.656;
+x.toFixed(0);           // returns 10
+x.toFixed(2);           // returns 9.66
+x.toFixed(4);           // returns 9.6560
+x.toFixed(6);           // returns 9.656000
+        </textarea><br>
+
+<p>toFixed(2) is perfect for working with money.
+
+<h3>The toPrecision() Method</h3>
+toPrecision() returns a string, with a number written with a specified length:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 9.656;
+x.toPrecision();        // returns 9.656
+x.toPrecision(2);       // returns 9.7
+x.toPrecision(4);       // returns 9.656
+x.toPrecision(6);       // returns 9.65600
+        </textarea><br>
+
+<p><h3>The valueOf() Method</h3>
+valueOf() returns a number as a number.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var x = 123;
+x.valueOf();            // returns 123 from variable x
+(123).valueOf();        // returns 123 from literal 123
+(100 + 23).valueOf();   // returns 123 from expression 100 + 23
+        </textarea><br>
+
+        <p>
+            In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).
+
+The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
+
+There is no reason to use it in your code.
+
+All JavaScript data types have a valueOf() and a toString() method.
+
+<h3>Converting Variables to Numbers</h3>
+There are 3 JavaScript methods that can be used to convert variables to numbers:
+<ul>
+    <li>The Number() method</li>
+    <li>The parseInt() method</li>
+    <li>The parseFloat() method</li>
+</ul>
+        </p>
+
+<p>These methods are not number methods, but global JavaScript methods.
+
+<h3>Global JavaScript Methods</h3>
+JavaScript global methods can be used on all JavaScript data types.
+
+These are the most relevant methods, when working with numbers:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+Method   Description
+Number()    Returns a number, converted from its argument.
+parseFloat()    Parses its argument and returns a floating point number
+parseInt()  Parses its argument and returns an integer
+        </textarea><br>
+
+<p><h3>The Number() Method</h3>
+Number() can be used to convert JavaScript variables to numbers:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+Number(true);          // returns 1
+Number(false);         // returns 0
+Number("10");          // returns 10
+Number("  10");        // returns 10
+Number("10  ");        // returns 10
+Number(" 10  ");       // returns 10
+Number("10.33");       // returns 10.33
+Number("10,33");       // returns NaN
+Number("10 33");       // returns NaN
+Number("John");        // returns NaN
+        </textarea><br>
+
+<p><h3>The Number() Method Used on Dates</h3>
+Number() can also convert a date to a number:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Number(new Date("2017-09-30"));    // returns 1506729600000
+
+        </textarea><br>
+        <p><h3>The parseInt() Method</h3>
+parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+       parseInt("10");         // returns 10
+parseInt("10.33");      // returns 10
+parseInt("10 20 30");   // returns 10
+parseInt("10 years");   // returns 10
+parseInt("years 10");   // returns NaN 
+</textarea><br>   
+
+<p>If the number cannot be converted, NaN (Not a Number) is returned.
+
+<h3>The parseFloat() Method</h3>
+parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:
+
+<h3>Example</h3></p> 
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            parseFloat("10");        // returns 10
+parseFloat("10.33");     // returns 10.33
+parseFloat("10 20 30");  // returns 10
+parseFloat("10 years");  // returns 10
+parseFloat("years 10");  // returns NaN
+</textarea><br>
+
+<p><h3>JavaScript MIN_VALUE and MAX_VALUE</h3>
+MAX_VALUE returns the largest possible number in JavaScript.
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var x = Number.MAX_VALUE;
+</textarea><br>
+
+<h3>Example</h3></p>
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

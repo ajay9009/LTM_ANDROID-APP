@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript For Loop</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>Loops can execute a block of code a number of times.
+
+<h3>JavaScript Loops</h3>
+Loops are handy, if you want to run the same code over and over again, each time with a different value.
+
+Often this is the case when working with arrays:
+
+<h4>Instead of writing:</h4></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+text += cars[0] + "<br>";
+text += cars[1] + "<br>";
+text += cars[2] + "<br>";
+text += cars[3] + "<br>";
+text += cars[4] + "<br>";
+text += cars[5] + "<br>";       
+        </textarea><br>
+<h3>You can write:</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var i;
+for (i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}         
+        </textarea><br>
+<p><h2>Different Kinds of Loops</h2>
+JavaScript supports different kinds of loops:
+<ul>
+    <li>for - loops through a block of code a number of times</li>
+    <li>for/in - loops through the properties of an object</li>
+    <li>for/of - loops through the values of an iterable object</li>
+    <li>while - loops through a block of code while a specified condition is true</li>
+    <li>do/while - also loops through a block of code while a specified condition is true
+</li>
+</ul>
+</p>
+     <p><h3>The For Loop</h3>
+The for loop has the following syntax:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}           
+        </textarea><br>
+<p>Statement 1 is executed (one time) before the execution of the code block.
+
+Statement 2 defines the condition for executing the code block.
+
+Statement 3 is executed (every time) after the code block has been executed.
+
+Example</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+for (i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}         
+        </textarea><br>
+<p>From the example above, you can read:
+
+Statement 1 sets a variable before the loop starts (var i = 0).
+
+Statement 2 defines the condition for the loop to run (i must be less than 5).
+
+Statement 3 increases a value (i++) each time the code block in the loop has been executed.</p>
+
+<p><h2>Statement 1</h2>
+Normally you will use statement 1 to initialize the variable used in the loop (i = 0).
+
+This is not always the case, JavaScript doesn't care. Statement 1 is optional.
+
+You can initiate many values in statement 1 (separated by comma):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+for (i = 0, len = cars.length, text = ""; i < len; i++) {
+  text += cars[i] + "<br>";
+}           
+        </textarea><br>
+<p>And you can omit statement 1 (like when your values are set before the loop starts):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var i = 2;
+var len = cars.length;
+var text = "";
+for (; i < len; i++) {
+  text += cars[i] + "<br>";
+}           
+        </textarea><br>
+<p><h2>Statement 2</h2>
+Often statement 2 is used to evaluate the condition of the initial variable.
+
+This is not always the case, JavaScript doesn't care. Statement 2 is also optional.
+
+If statement 2 returns true, the loop will start over again, if it returns false, the loop will end.</p>
+
+<p><h2>Statement 3</h2>
+Often statement 3 increments the value of the initial variable.
+
+This is not always the case, JavaScript doesn't care, and statement 3 is optional.
+
+Statement 3 can do anything like negative increment (i--), positive increment (i = i + 15), or anything else.
+
+Statement 3 can also be omitted (like when you increment your values inside the loop):
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var i = 0;
+var len = cars.length;
+for (; i < len; ) {
+  text += cars[i] + "<br>";
+  i++;
+}          
+        </textarea><br>
+<p><h2>The For/In Loop</h2>
+The JavaScript for/in statement loops through the properties of an object:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var person = {fname:"John", lname:"Doe", age:25};
+
+var text = "";
+var x;
+for (x in person) {
+  text += person[x];
+}          
+        </textarea><br>
+<p><h2>The For/Of Loop</h2>
+The JavaScript for/of statement loops through the values of an iterable objects.
+
+for/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
+
+The for/of loop has the following syntax:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ for (variable of iterable) {
+  // code block to be executed
+}          
+        </textarea><br>
+<p>variable - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var.
+
+iterable - An object that has iterable properties.
+
+<h3>Looping over an Array</h3>
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var cars = ["BMW", "Volvo", "Mini"];
+var x;
+
+for (x of cars) {
+  document.write(x + "<br >");
+}  
+        </textarea><br>
+<p><h3>Looping over a String
+Example</h3></p>
+         <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var txt = "JavaScript";
+var x;
+
+for (x of txt) {
+  document.write(x + "<br >");
+}           
+        </textarea><br>
+<p>The While Loop
+The while loop and the do/while loop will be explained in the next chapter.</p>
+        
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

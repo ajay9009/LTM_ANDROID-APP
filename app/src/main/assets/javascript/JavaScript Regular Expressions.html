@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Regular Expressions</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>A regular expression is a sequence of characters that forms a search pattern.
+
+The search pattern can be used for text search and text replace operations.
+
+<h2>What Is a Regular Expression?</h2>
+A regular expression is a sequence of characters that forms a search pattern.
+
+When you search for data in a text, you can use this search pattern to describe what you are searching for.
+
+A regular expression can be a single character, or a more complicated pattern.
+
+Regular expressions can be used to perform all types of text search and text replace operations.
+
+<h2>Syntax</h2></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ /pattern/modifiers;       
+        </textarea><br>
+<h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var patt = /w3schools/i;          
+        </textarea><br>
+<p>Using String Methods
+In JavaScript, regular expressions are often used with the two string methods: search() and replace().
+
+The search() method uses an expression to search for a match, and returns the position of the match.
+
+The replace() method returns a modified string where the pattern is replaced.
+
+<h2>Using String search() With a String</h2>
+The search() method searches a string for a specified value and returns the position of the match:
+
+<h3>Example</h3>
+Use a string to do a search for "W3schools" in a string:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var str = "Visit W3Schools!";
+var n = str.search("W3Schools");          
+        </textarea><br>
+<p><h2>Using String search() With a Regular Expression</h2>
+<h3>Example</h3>
+Use a regular expression to do a case-insensitive search for "w3schools" in a string:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var str = "Visit W3Schools";
+var n = str.search(/w3schools/i);          
+        </textarea><br>
+<b>The result in n will be:
+
+6</b>
+<p><h2>Using String replace() With a String</h2>
+The replace() method replaces a specified value with another value in a string:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var str = "Visit Microsoft!";
+var res = str.replace("Microsoft", "W3Schools");           
+        </textarea><br>
+<p><h2>Use String replace() With a Regular Expression</h2>
+<h3>Example</h3>
+Use a case insensitive regular expression to replace Microsoft with W3Schools in a string:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var str = "Visit Microsoft!";
+var res = str.replace(/microsoft/i, "W3Schools");           
+        </textarea><br>
+<p><h2>Did You Notice?</h2>
+<b>Regular expression arguments (instead of string arguments) can be used in the methods above.
+Regular expressions can make your search much more powerful (case insensitive for example).</b>
+
+Regular Expression Modifiers
+Modifiers can be used to perform case-insensitive more global searches:</p>
+<p><h2>Using the RegExp Object</h2>
+In JavaScript, the RegExp object is a regular expression object with predefined properties and methods.
+
+<h2>Using test()</h2>
+The test() method is a RegExp expression method.
+
+It searches a string for a pattern, and returns true or false, depending on the result.
+
+The following example searches a string for the character "e":
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ var patt = /e/;
+patt.test("The best things in life are free!");          
+        </textarea><br>
+<p>You don't have to put the regular expression in a variable first. The two lines above can be shortened to one:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ /e/.test("The best things in life are free!");          
+        </textarea><br>
+
+
+<p><h2>Using exec()</h2>
+The exec() method is a RegExp expression method.
+
+It searches a string for a specified pattern, and returns the found text as an object.
+
+If no match is found, it returns an empty (null) object.
+
+The following example searches a string for the character "e":
+
+<h3>Example 1</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+ /e/.exec("The best things in life are free!");          
+        </textarea><br>
+<p><h2>Complete RegExp Reference</h2>
+For a complete reference, go to our Complete JavaScript RegExp Reference.
+
+The reference contains descriptions and examples of all RegExp properties and methods.</p>
+        
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

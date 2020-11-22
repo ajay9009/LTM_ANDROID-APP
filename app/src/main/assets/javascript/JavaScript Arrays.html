@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>JavaScript Arrays</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>JavaScript arrays are used to store multiple values in a single variable.
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        var cars = ["Saab", "Volvo", "BMW"];
+        </textarea><br>
+
+        <p><h3>What is an Array?</h3>
+An array is a special variable, which can hold more than one value at a time.
+
+If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var car1 = "Saab";
+var car2 = "Volvo";
+var car3 = "BMW";
+        </textarea><br>
+
+<p>However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?
+
+The solution is an array!
+
+An array can hold many values under a single name, and you can access the values by referring to an index number.
+
+<h3>Creating an Array</h3>
+Using an array literal is the easiest way to create a JavaScript Array.
+
+Syntax:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var array_name = [item1, item2, ...];      
+        </textarea><br>
+<h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var cars = ["Saab", "Volvo", "BMW"];
+        </textarea><br>
+
+
+<p>Spaces and line breaks are not important. A declaration can span multiple lines:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+  var cars = [
+  "Saab",
+  "Volvo",
+  "BMW"
+];
+        </textarea><br>
+
+
+<p><h3>Using the JavaScript Keyword new</h3>
+The following example also creates an Array, and assigns values to it:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    var cars = new Array("Saab", "Volvo", "BMW");           
+        </textarea><br>
+<p>The two examples above do exactly the same. There is no need to use new Array().
+For simplicity, readability and execution speed, use the first one (the array literal method).
+
+<h3>Access the Elements of an Array</h3>
+You access an array element by referring to the index number.
+
+This statement accesses the value of the first element in cars:</p>
+
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var name = cars[0];
+        </textarea><br>
+        <h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars[0];
+        </textarea><br>
+
+
+<p><h3>Changing an Array Element</h3>
+This statement changes the value of the first element in cars:</p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            cars[0] = "Opel";
+        </textarea><br>
+
+<h2>Example</h2>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var cars = ["Saab", "Volvo", "BMW"];
+cars[0] = "Opel";
+document.getElementById("demo").innerHTML = cars[0];
+        </textarea><br>
+        <p><h3>Access the Full Array</h3>
+With JavaScript, the full array can be accessed by referring to the array name:
+
+<h3>Example</h3></p>
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars;
+        </textarea><br>
+
+
+<p><h3>Arrays are Objects</h3>
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+
+But, JavaScript arrays are best described as arrays.
+
+Arrays use numbers to access its "elements". In this example, person[0] returns John:
+
+<h3>Array:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var person = ["John", "Doe", 46];
+        </textarea><br>
+
+<p>Objects use names to access its "members". In this example, person.firstName returns John:
+
+<h3>Object:</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        var person = {firstName:"John", lastName:"Doe", age:46};           
+        </textarea><br>           
+        <p><h3>Array Elements Can Be Objects</h3>
+JavaScript variables can be objects. Arrays are special kinds of objects.
+
+Because of this, you can have variables of different types in the same Array.
+
+You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+    myArray[0] = Date.now;
+myArray[1] = myFunction;
+myArray[2] = myCars;
+</textarea>
+
+<p><h3>Array Properties and Methods</h3>
+The real strength of JavaScript arrays are the built-in array properties and methods:
+
+<h3>Examples</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var x = cars.length;   // The length property returns the number of elements
+            var y = cars.sort();   // The sort() method sorts arrays
+        </textarea><br>
+
+
+<p>Array methods are covered in the next chapters.
+
+<h3>The length Property</h3>
+The length property of an array returns the length of an array (the number of array elements).
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.length;   // the length of fruits is 4
+        </textarea><br>
+
+
+        <p><h3>Accessing the First Array Element<br>
+Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           fruits = ["Banana", "Orange", "Apple", "Mango"];
+            var first = fruits[0];
+        </textarea><br>
+
+        <p><h3>Accessing the Last Array Element<br>
+Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           fruits = ["Banana", "Orange", "Apple", "Mango"];
+            var last = fruits[fruits.length - 1];
+        </textarea><br>
+
+<p><h3>Looping Array Elements</h3>
+The safest way to loop through an array, is using a for loop:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+        </textarea><br>
+<p>You can also use the Array.forEach() function:
+
+<h3>Example</h3></p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+
+
+        </textarea><br>
+
+        <p><h3>Associative Arrays</h3>
+Many programming languages support arrays with named indexes.
+
+Arrays with named indexes are called associative arrays (or hashes).
+
+JavaScript does not support arrays with named indexes.
+
+In JavaScript, arrays always use numbered indexes.  </p>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

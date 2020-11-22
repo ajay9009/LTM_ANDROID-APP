@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>Python If ... Else</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+
+        <h3>Python Conditions and If statements</h3>
+Python supports the usual logical conditions from mathematics:
+<ul>
+<li>Equals: a == b</li>
+<li>Not Equals: a != b</li>
+<li>Less than: a < b</li>
+<li>Less than or equal to: a <= b</li>
+<li>Greater than: a > b</li>
+<li>Greater than or equal to: a >= b</li>
+</ul>
+These conditions can be used in several ways, most commonly in "if statements" and loops.
+
+An "if statement" is written by using the if keyword.
+        
+
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        Example
+If statement:
+
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+Try it Yourself »
+        </textarea><br>
+In this example we use two variables, a and b, which are used as part of the if statement to test whether b is greater than a. As a is 33, and b is 200, we know that 200 is greater than 33, and so we print to screen that "b is greater than a".
+
+<h3>Indentation</h3>
+
+python relies on indentation (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.
+
+Example
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+If statement, without indentation (will raise an error):
+
+a = 33
+b = 200
+if b > a:
+print("b is greater than a") # you will get an error
+Try it Yourself »
+        </textarea><br>
+
+        <hr>
+<h3>Elif</h3>
+The elif keyword is pythons way of saying "if the previous conditions were not true, then try this condition"
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+a = 33
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+Try it Yourself »
+        </textarea><br>
+<h3>Else</h3>
+The else keyword catches anything which isn't caught by the preceding conditions.
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+Try it Yourself »
+        </textarea><br>
+n this example a is greater than b, so the first condition is not true, also the elif condition is not true, so we go to the else condition and print to screen that "a is greater than b".
+
+You can also have an else without the elif:
+
+Example
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
+Try it Yourself »
+        </textarea><br>
+<h3>Short Hand If</h3>
+If you have only one statement to execute, you can put it on the same line as the if statement
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+          Example
+One line if statement:
+
+if a > b: print("a is greater than b")
+Try it Yourself » 
+        </textarea><br>
+<h3>Short Hand If ... Else</h3>
+If you have only one statement to execute, one for if, and one for else, you can put it all on the same line:
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+One line if else statement:
+
+a = 2
+b = 330
+print("A") if a > b else print("B")
+Try it Yourself »
+        </textarea><br>
+
+You can also have multiple else statements on the same line:
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+One line if else statement, with 3 conditions:
+
+a = 330
+b = 330
+print("A") if a > b else print("=") if a == b else print("B")
+Try it Yourself »
+        </textarea><br>
+
+<h3>And</h3>
+The and keyword is a logical operator, and is used to combine conditional statements:
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Test if a is greater than b, AND if c is greater than a:
+
+a = 200
+b = 33
+c = 500
+if a > b and c > a:
+  print("Both conditions are True")
+Try it Yourself »
+        </textarea><br>
+<h3>Or</h3>
+The or keyword is a logical operator, and is used to combine conditional statements:
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+Test if a is greater than b, OR if a is greater than c:
+
+a = 200
+b = 33
+c = 500
+if a > b or a > c:
+  print("At least one of the conditions is True")
+Try it Yourself »
+        </textarea><br>
+<h3>Nested If</h3>
+You can have if statements inside if statements, this is called nested if statements.
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+            Example
+x = 41
+
+if x > 10:
+  print("Above ten,")
+  if x > 20:
+    print("and also above 20!")
+  else:
+    print("but not above 20.")
+Try it Yourself »
+           </textarea><br>
+<h3>The pass Statement</h3>
+if statements cannot be empty, but if you for some reason have an if statement with no content, put in the pass statement to avoid getting an error.
+
+Example
+           <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example
+a = 33
+b = 200
+
+if b > a:
+  pass
+        </textarea><br>
+
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

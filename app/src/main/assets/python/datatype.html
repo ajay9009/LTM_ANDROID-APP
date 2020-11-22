@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>Python Data Types</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        
+<h3>Built-in Data Types</h3>
+In programming, data type is an important concept.
+
+Variables can store data of different types, and different types can do different things.
+
+Python has the following data types built-in by default, in these categories:
+
+Text Type:  str
+Numeric Types:  int, float, complex
+Sequence Types: list, tuple, range
+Mapping Type:   dict
+Set Types:  set, frozenset
+Boolean Type:   bool
+Binary Types:   bytes, bytearray, memoryview
+
+
+<h3>
+    Getting the Data Type
+You can get the data type of any object by using the type() function:
+
+Example
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        Example
+Print the data type of the variable x:
+
+x = 5
+print(type(x))
+Try it Yourself »
+
+        </textarea><br>
+<h3>Setting the Data Type</h3>
+In Python, the data type is set when you assign a value to a variable:
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example  Data Type   Try it
+x = "Hello World"   str Try it »
+x = 20  int Try it »
+x = 20.5    float   Try it »
+x = 1j  complex Try it »
+x = ["apple", "banana", "cherry"]   list    Try it »
+x = ("apple", "banana", "cherry")   tuple   Try it »
+x = range(6)    range   Try it »
+x = {"name" : "John", "age" : 36}   dict    Try it »
+x = {"apple", "banana", "cherry"}   set Try it »
+x = frozenset({"apple", "banana", "cherry"})    frozenset   Try it »
+x = True    bool    Try it »
+x = b"Hello"    bytes   Try it »
+x = bytearray(5)    bytearray   Try it »
+x = memoryview(bytes(5))    memoryview  Try it »
+
+        </textarea><br>
+
+<hr>
+Setting the Specific Data Type
+If you want to specify the data type, you can use the following constructor functions:
+
+
+
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+           Example  Data Type   Try it
+x = str("Hello World")  str Try it »
+x = int(20) int Try it »
+x = float(20.5) float   Try it »
+x = complex(1j) complex Try it »
+x = list(("apple", "banana", "cherry")) list    Try it »
+x = tuple(("apple", "banana", "cherry"))    tuple   Try it »
+x = range(6)    range   Try it »
+x = dict(name="John", age=36)   dict    Try it »
+x = set(("apple", "banana", "cherry"))  set Try it »
+x = frozenset(("apple", "banana", "cherry"))    frozenset   Try it »
+x = bool(5) bool    Try it »
+x = bytes(5)    bytes   Try it »
+x = bytearray(5)    bytearray   Try it »
+x = memoryview(bytes(5))    memoryview  Try it »
+
+        </textarea><br>
+
+        
+
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
+ 

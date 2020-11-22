@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>What You Should Already Know</h2>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+        <p>Before you continue you should have a basic understanding of the following:<br></p>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+<hr />
+
+<p>If you want to study these subjects first, find the tutorials on our home page.</p>
+
+<hr />
+<h2>What is PHP?</h2>
+<ul>
+<li>PHP is an acronym for "PHP: Hypertext Preprocessor"</li>
+<li>PHP is a widely-used, open-source scripting language</li>
+<li>PHP scripts are executed on the server</li>
+<li>PHP is free to download and use</li>
+</ul>
+<h2>What is a PHP File?</h2>
+<ul>
+<li>PHP files can contain text, HTML, CSS, JavaScript, and PHP code</li>
+<li>PHP code is executed on the server, and the result is returned to the browser as plain HTML</li>
+<li>PHP files have an extension "<code class="w3-codespan">.php</code>"</li>
+</ul>
+<hr />
+<h2>What Can PHP Do?</h2>
+<ul>
+<li>PHP can generate the dynamic page content</li>
+<li>PHP can create, open, read, write, delete, and close files on the server</li>
+<li>PHP can collect form data</li>
+<li>PHP can send and receive cookies</li>
+<li>PHP can add, delete, modify data in your database</li>
+<li>PHP can be used to control user-access</li>
+<li>PHP can encrypt data</li>
+</ul>
+<p>With PHP you are not limited to output HTML. You can output images, PDF files, and even Flash movies. You can also output any text, such as XHTML and XML.</p>
+<hr />
+<h2>Why PHP?</h2>
+<ul>
+<li>PHP runs on various platforms (<span style="background-color: #ffcc00;">Windows, Linux, Unix, Mac OS X, etc.</span>)</li>
+<li>PHP is compatible with almost all servers used today (<span style="background-color: #ffcc00;">Apache, IIS, etc.</span>)</li>
+<li>PHP supports a wide range of databases</li>
+<li>PHP is free. Download it from the official PHP resource: www.php.net</li>
+<li>PHP is easy to learn and runs efficiently on the server-side</li>
+</ul>
+<hr />
+<h2>What's new in PHP 7</h2>
+<ul>
+<li>PHP 7 is much faster than the previous popular stable release (PHP 5.6)</li>
+<li>PHP 7 has Improved Error Handling</li>
+<li>PHP 7 supports stricter Type Declarations for function arguments</li>
+<li>PHP 7 supports new operators (like the spaceship operator:&nbsp;<code class="w3-codespan">&lt;=&gt;</code>&nbsp;)</li>
+</ul>
+
+
+
+    </p>
+      </div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- css style-->
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>

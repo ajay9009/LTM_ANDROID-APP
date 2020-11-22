@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="blog-post">
+
+    <!--image of the header
+    <div class="blog-post-img">
+      <img src="c_icon.png" alt="icon" >
+    </div>
+    -->
+
+    <div class="blog-post-info">
+      <div class="blog-post-title">
+        <h2>React Getting Started</h2>
+        <p>To use React in production, you need NPM and Node.js
+
+To get an overview of what React is, you can write React code directly in HTML.
+
+But in order to use React in production, you need NPM and Node.js installed.</p>
+      </div>
+      <div class="blog-post-date">
+        <!--<span>Friday</span>-->
+        <!--<span>June 12 2020</span>-->
+      </div>
+
+      <!--post section-->
+      <div class="blog-post-desc">
+       <h2>React Directly in HTML</h2> 
+        <p><br></br>
+
+<br>The quickest way start learning React is to write React directly in your HTML files.
+
+Start by including three scripts, the first two let us write React code in our JavaScripts, and the third, Babel, allows us to write JSX syntax and ES6 in older browsers.
+
+You will learn more about JSX in the React JSX chapter..<br>
+
+
+</p>
+         <br><br>
+        <h2>Learning by Examples</h2>       
+		<p>Include three CDN's in your HTML file</p> 
+        <h3>Example</h3>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+		<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+  
+    <div id="mydiv"></div>
+
+    <script type="text/babel">
+      class Hello extends React.Component {
+        render() {
+          return <h1>Hello World!</h1>
+        }
+      }
+
+      ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+    </script>
+  </body>
+</html>
+         </textarea><br>
+		 
+		<p><br>This way of using React can be OK for testing purposes, but for production you will need to set up a React environment</br>
+            <h2>Setting up a React Environment</h2>       
+        <p>If you have NPM and Node.js installed, you can create a React application by first installing the create-react-app.</p>
+
+<p>If you've already created the create-react-app you can skip this section.</p> 
+        <p><Install create-react-app by running this command in your terminal:<br><br>
+
+C:\Users\Your Name>npm install -g create-react-app<p>
+
+    <p>Then you are able to create a React application, let's create one called myfirstreact.<p>
+
+<p><b>Run this command to create a React application named myfirstreact:<b><p>
+        <textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        C:\Users\Your Name>npx create-react-app myfirstreact
+    </textarea><br>
+    <p>The create-react-app will set up everything you need to run a React application.</p>
+    <p>Now you are ready to run your first real React application!
+
+Run this command to move to the myfirstreact directory:</p>
+<p><b>C:\Users\Your Name>cd myfirstreact</b></p>
+<p>Run this command to run the React application myfirstreact:<br>
+
+C:\Users\Your Name\myfirstreact>npm start<br>
+A new browser window will pop up with your newly created React App! If not, open your browser and type<> localhost:3000 in the address bar.</p>
+<h3>Modify the React Application</h3>
+<p>So far so good, but how do I change the content?<br>
+
+Look in the myfirstreact directory, and you will find a src folder. Inside the src folder there is a file called App.js, open it and it will look like this:</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+        /myfirstreact/src/App.js:
+
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    );
+  }
+}
+
+export default App;
+    </textarea><br>
+
+<p>Try changing the HTML content and save the file
+<b>Notice that the changes is visible immediately after you save the file, you do not have to reload the browser</b></p>
+<h3>Example</h3>
+<p>Replace all the content inside the <div className="App"> with a <h1> element.
+See the changes in the browser when you click Save.</p>
+<
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Hello World!</h1>
+      </div>
+    );
+  }
+}
+
+export default App;
+</textarea>
+<h2>What's Next?</h2>
+<p>Now you have a React Environment on your computer, and you are ready to learn more about React.
+
+<br>In the rest of this tutorial we will use our Show React tool to explain the various aspects of React, and how they are displayed in the browser.
+
+If you want to follow the same steps on your computer, start by stripping down the src folder to only contain two files: index.js and index.html, in some builds you might find the index.html in the public folder instead, you should also remove any unnecessary lines of code inside the two files to make them look like the files in the Show React tool below:</br></p>
+<h3>Example</h3>
+<p>Click the "Run Example" button to see the result.
+ <br>index.js:</br></p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myfirstelement = <h1>Hello React!</h1>
+
+ReactDOM.render(myfirstelement, document.getElementById('root'));
+</textarea>
+<p>index.html</p>
+<textarea id="code_container" name="code_container" rows="6" cols="50" readonly="">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+  </body>
+</html>
+</textarea>
+
+</div>
+      <!--/post section-->
+    </div>
+  </div>
+</body>
+</html>
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #008080;
+}
+
+textarea{
+    display: flex;
+    resize: none;
+    width: 250px;
+    height: auto;
+    background-color: #25383C;
+    border-radius: 2px;
+    text-align: left;
+    border-color: #999999;
+    color: #FFFFFF;
+    font-family: sans-serif;
+}
+.blog-post{
+	
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    background-color: #FEFCFF;
+}
+.blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+.blog-post-title h2{
+    color:#673AB7;
+    text-transform: uppercase;
+}
+.blog-post-read-more a{
+    cursor: pointer;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 0.3rem;
+    padding:0.5rem;
+    background-color: #fff;
+    border:1px solid #673AB7;
+    color: #673AB7 !important;
+    box-shadow: 0 0.05em 0.1em rgba(0,0,0,.25);
+}
+.blog-post-read-more a:hover{
+    transition: .5s;
+    background-color: #673AB7;
+    border: 1px solid #673AB7;
+    color: #fff !important;
+    text-decoration: none;
+}
+/*Extra small devices (phones , 600px and down)*/
+@media only screen and (max-width: 600px){
+    .blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}
+.blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Medium devices (tablets landscape)*/
+@media only screen and (min-width: 768px){
+.blog-post{
+    display: flex;
+    flex-direction:column;
+    margin-top: 3rem;
+    margin-left:1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+}   
+    .blog-post-img{
+    flex:1;
+    padding:0rem 1rem 0rem 1rem;
+}
+   .blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateY(-20px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding:0rem 1rem 2rem 1rem;
+}
+}
+/*Large devices (laptops)*/
+@media only screen and (min-width: 992px){
+    .blog-post{
+    display: flex;
+    flex-direction:row;
+    margin: 10rem;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    }
+    .blog-post-img{
+    flex:1;
+    padding:2rem 2rem 2rem 0rem;
+}
+.blog-post-img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    transform: translateX(-50px);
+    box-shadow:0px 0px 3px 3px rgba(0, 0 , 0, .5);
+}
+.blog-post-info{
+    flex:2;
+    padding: 2rem;
+}
+}
+</style>
